@@ -11,27 +11,49 @@ class MarkdownGenerator:
         )
 
         with open(
-            "DiagnosticReport.md",
+            "reports/DiagnosticReport.md",
             "w",
             encoding="utf-8"
         ) as file:
 
-            file.write("# System Diagnostic Report\n\n")
+            file.write(
+                "# Linux Diagnostic Report\n\n"
+            )
 
-            file.write("## Summary\n\n")
+            file.write(
+                "## Incident Summary\n\n"
+            )
 
-            for level, qty in counts.items():
+            for severity, total in counts.items():
 
                 file.write(
-                    f"- {level}: {qty}\n"
+                    f"- {severity}: {total}\n"
                 )
 
-            file.write("\n## Findings\n\n")
+            file.write(
+                "\n## Detailed Findings\n\n"
+            )
 
             for item in findings:
 
                 file.write(
                     f"- [{item['severity']}] "
-                    f"Line {item['line']} : "
-                    f"{item['message']}\n"
+                    f"Line {item['line']} "
+                    f"=> {item['message']}\n"
                 )
+
+            file.write(
+                "\n## Recommended Actions\n\n"
+            )
+
+            file.write(
+                "1. Investigate CRITICAL events immediately.\n"
+            )
+
+            file.write(
+                "2. Review ERROR events.\n"
+            )
+
+            file.write(
+                "3. Monitor WARNING events.\n"
+            )

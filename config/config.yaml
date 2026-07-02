@@ -1,0 +1,13 @@
+database:
+  name: diagnostics.db
+
+reports:
+  output_directory: reports
+
+logs:
+  sample_size: 10000
+
+severity_priority:
+  CRITICAL: 1
+  ERROR: 2
+  WARNING: 3
