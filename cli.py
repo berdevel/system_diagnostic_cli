@@ -5,6 +5,9 @@ from pathlib import Path
 from parsers.log_parser import LogParser
 from database.sqlite_manager import SQLiteManager
 from reports.markdown_generator import MarkdownGenerator
+from colorama import init, Fore, Style
+
+init(autoreset=True)
 
 
 class DiagnosticTool:
@@ -12,13 +15,28 @@ class DiagnosticTool:
     def run(self, logfile):
 
         if not Path(logfile).exists():
-            print(f"ERROR: Log file not found -> {logfile}")
+
+            print(
+                Fore.RED +
+                Style.BRIGHT +
+                f"ERROR: Log file not found -> {logfile}"
+            )
+
             return
 
         start_time = time.time()
 
-        print("\n========== SYSTEM DIAGNOSTIC ==========")
-        print(f"Processing log: {logfile}")
+        
+        print(
+            Fore.CYAN +
+            "\n========== SYSTEM DIAGNOSTIC =========="
+        )
+
+        print(
+            Fore.WHITE +
+            f"Processing log: {logfile}"
+        )
+
 
         try:
 
@@ -54,19 +72,58 @@ class DiagnosticTool:
                 if item["severity"] == "WARNING"
             )
 
-            print("\n========== RESULTS ==========")
-            print(f"Total Findings : {len(findings)}")
-            print(f"Critical Events: {critical_count}")
-            print(f"Errors         : {error_count}")
-            print(f"Warnings       : {warning_count}")
-            print(f"Database       : diagnostics.db")
-            print("Report         : reports/DiagnosticReport.md")
-            print(f"Process Time   : {elapsed_time} sec")
+            print(
+                Fore.CYAN +
+                "\n========== RESULTS =========="
+            )
+
+            print(
+                Fore.GREEN +
+                f"Total Findings : {len(findings)}"
+            )
+
+            print(
+                Fore.RED +
+                f"Critical Events: {critical_count}"
+            )
+
+            print(
+                Fore.YELLOW +
+                f"Errors         : {error_count}"
+            )
+
+            print(
+                Fore.MAGENTA +
+                f"Warnings       : {warning_count}"
+            )
+
+            print(
+                Fore.BLUE +
+                "Database       : diagnostics.db"
+            )
+
+            print(
+                Fore.BLUE +
+                "Report         : reports/DiagnosticReport.md"
+            )
+
+            print(
+                Fore.GREEN +
+                f"Process Time   : {elapsed_time} sec"
+            )
 
         except Exception as error:
 
-            print("\nExecution Failed")
-            print(f"Reason: {error}")
+            print(
+                Fore.RED +
+                Style.BRIGHT +
+                "\nExecution Failed"
+            )
+
+            print(
+                Fore.RED +
+                f"Reason: {error}"
+            )
 
 
 if __name__ == "__main__":
@@ -77,9 +134,57 @@ if __name__ == "__main__":
 
     parser.add_argument(
         "logfile",
+        nargs="?",
         help="Path to log file"
+    )
+
+    parser.add_argument(
+        "--generate",
+        type=int,
+        help="Generate fake log file with N lines"
+    )
+
+    parser.add_argument(
+    "--generate-and-analyze",
+    type=int,
+    help="Generate fake logs and analyze them"
     )
 
     args = parser.parse_args()
 
-    DiagnosticTool().run(args.logfile)
+    if args.generate:
+
+        from generators.fake_log_generator import FakeLogGenerator
+
+        generator = FakeLogGenerator()
+
+        generator.generate(
+            "logs/generated.log",
+            args.generate
+        )
+
+        print(
+            f"Generated logs/generated.log with {args.generate} entries"
+        )
+
+    elif args.logfile:
+
+        DiagnosticTool().run(args.logfile)
+
+    elif args.generate_and_analyze:
+
+        from generators.fake_log_generator import FakeLogGenerator
+
+        logfile = "logs/generated.log"
+
+        generator = FakeLogGenerator()
+        generator.generate(
+            logfile,
+            args.generate_and_analyze
+        )
+
+        DiagnosticTool().run(logfile)
+
+    else:
+
+        parser.print_help()
