@@ -1,5 +1,11 @@
 import re
-from parsers.regex_patterns import PATTERNS
+
+from config.failure_catalog import FAILURE_CATALOG
+
+BIANCA_MAPPING = {
+    "Module 0": "Bianca 1",
+    "Module 1": "Bianca 2"
+}
 
 
 class LogParser:
@@ -8,22 +14,35 @@ class LogParser:
 
         findings = []
 
-        with open(logfile, "r", encoding="utf-8") as file:
+        with open(
+            logfile,
+            "r",
+            encoding="utf-8",
+            errors="ignore"
+        ) as file:
 
             for line_number, line in enumerate(file, start=1):
 
-                for severity, patterns in PATTERNS.items():
+                line_lower = line.lower()
 
-                    for pattern in patterns:
+                for failure, module in FAILURE_CATALOG.items():
 
-                        if re.search(pattern, line, re.IGNORECASE):
+                    if failure.lower() in line_lower:
 
-                            findings.append({
-                                "line": line_number,
-                                "severity": severity,
-                                "message": line.strip()
-                            })
+                        findings.append({
 
-                            break
+                            "line": line_number,
+
+                            "failure": failure,
+
+                            "module": module,
+
+                            "bianca": BIANCA_MAPPING[module],
+
+                            "action": "Replace affected Bianca",
+
+                            "message": line.strip()
+
+                        })
 
         return findings

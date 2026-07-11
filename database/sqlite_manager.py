@@ -5,35 +5,89 @@ class SQLiteManager:
 
     def __init__(self):
 
-        self.connection = sqlite3.connect("diagnostics.db")
-
-        self.connection.execute("""
-        CREATE TABLE IF NOT EXISTS incidents(
-
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            severity TEXT,
-            line INTEGER,
-            message TEXT
+        self.connection = sqlite3.connect(
+            "diagnostics.db"
         )
+
+        self.cursor = self.connection.cursor()
+
+        self.cursor.execute("""
+
+            CREATE TABLE IF NOT EXISTS findings (
+
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+                failure TEXT,
+
+                bianca TEXT,
+
+                module TEXT,
+
+                line_number INTEGER,
+
+                message TEXT
+
+            )
+
         """)
+
+        self.connection.commit()
 
     def save_findings(self, findings):
 
-        cursor = self.connection.cursor()
-
         for item in findings:
 
-            cursor.execute(
-                """
-                INSERT INTO incidents
-                (severity, line, message)
-                VALUES (?, ?, ?)
-                """,
-                (
-                    item["severity"],
-                    item["line"],
-                    item["message"]
+            self.cursor.execute("""
+
+                INSERT INTO findings (
+
+                    failure,
+
+                    bianca,
+
+                    module,
+
+                    line_number,
+
+                    message
+
                 )
+
+                VALUES (?, ?, ?, ?, ?)
+
+            """,
+
+            (
+
+                item.get(
+                    "failure",
+                    "Unknown"
+                ),
+
+                item.get(
+                    "bianca",
+                    "Unknown"
+                ),
+
+                item.get(
+                    "module",
+                    "Unknown"
+                ),
+
+                item.get(
+                    "line",
+                    0
+                ),
+
+                item.get(
+                    "message",
+                    ""
+                )
+
+            )
+
             )
 
         self.connection.commit()
+
+        self.connection.close()
