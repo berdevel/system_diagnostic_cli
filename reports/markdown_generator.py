@@ -2,6 +2,8 @@ from collections import Counter
 from datetime import datetime
 from pathlib import Path
 
+import markdown
+
 
 class MarkdownGenerator:
 
@@ -9,7 +11,8 @@ class MarkdownGenerator:
         self,
         findings,
         critical_findings=None,
-        source_log="report"
+        source_log="report",
+        root_causes=None
     ):
 
         report_name = Path(source_log).stem
@@ -197,67 +200,166 @@ class MarkdownGenerator:
                 "# ROOT CAUSE ANALYSIS\n\n"
             )
 
-            if critical_findings:
+            if root_causes:
 
-                xid_163_count = sum(
-                    1
-                    for event in critical_findings
-                    if event.get("xid") == "163"
+                for cause in root_causes:
+
+                    file.write(
+                        f"## {cause['name']}\n\n"
+                    )
+
+                    file.write(
+                        f"Confidence: "
+                        f"{cause['confidence']}\n\n"
+                    )
+
+                    file.write(
+                        "Recommended Actions:\n\n"
+                    )
+
+                    file.write(
+                        f"{cause['recommendation']}\n\n"
+                    )
+
+            else:
+
+                file.write(
+                    "No matching root "
+                    "cause rule found.\n"
                 )
 
-                if xid_163_count:
+        # ==========================================
+        # HTML REPORT GENERATION
+        # ==========================================
 
-                    file.write(
-                        "## High Confidence Thermal Event\n\n"
-                    )
+        md_file = (
+            f"reports/{report_name}_Report.md"
+        )
 
-                    file.write(
-                        f"Detected XID 163 "
-                        f"{xid_163_count} times.\n\n"
-                    )
+        html_file = (
+            f"reports/{report_name}_Report.html"
+        )
 
-                    file.write(
-                        "Affected GPUs:\n"
-                    )
+        with open(
+            md_file,
+            "r",
+            encoding="utf-8"
+        ) as md:
 
-                    affected_gpus = sorted({
-                        event.get("gpu", "Unknown")
-                        for event in critical_findings
-                        if event.get("gpu") != "Unknown"
-                    })
+            md_content = md.read()
 
-                    for gpu in affected_gpus:
+        html_body = markdown.markdown(
+            md_content,
+            extensions=["tables"]
+        )
 
-                        file.write(
-                            f"- {gpu}\n"
-                        )
+        html_template = f"""
+<!DOCTYPE html>
+<html lang="en">
 
-                    file.write("\n")
+<head>
 
-                    file.write(
-                        "Recommended Investigation:\n"
-                    )
+<meta charset="UTF-8">
 
-                    file.write(
-                        "- Verify TIM condition.\n"
-                    )
+<title>
+FoxconnFailureAnalyzer Report
+</title>
 
-                    file.write(
-                        "- Verify cold plate pressure.\n"
-                    )
+<style>
 
-                    file.write(
-                        "- Check airflow restrictions.\n"
-                    )
+body {{
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px;
+    background-color: #f4f6f9;
+}}
 
-                    file.write(
-                        "- Verify fan speeds.\n"
-                    )
+.header {{
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}}
 
-                    file.write(
-                        "- Review PCB temperature history.\n\n"
-                    )
+.section {{
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}}
 
-            file.write(
-                "\n---\n"
+h1 {{
+    margin: 0;
+}}
+
+h2 {{
+    color: #003366;
+}}
+
+h3 {{
+    color: #0055aa;
+}}
+
+table {{
+    width: 100%;
+    border-collapse: collapse;
+}}
+
+th {{
+    background-color: #003366;
+    color: white;
+    padding: 10px;
+}}
+
+td {{
+    border: 1px solid #ddd;
+    padding: 10px;
+}}
+
+tr:nth-child(even) {{
+    background-color: #f2f2f2;
+}}
+
+code {{
+    background-color: #efefef;
+    padding: 2px 4px;
+}}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>FoxconnFailureAnalyzer</h1>
+
+<p>
+Automated HGX / Bianca Diagnostic Report
+</p>
+
+</div>
+
+<div class="section">
+
+{html_body}
+
+</div>
+
+</body>
+
+</html>
+"""
+
+        with open(
+            html_file,
+            "w",
+            encoding="utf-8"
+        ) as html:
+
+            html.write(
+                html_template
             )

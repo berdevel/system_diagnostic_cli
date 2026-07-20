@@ -9,6 +9,10 @@ from parsers.redfish_parser import RedfishParser
 from database.sqlite_manager import SQLiteManager
 from reports.markdown_generator import MarkdownGenerator
 
+from parsers.root_cause_analyzer import (
+    RootCauseAnalyzer
+)
+
 init(autoreset=True)
 
 
@@ -89,6 +93,17 @@ class DiagnosticTool:
                 )
             )
 
+            root_cause_analyzer = (
+                RootCauseAnalyzer()
+            )
+
+            root_causes = (
+                root_cause_analyzer.analyze(
+                    findings,
+                    critical_events
+                )
+            )
+
             for event in critical_events:
 
                 print(
@@ -106,7 +121,8 @@ class DiagnosticTool:
             report.generate(
                 findings,
                 critical_events,
-                logfile
+                logfile,
+                root_causes
             )
 
             elapsed_time = round(
@@ -160,13 +176,16 @@ class DiagnosticTool:
                 "Database       : diagnostics.db"
             )
 
-            report_name = (
-                Path(logfile).stem
+            report_name = Path(logfile).stem
+
+            print(
+                Fore.BLUE +
+                f"Markdown Report : reports/{report_name}_Report.md"
             )
 
             print(
                 Fore.BLUE +
-                f"Report         : reports/{report_name}_Report.md"
+                f"HTML Report     : reports/{report_name}_Report.html"
             )
 
             print(
