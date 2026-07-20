@@ -104,13 +104,49 @@ class DiagnosticTool:
                 )
             )
 
+            primary = root_causes.get(
+                "primary"
+            )
+
             for event in critical_events:
 
                 print(
-                    f"ID {event['event_id']} | "
-                    f"{event['gpu']} | "
-                    f"XID {event['xid']} | "
-                    f"{event['failure']}"
+                    f"\n[ID {event['event_id']}]"
+                )
+
+                print(
+                    f"Line       : "
+                    f"{event.get('line', 'N/A')}"
+                )
+
+                print(
+                    f"GPU        : "
+                    f"{event.get('gpu','Unknown')}"
+                )
+
+                print(
+                    f"CPU        : "
+                    f"{event.get('cpu','Unknown')}"
+                )
+
+                print(
+                    f"Bianca     : "
+                    f"{event.get('bianca','Unknown')}"
+                )
+
+                print(
+                    f"Coldplate  : "
+                    f"{event.get('coldplate','Unknown')}"
+                )
+
+                print(
+                    f"XID        : "
+                    f"{event.get('xid','N/A')}"
+                )
+
+                print(
+                    f"Failure    : "
+                    f"{event.get('failure','Unknown')}"
                 )
 
             database = SQLiteManager()
@@ -172,6 +208,35 @@ class DiagnosticTool:
             )
 
             print(
+                "\n================================="
+            )
+
+            print(
+                "ROOT CAUSE ANALYSIS"
+            )
+
+            print(
+                "=================================\n"
+            )
+
+            if primary:
+
+                print(
+                    f"Primary Root Cause: "
+                    f"{primary['name']}"
+                )
+
+                print(
+                    f"Rule ID: "
+                    f"{primary['id']}"
+                )
+
+                print(
+                    f"Confidence: "
+                    f"{primary['confidence']}"
+                )
+
+            print(
                 Fore.BLUE +
                 "Database       : diagnostics.db"
             )
@@ -198,9 +263,15 @@ class DiagnosticTool:
             for item in findings:
 
                 print(
+
                     f"[{item['bianca']}] "
+
                     f"{item['failure']} "
-                    f"(Line {item['line']})"
+
+                    f"[Event ID: {item.get('event_id', 'N/A')}]"
+
+                    f"(Line {item['line']}) "
+
                 )
 
         except Exception as error:

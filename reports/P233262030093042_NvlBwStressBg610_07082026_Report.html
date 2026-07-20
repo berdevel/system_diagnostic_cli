@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+FoxconnFailureAnalyzer Report
+</title>
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px;
+    background-color: #f4f6f9;
+}
+
+.header {
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.section {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    color: #003366;
+}
+
+h3 {
+    color: #0055aa;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #003366;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+code {
+    background-color: #efefef;
+    padding: 2px 4px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>FoxconnFailureAnalyzer</h1>
+
+<p>
+Automated HGX / Bianca Diagnostic Report
+</p>
+
+</div>
+
+<div class="section">
+
+<h1>FOXCONN FAILURE ANALYSIS REPORT</h1>
+<p>Generated: 2026-07-20 13:16:25</p>
+<p>Source Log: logs\P233262030093042_NvlBwStressBg610_07082026.txt</p>
+<p>Serial Number: Unknown</p>
+<p>Total Bianca Failures: 0</p>
+<h1>BIANCA FAILURE ANALYSIS</h1>
+<p>No Bianca failures detected.</p>
+<hr />
+<h1>NVIDIA CRITICAL EVENTS ANALYSIS</h1>
+<p>Total Critical Events: 6</p>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 100</li>
+<li>Log Line       : N/A</li>
+<li>Date           : 2026-07-02T21:55:46+00:00</li>
+<li>Severity       : Critical</li>
+<li>GPU            : GPU_2</li>
+<li>Bianca         : Bianca#2</li>
+<li>Coldplate      : Right</li>
+<li>XID            : N/A</li>
+<li>Failure        : GPU_2 Thermal Over Temperature</li>
+<li>Description    : The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_GPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_GPU_THERM_OVERT{0x4}'.</li>
+<li>Recommendation : GPU_2 overheating detected on Bianca#2. Replace cold plate and thermal interface material (TIM).</li>
+<li>Resolution     : AC cycle the system. If problem persists, collect all dumps per troubleshooting guide, isolate the system and evaluate for RMA.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 76</li>
+<li>Log Line       : N/A</li>
+<li>Date           : 2026-07-02T19:33:55+00:00</li>
+<li>Severity       : Critical</li>
+<li>GPU            : GPU_2</li>
+<li>Bianca         : Bianca#2</li>
+<li>Coldplate      : Right</li>
+<li>XID            : 163</li>
+<li>Failure        : PSHC disengaged due to thermal event</li>
+<li>Description    : The resource property GPU_2 Driver Event Message has detected errors of type '[Fri Jul  3 16:28:26 2026][1][0] XID 163 PSHC disengaged due to thermal event - 0x4002020'.</li>
+<li>Recommendation : Check heatsink contact, TIM, airflow, fan speed, PCB temperature and thermal throttling history.</li>
+<li>Resolution     : Regarding XID documentation and further actions please refer to XID and sXID Catalog for NVIDIA Data Center Products (NVOnline: 1115699)</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 79</li>
+<li>Log Line       : N/A</li>
+<li>Date           : 2026-07-02T19:34:20+00:00</li>
+<li>Severity       : Critical</li>
+<li>GPU            : GPU_3</li>
+<li>Bianca         : Bianca#2</li>
+<li>Coldplate      : Right</li>
+<li>XID            : 163</li>
+<li>Failure        : PSHC disengaged due to thermal event</li>
+<li>Description    : The resource property GPU_3 Driver Event Message has detected errors of type '[Fri Jul  3 16:28:50 2026][1][0] XID 163 PSHC disengaged due to thermal event - 0x4000004'.</li>
+<li>Recommendation : Check heatsink contact, TIM, airflow, fan speed, PCB temperature and thermal throttling history.</li>
+<li>Resolution     : Regarding XID documentation and further actions please refer to XID and sXID Catalog for NVIDIA Data Center Products (NVOnline: 1115699)</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 80</li>
+<li>Log Line       : N/A</li>
+<li>Date           : 2026-07-02T19:34:22+00:00</li>
+<li>Severity       : Critical</li>
+<li>GPU            : GPU_2</li>
+<li>Bianca         : Bianca#2</li>
+<li>Coldplate      : Right</li>
+<li>XID            : N/A</li>
+<li>Failure        : GPU_2 Thermal Over Temperature</li>
+<li>Description    : The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_GPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_GPU_THERM_OVERT{0x4}'.</li>
+<li>Recommendation : GPU_2 overheating detected on Bianca#2. Replace cold plate and thermal interface material (TIM).</li>
+<li>Resolution     : AC cycle the system. If problem persists, collect all dumps per troubleshooting guide, isolate the system and evaluate for RMA.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 96</li>
+<li>Log Line       : N/A</li>
+<li>Date           : 2026-07-02T21:55:37+00:00</li>
+<li>Severity       : Critical</li>
+<li>GPU            : GPU_2</li>
+<li>Bianca         : Bianca#2</li>
+<li>Coldplate      : Right</li>
+<li>XID            : 163</li>
+<li>Failure        : PSHC disengaged due to thermal event</li>
+<li>Description    : The resource property GPU_2 Driver Event Message has detected errors of type '[Sat Jul  4 04:19:56 2026][1][0] XID 163 PSHC disengaged due to thermal event - 0x4002020'.</li>
+<li>Recommendation : Check heatsink contact, TIM, airflow, fan speed, PCB temperature and thermal throttling history.</li>
+<li>Resolution     : Regarding XID documentation and further actions please refer to XID and sXID Catalog for NVIDIA Data Center Products (NVOnline: 1115699)</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 99</li>
+<li>Log Line       : N/A</li>
+<li>Date           : 2026-07-02T21:55:44+00:00</li>
+<li>Severity       : Critical</li>
+<li>GPU            : GPU_1</li>
+<li>Bianca         : Bianca#1</li>
+<li>Coldplate      : Left</li>
+<li>XID            : 163</li>
+<li>Failure        : PSHC disengaged due to thermal event</li>
+<li>Description    : The resource property GPU_1 Driver Event Message has detected errors of type '[Sat Jul  4 04:20:03 2026][1][0] XID 163 PSHC disengaged due to thermal event - 0x4000004'.</li>
+<li>Recommendation : Check heatsink contact, TIM, airflow, fan speed, PCB temperature and thermal throttling history.</li>
+<li>Resolution     : Regarding XID documentation and further actions please refer to XID and sXID Catalog for NVIDIA Data Center Products (NVOnline: 1115699)</li>
+</ul>
+<hr />
+<h1>ROOT CAUSE ANALYSIS</h1>
+<h2>PRIMARY ROOT CAUSE</h2>
+<p>Catalog Version: 1.0.0</p>
+<p>Rule ID: RCA-001</p>
+<p>Rule Version: 1.0</p>
+<p>Priority: 80</p>
+<p>Cause: GPU Thermal Event</p>
+<p>Confidence: HIGH</p>
+<p>Affected Bianca Modules:</p>
+<ul>
+<li>Bianca#1</li>
+<li>Bianca#2</li>
+</ul>
+<p>Affected Cooling Assemblies:</p>
+<ul>
+<li>Left Coldplate</li>
+<li>Right Coldplate</li>
+</ul>
+<p>Recommended Actions:</p>
+<pre><code>    Verify thermal interface material (TIM).
+    Verify cold plate installation.
+    Check airflow restrictions.
+    Verify fan operation.
+    Review GPU temperature history.
+</code></pre>
+<h2>SECONDARY FINDINGS</h2>
+<ul>
+<li>GPU Thermal Degradation (Priority 60)</li>
+<li>Power Sequencing Failure (Priority 40)</li>
+</ul>
+
+</div>
+
+</body>
+
+</html>

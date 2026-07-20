@@ -1,6 +1,16 @@
+CATALOG_VERSION = "1.0.0"
+
+CATALOG_VERSION = "1.0.0"
+
 ROOT_CAUSE_CATALOG = [
 
     {
+        "id": "RCA-001",
+
+        "version": "1.0",
+
+        "priority": 80,
+
         "name": "GPU Thermal Event",
 
         "confidence": "HIGH",
@@ -24,6 +34,12 @@ ROOT_CAUSE_CATALOG = [
     },
 
     {
+        "id": "RCA-002",
+
+        "version": "1.0",
+
+        "priority": 60,
+
         "name": "GPU Thermal Degradation",
 
         "confidence": "MEDIUM",
@@ -44,6 +60,12 @@ ROOT_CAUSE_CATALOG = [
     },
 
     {
+        "id": "RCA-003",
+
+        "version": "1.0",
+
+        "priority": 100,
+
         "name": "PEX Switch 0.95V Rail Failure - Bianca 1",
 
         "confidence": "HIGH",
@@ -63,6 +85,12 @@ ROOT_CAUSE_CATALOG = [
     },
 
     {
+        "id": "RCA-004",
+
+        "version": "1.0",
+
+        "priority": 100,
+
         "name": "PEX Switch 0.95V Rail Failure - Bianca 2",
 
         "confidence": "HIGH",
@@ -82,6 +110,12 @@ ROOT_CAUSE_CATALOG = [
     },
 
     {
+        "id": "RCA-005",
+
+        "version": "1.0",
+
+        "priority": 100,
+
         "name": "CPUVDD Failure - Bianca 1",
 
         "confidence": "HIGH",
@@ -101,6 +135,12 @@ ROOT_CAUSE_CATALOG = [
     },
 
     {
+        "id": "RCA-006",
+
+        "version": "1.0",
+
+        "priority": 100,
+
         "name": "CPUVDD Failure - Bianca 2",
 
         "confidence": "HIGH",
@@ -120,6 +160,12 @@ ROOT_CAUSE_CATALOG = [
     },
 
     {
+        "id": "RCA-007",
+
+        "version": "1.0",
+
+        "priority": 100,
+
         "name": "GPU Core Power Failure",
 
         "confidence": "HIGH",
@@ -139,6 +185,12 @@ ROOT_CAUSE_CATALOG = [
     },
 
     {
+        "id": "RCA-008",
+
+        "version": "1.0",
+
+        "priority": 100,
+
         "name": "FBVDDP Failure",
 
         "confidence": "HIGH",
@@ -159,6 +211,12 @@ ROOT_CAUSE_CATALOG = [
     },
 
     {
+        "id": "RCA-009",
+
+        "version": "1.0",
+
+        "priority": 40,
+
         "name": "Power Sequencing Failure",
 
         "confidence": "MEDIUM",
@@ -178,6 +236,12 @@ ROOT_CAUSE_CATALOG = [
     },
 
     {
+        "id": "RCA-010",
+
+        "version": "1.0",
+
+        "priority": 100,
+
         "name": "I/O Mezzanine Failure",
 
         "confidence": "HIGH",

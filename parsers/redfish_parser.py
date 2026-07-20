@@ -97,6 +97,112 @@ class RedfishParser:
                     )
 
                     break
+            
+            # ==========================================
+            # Infer GPU from Failure Description
+            # ==========================================
+
+            if gpu == "Unknown":
+
+                if "GPU_0" in failure:
+                    gpu = "GPU_0"
+
+                elif "GPU_1" in failure:
+                    gpu = "GPU_1"
+
+                elif "GPU_2" in failure:
+                    gpu = "GPU_2"
+
+                elif "GPU_3" in failure:
+                    gpu = "GPU_3"
+
+            bianca = "Unknown"
+
+            if gpu in [
+
+                "GPU_0",
+                "GPU_1"
+
+            ]:
+
+                bianca = "Bianca#1"
+
+            elif gpu in [
+
+                "GPU_2",
+                "GPU_3"
+
+            ]:
+
+                bianca = "Bianca#2"
+
+            coldplate = "N/A"
+
+            thermal_event = (
+
+                "THERM" in message.upper()
+
+                or
+
+                "THERMAL" in message.upper()
+
+                or
+
+                "OVERT" in message.upper()
+
+                or
+
+                xid == "163"
+
+            )
+
+            if thermal_event:
+
+                if gpu in [
+
+                    "GPU_0",
+                    "GPU_1"
+
+                ]:
+
+                    coldplate = "Left"
+
+                elif gpu in [
+
+                    "GPU_2",
+                    "GPU_3"
+
+                ]:
+
+                    coldplate = "Right"
+
+            cpu_match = re.search(
+
+                r'CPU_(\d+)',
+
+                message,
+
+                re.IGNORECASE
+
+            )
+
+            if cpu_match:
+
+                cpu = (
+                    f"CPU_{cpu_match.group(1)}"
+                )
+
+            else:
+
+                cpu = "Unknown"
+
+            if cpu == "CPU_0":
+
+                bianca = "Bianca#1"
+
+            elif cpu == "CPU_1":
+
+                bianca = "Bianca#2"
 
             findings.append({
 
@@ -116,6 +222,12 @@ class RedfishParser:
                 ),
 
                 "gpu": gpu,
+
+                "cpu": cpu,
+
+                "bianca": bianca,
+
+                "coldplate": coldplate,
 
                 "xid": xid,
 

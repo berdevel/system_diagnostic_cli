@@ -1,31 +1,24 @@
 from config.root_cause_catalog import (
-    ROOT_CAUSE_CATALOG
+    ROOT_CAUSE_CATALOG,
+    CATALOG_VERSION
 )
 
 
 class RootCauseAnalyzer:
 
     def analyze(
-
         self,
         findings,
         critical_events
-
     ):
 
         evidence = set()
 
-        # Bianca Failures
-
         for finding in findings:
 
             evidence.add(
-
                 finding["failure"].upper()
-
             )
-
-        # Critical Events
 
         for event in critical_events:
 
@@ -34,7 +27,7 @@ class RootCauseAnalyzer:
                 ""
             )
 
-            if xid:
+            if xid and xid != "N/A":
 
                 evidence.add(
                     f"XID_{xid}"
@@ -67,12 +60,43 @@ class RootCauseAnalyzer:
 
                 condition in evidence
 
-                for condition
-
-                in rule["conditions"]
+                for condition in rule[
+                    "conditions"
+                ]
 
             ):
 
                 matches.append(rule)
 
-        return matches
+        matches.sort(
+
+            key=lambda rule: (
+
+                rule["priority"],
+
+                len(
+                    rule["conditions"]
+                )
+
+            ),
+
+            reverse=True
+
+        )
+
+        return {
+
+            "catalog_version":
+            CATALOG_VERSION,
+
+            "primary":
+            matches[0]
+            if matches
+            else None,
+
+            "secondary":
+            matches[1:]
+            if len(matches) > 1
+            else []
+
+        }

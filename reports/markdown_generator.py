@@ -12,7 +12,8 @@ class MarkdownGenerator:
         findings,
         critical_findings=None,
         source_log="report",
-        root_causes=None
+        root_causes=None,
+        serial_number="Unknown"
     ):
 
         report_name = Path(source_log).stem
@@ -27,12 +28,20 @@ class MarkdownGenerator:
                 "# FOXCONN FAILURE ANALYSIS REPORT\n\n"
             )
 
+            report_timestamp = datetime.now()
+
             file.write(
-                f"Generated: {datetime.now()}\n\n"
+                f"Generated: "
+                f"{report_timestamp.strftime('%Y-%m-%d %H:%M:%S')}\n\n"
             )
 
             file.write(
                 f"Source Log: {source_log}\n\n"
+            )
+
+            file.write(
+                f"Serial Number: "
+                f"{serial_number}\n\n"
             )
 
             file.write(
@@ -77,6 +86,11 @@ class MarkdownGenerator:
                     )
 
                     file.write(
+                        f"- Event ID       : "
+                        f"{item.get('event_id', 'Unknown')}\n"
+                    )
+
+                    file.write(
                         f"- Failure       : "
                         f"{item.get('failure', 'Unknown')}\n"
                     )
@@ -89,6 +103,16 @@ class MarkdownGenerator:
                     file.write(
                         f"- Module        : "
                         f"{item.get('module', 'Unknown')}\n"
+                    )
+
+                    file.write(
+                        f"- GPU   : "
+                        f"{item.get('gpu', 'N/A')}\n"
+                    )
+
+                    file.write(
+                        f"- Coldplate   : "
+                        f"{item.get('coldplate', 'N/A')}\n"
                     )
 
                     file.write(
@@ -143,6 +167,11 @@ class MarkdownGenerator:
                     )
 
                     file.write(
+                        f"- Log Line       : "
+                        f"{event.get('line', 'N/A')}\n"
+                    )
+
+                    file.write(
                         f"- Date           : "
                         f"{event.get('created', 'Unknown')}\n"
                     )
@@ -152,9 +181,30 @@ class MarkdownGenerator:
                         f"{event.get('severity', 'Unknown')}\n"
                     )
 
+                    if event.get("gpu") != "Unknown":
+                    
+                        file.write(
+                            f"- GPU            : "
+                            f"{event.get('gpu')}\n"
+                        )
+
+                    if event.get("cpu") != "Unknown":
+
+                        file.write(
+
+                            f"- CPU            : "
+                            f"{event.get('cpu')}\n"
+
+                        )
+
                     file.write(
-                        f"- GPU            : "
-                        f"{event.get('gpu', 'Unknown')}\n"
+                        f"- Bianca         : "
+                        f"{event.get('bianca', 'Unknown')}\n"
+                    )
+
+                    file.write(
+                        f"- Coldplate      : "
+                        f"{event.get('coldplate', 'N/A')}\n"
                     )
 
                     file.write(
@@ -200,32 +250,156 @@ class MarkdownGenerator:
                 "# ROOT CAUSE ANALYSIS\n\n"
             )
 
-            if root_causes:
+            if (
 
-                for cause in root_causes:
+                root_causes
 
-                    file.write(
-                        f"## {cause['name']}\n\n"
+                and
+
+                root_causes.get(
+                    "primary"
+                )
+
+            ):
+
+                primary = (
+                    root_causes[
+                        "primary"
+                    ]
+                )
+
+                file.write(
+                    "## PRIMARY ROOT CAUSE\n\n"
+                )
+
+                file.write(
+                    f"Catalog Version: "
+                    f"{root_causes['catalog_version']}\n\n"
+                )
+
+                file.write(
+                    f"Rule ID: "
+                    f"{primary['id']}\n\n"
+                )
+
+                file.write(
+                    f"Rule Version: "
+                    f"{primary['version']}\n\n"
+                )
+
+                file.write(
+                    f"Priority: "
+                    f"{primary['priority']}\n\n"
+                )
+
+                file.write(
+                    f"Cause: "
+                    f"{primary['name']}\n\n"
+                )
+
+                file.write(
+                    f"Confidence: "
+                    f"{primary['confidence']}\n\n"
+                )
+
+                affected_biancas = sorted({
+
+                    event.get(
+                        "bianca",
+                        "Unknown"
                     )
 
-                    file.write(
-                        f"Confidence: "
-                        f"{cause['confidence']}\n\n"
+                    for event in critical_findings
+
+                    if event.get(
+                        "bianca"
+                    ) != "Unknown"
+
+                })
+
+                affected_coldplates = sorted({
+
+                    event.get(
+                        "coldplate",
+                        "N/A"
                     )
 
-                    file.write(
-                        "Recommended Actions:\n\n"
-                    )
+                    for event in critical_findings
+
+                    if event.get(
+                        "coldplate"
+                    ) not in [
+
+                        "Unknown",
+                        "N/A"
+
+                    ]
+
+                })
+
+                if affected_biancas:
 
                     file.write(
-                        f"{cause['recommendation']}\n\n"
+                        "Affected Bianca Modules:\n\n"
                     )
+
+                    for bianca in affected_biancas:
+
+                        file.write(
+                            f"- {bianca}\n"
+                        )
+
+                    file.write("\n")
+
+                if affected_coldplates:
+
+                    file.write(
+                        "Affected Cooling Assemblies:\n\n"
+                    )
+
+                    for coldplate in affected_coldplates:
+
+                        file.write(
+                            f"- {coldplate} Coldplate\n"
+                        )
+
+                    file.write("\n")
+
+                file.write(
+                    "Recommended Actions:\n\n"
+                )
+
+                file.write(
+                    primary[
+                        "recommendation"
+                    ] + "\n\n"
+                )
+
+                secondary = (
+                    root_causes.get(
+                        "secondary",
+                        []
+                    )
+                )
+
+                if secondary:
+
+                    file.write(
+                        "## SECONDARY FINDINGS\n\n"
+                    )
+
+                    for rule in secondary:
+
+                        file.write(
+                            f"- {rule['name']} "
+                            f"(Priority "
+                            f"{rule['priority']})\n"
+                        )
 
             else:
 
                 file.write(
-                    "No matching root "
-                    "cause rule found.\n"
+                    "No matching root cause rule found.\n"
                 )
 
         # ==========================================
