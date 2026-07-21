@@ -1,0 +1,586 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+FoxconnFailureAnalyzer Report
+</title>
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px;
+    background-color: #f4f6f9;
+}
+
+.header {
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.section {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    color: #003366;
+}
+
+h3 {
+    color: #0055aa;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #003366;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+code {
+    background-color: #efefef;
+    padding: 2px 4px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>FoxconnFailureAnalyzer</h1>
+
+<p>
+Automated HGX / Bianca Diagnostic Report
+</p>
+
+</div>
+
+<div class="section">
+
+<h1>FOXCONN FAILURE ANALYSIS REPORT</h1>
+<h2>System Information</h2>
+<ul>
+<li>Serial Number: P233262530256042</li>
+<li>Source Log: logs\P233262530256042_NvlBwStressBg610_07082026.txt</li>
+<li>Report Date: 2026-07-21 12:09:48</li>
+<li>Total Component Failures: 9</li>
+</ul>
+<h2>FAILURE HIGHLIGHTS</h2>
+<p>Primary Root Cause: PEX Switch 0.95V Rail Failure - Bianca 2</p>
+<p>Most Frequent Failure: pwr_fail_pex_sw_0v95_mod_1</p>
+<p>Occurrences: 8</p>
+<h1>COMPONENT FAILURE ANALYSIS</h1>
+<h2>Component Failure Summary</h2>
+<ul>
+<li>Bianca: 8</li>
+<li>Coldplate: 1</li>
+</ul>
+<h2>Component Statistics</h2>
+<h3>Bianca</h3>
+<ul>
+<li>Total Failures : 8</li>
+<li>Common Failures:</li>
+<li>pwr_fail_pex_sw_0v95_mod_1: 8</li>
+<li>Affected Components:</li>
+<li>Bianca 2</li>
+<li>Recommendations:</li>
+<li>Replace Bianca 2</li>
+</ul>
+<h3>Coldplate</h3>
+<ul>
+<li>Total Failures : 1</li>
+<li>Common Failures:</li>
+<li>pwr_fail_gpu_therm_overt{0x2}: 1</li>
+<li>Affected Components:</li>
+<li>Left Coldplate</li>
+<li>Recommendations:</li>
+<li>Replace Left Coldplate</li>
+</ul>
+<h2>Component Failure Details</h2>
+<h3>pwr_fail_pex_sw_0v95_mod_1</h3>
+<p>Occurrences: 8</p>
+<p>Event IDs:</p>
+<ul>
+<li>243</li>
+<li>248</li>
+<li>257</li>
+<li>329</li>
+<li>373</li>
+<li>379</li>
+<li>509</li>
+<li>518</li>
+</ul>
+<p>Component: Bianca</p>
+<p>Assembly: Bianca#2 Assembly</p>
+<p>Bianca: Bianca 2</p>
+<p>Recommendation: Replace Bianca 2</p>
+<h3>pwr_fail_gpu_therm_overt{0x2}</h3>
+<p>Occurrences: 1</p>
+<p>Event IDs:</p>
+<ul>
+<li>288</li>
+</ul>
+<p>Component: Coldplate</p>
+<p>Coldplate: Left</p>
+<p>Recommendation: Replace Left Coldplate</p>
+<hr />
+<h1>NVIDIA CRITICAL EVENTS ANALYSIS</h1>
+<p>Total Critical Events: 31</p>
+<h2>Critical Event Summary</h2>
+<ul>
+<li>CPU Firmware Authentication Failure: 19</li>
+<li>Power Sequencing Failure: 8</li>
+<li>Unknown Critical Event: 3</li>
+<li>GPU_1 Thermal Over Temperature: 1</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 102</li>
+<li>Date           : 2011-04-06T01:19:49+00:00</li>
+<li>Severity       : Critical</li>
+<li>CPU            : CPU_0</li>
+<li>Bianca         : Bianca#1</li>
+<li>Failure        : CPU Firmware Authentication Failure</li>
+<li>Description    : The resource property CPU_0 Firmware has detected errors of type 'AP0_SECONDARY_AuthenticateError'.</li>
+<li>Recommendation : Reflash CPU firmware and collect ERoT logs.</li>
+<li>Resolution     : ERoT will try to recover AP by a reset/reboot. If there is still a problem, collect ERoT logs and reflash AP firmware with recovery flow.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 103</li>
+<li>Date           : 2011-04-06T01:19:55+00:00</li>
+<li>Severity       : Critical</li>
+<li>CPU            : CPU_1</li>
+<li>Bianca         : Bianca#2</li>
+<li>Failure        : CPU Firmware Authentication Failure</li>
+<li>Description    : The resource property CPU_1 Firmware has detected errors of type 'AP0_SECONDARY_AuthenticateError'.</li>
+<li>Recommendation : Reflash CPU firmware and collect ERoT logs.</li>
+<li>Resolution     : ERoT will try to recover AP by a reset/reboot. If there is still a problem, collect ERoT logs and reflash AP firmware with recovery flow.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 104</li>
+<li>Date           : 2011-04-06T01:20:06+00:00</li>
+<li>Severity       : Critical</li>
+<li>CPU            : CPU_0</li>
+<li>Bianca         : Bianca#1</li>
+<li>Failure        : CPU Firmware Authentication Failure</li>
+<li>Description    : The resource property CPU_0 Firmware has detected errors of type 'AP0_SECONDARY_AuthenticateError'.</li>
+<li>Recommendation : Reflash CPU firmware and collect ERoT logs.</li>
+<li>Resolution     : ERoT will try to recover AP by a reset/reboot. If there is still a problem, collect ERoT logs and reflash AP firmware with recovery flow.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 105</li>
+<li>Date           : 2011-04-06T01:20:10+00:00</li>
+<li>Severity       : Critical</li>
+<li>CPU            : CPU_1</li>
+<li>Bianca         : Bianca#2</li>
+<li>Failure        : CPU Firmware Authentication Failure</li>
+<li>Description    : The resource property CPU_1 Firmware has detected errors of type 'AP0_SECONDARY_AuthenticateError'.</li>
+<li>Recommendation : Reflash CPU firmware and collect ERoT logs.</li>
+<li>Resolution     : ERoT will try to recover AP by a reset/reboot. If there is still a problem, collect ERoT logs and reflash AP firmware with recovery flow.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 106</li>
+<li>Date           : 2011-04-06T01:21:48+00:00</li>
+<li>Severity       : Critical</li>
+<li>CPU            : CPU_1</li>
+<li>Bianca         : Bianca#2</li>
+<li>Failure        : CPU Firmware Authentication Failure</li>
+<li>Description    : The resource property CPU_1 Firmware has detected errors of type 'AP0_SECONDARY_AuthenticateError'.</li>
+<li>Recommendation : Reflash CPU firmware and collect ERoT logs.</li>
+<li>Resolution     : ERoT will try to recover AP by a reset/reboot. If there is still a problem, collect ERoT logs and reflash AP firmware with recovery flow.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 107</li>
+<li>Date           : 2011-04-06T01:21:52+00:00</li>
+<li>Severity       : Critical</li>
+<li>CPU            : CPU_0</li>
+<li>Bianca         : Bianca#1</li>
+<li>Failure        : CPU Firmware Authentication Failure</li>
+<li>Description    : The resource property CPU_0 Firmware has detected errors of type 'AP0_SECONDARY_AuthenticateError'.</li>
+<li>Recommendation : Reflash CPU firmware and collect ERoT logs.</li>
+<li>Resolution     : ERoT will try to recover AP by a reset/reboot. If there is still a problem, collect ERoT logs and reflash AP firmware with recovery flow.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 108</li>
+<li>Date           : 2011-04-06T01:23:13+00:00</li>
+<li>Severity       : Critical</li>
+<li>CPU            : CPU_1</li>
+<li>Bianca         : Bianca#2</li>
+<li>Failure        : CPU Firmware Authentication Failure</li>
+<li>Description    : The resource property CPU_1 Firmware has detected errors of type 'AP0_SECONDARY_AuthenticateError'.</li>
+<li>Recommendation : Reflash CPU firmware and collect ERoT logs.</li>
+<li>Resolution     : ERoT will try to recover AP by a reset/reboot. If there is still a problem, collect ERoT logs and reflash AP firmware with recovery flow.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 2</li>
+<li>Date           : 2024-02-27T17:26:53+00:00</li>
+<li>Severity       : Critical</li>
+<li>Bianca         : Unknown</li>
+<li>Failure        : Unknown Critical Event</li>
+<li>Description    : xyz.openbmc_project.Common.Error.InternalFailure</li>
+<li>Recommendation : Review NVIDIA documentation.</li>
+<li>Resolution     : N/A</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 243</li>
+<li>Date           : 2026-06-19T23:54:36+00:00</li>
+<li>Severity       : Critical</li>
+<li>Bianca         : Bianca#2</li>
+<li>Failure        : Power Sequencing Failure</li>
+<li>Description    : The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_1{0x1}'.</li>
+<li>Recommendation : Review associated PWR_FAIL codes to determine the root cause.</li>
+<li>Resolution     : AC cycle the system. If problem persists, collect all dumps per troubleshooting guide, isolate the system and evaluate for RMA.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 248</li>
+<li>Date           : 2026-06-20T03:18:06+00:00</li>
+<li>Severity       : Critical</li>
+<li>Bianca         : Bianca#2</li>
+<li>Failure        : Power Sequencing Failure</li>
+<li>Description    : The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_1{0x1}'.</li>
+<li>Recommendation : Review associated PWR_FAIL codes to determine the root cause.</li>
+<li>Resolution     : AC cycle the system. If problem persists, collect all dumps per troubleshooting guide, isolate the system and evaluate for RMA.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 257</li>
+<li>Date           : 2026-06-20T07:12:08+00:00</li>
+<li>Severity       : Critical</li>
+<li>Bianca         : Bianca#2</li>
+<li>Failure        : Power Sequencing Failure</li>
+<li>Description    : The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_1{0x1}'.</li>
+<li>Recommendation : Review associated PWR_FAIL codes to determine the root cause.</li>
+<li>Resolution     : AC cycle the system. If problem persists, collect all dumps per troubleshooting guide, isolate the system and evaluate for RMA.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 288</li>
+<li>Date           : 2011-04-06T01:32:45+00:00</li>
+<li>Severity       : Critical</li>
+<li>GPU            : GPU_1</li>
+<li>Bianca         : Bianca#1</li>
+<li>Coldplate      : Left</li>
+<li>Failure        : GPU_1 Thermal Over Temperature</li>
+<li>Description    : The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_GPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_GPU_THERM_OVERT{0x2}'.</li>
+<li>Recommendation : GPU_1 overheating detected on Bianca#1. Replace coldplate and thermal interface material (TIM).</li>
+<li>Resolution     : AC cycle the system. If problem persists, collect all dumps per troubleshooting guide, isolate the system and evaluate for RMA.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 289</li>
+<li>Date           : 2011-04-06T01:32:46+00:00</li>
+<li>Severity       : Critical</li>
+<li>GPU            : GPU_1</li>
+<li>Bianca         : Bianca#1</li>
+<li>Coldplate      : Left</li>
+<li>Failure        : Unknown Critical Event</li>
+<li>Description    : The resource property GPU_1 THERM_OVERT_INT has detected errors of type 'Abnormal State Change'.</li>
+<li>Recommendation : Review NVIDIA documentation.</li>
+<li>Resolution     : A thermal interrupt was triggered. Power off the Baseboard within 1 second, and GPU will shutdown autonomously. Check thermal environment to ensure the GPU operates within thermal specifications and power cycle the Baseboard to recover.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 329</li>
+<li>Date           : 2011-04-06T01:44:19+00:00</li>
+<li>Severity       : Critical</li>
+<li>Bianca         : Bianca#2</li>
+<li>Failure        : Power Sequencing Failure</li>
+<li>Description    : The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_1{0x1}'.</li>
+<li>Recommendation : Review associated PWR_FAIL codes to determine the root cause.</li>
+<li>Resolution     : AC cycle the system. If problem persists, collect all dumps per troubleshooting guide, isolate the system and evaluate for RMA.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 373</li>
+<li>Date           : 2026-07-02T08:18:11+00:00</li>
+<li>Severity       : Critical</li>
+<li>Bianca         : Bianca#2</li>
+<li>Failure        : Power Sequencing Failure</li>
+<li>Description    : The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_1{0x1}'.</li>
+<li>Recommendation : Review associated PWR_FAIL codes to determine the root cause.</li>
+<li>Resolution     : AC cycle the system. If problem persists, collect all dumps per troubleshooting guide, isolate the system and evaluate for RMA.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 379</li>
+<li>Date           : 2026-07-02T10:31:50+00:00</li>
+<li>Severity       : Critical</li>
+<li>Bianca         : Bianca#2</li>
+<li>Failure        : Power Sequencing Failure</li>
+<li>Description    : The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_1{0x1}'.</li>
+<li>Recommendation : Review associated PWR_FAIL codes to determine the root cause.</li>
+<li>Resolution     : AC cycle the system. If problem persists, collect all dumps per troubleshooting guide, isolate the system and evaluate for RMA.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 508</li>
+<li>Date           : 2026-07-06T06:04:23+00:00</li>
+<li>Severity       : Critical</li>
+<li>CPU            : CPU_1</li>
+<li>Bianca         : Bianca#2</li>
+<li>Failure        : Unknown Critical Event</li>
+<li>Description    : The resource property HGX_CPU_1 Performance has detected errors of type 'PerformanceDegraded due to high temperature'.</li>
+<li>Recommendation : Review NVIDIA documentation.</li>
+<li>Resolution     : None</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 509</li>
+<li>Date           : 2026-07-06T06:05:24+00:00</li>
+<li>Severity       : Critical</li>
+<li>Bianca         : Bianca#2</li>
+<li>Failure        : Power Sequencing Failure</li>
+<li>Description    : The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_1{0x1}'.</li>
+<li>Recommendation : Review associated PWR_FAIL codes to determine the root cause.</li>
+<li>Resolution     : AC cycle the system. If problem persists, collect all dumps per troubleshooting guide, isolate the system and evaluate for RMA.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 518</li>
+<li>Date           : 2026-07-06T07:15:15+00:00</li>
+<li>Severity       : Critical</li>
+<li>Bianca         : Bianca#2</li>
+<li>Failure        : Power Sequencing Failure</li>
+<li>Description    : The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_1{0x1}'.</li>
+<li>Recommendation : Review associated PWR_FAIL codes to determine the root cause.</li>
+<li>Resolution     : AC cycle the system. If problem persists, collect all dumps per troubleshooting guide, isolate the system and evaluate for RMA.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 78</li>
+<li>Date           : 2011-04-06T00:59:02+00:00</li>
+<li>Severity       : Critical</li>
+<li>CPU            : CPU_0</li>
+<li>Bianca         : Bianca#1</li>
+<li>Failure        : CPU Firmware Authentication Failure</li>
+<li>Description    : The resource property CPU_0 Firmware has detected errors of type 'AP0_SECONDARY_AuthenticateError'.</li>
+<li>Recommendation : Reflash CPU firmware and collect ERoT logs.</li>
+<li>Resolution     : ERoT will try to recover AP by a reset/reboot. If there is still a problem, collect ERoT logs and reflash AP firmware with recovery flow.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 79</li>
+<li>Date           : 2011-04-06T00:59:02+00:00</li>
+<li>Severity       : Critical</li>
+<li>CPU            : CPU_0</li>
+<li>Bianca         : Bianca#1</li>
+<li>Failure        : CPU Firmware Authentication Failure</li>
+<li>Description    : The resource property CPU_0 Firmware has detected errors of type 'FATAL_ERROR_CODE_ErrorAuthApFw'.</li>
+<li>Recommendation : Collect ERoT logs and evaluate firmware recovery.</li>
+<li>Resolution     : Collect ERoT logs and isolate the server for RMA evaluation.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 80</li>
+<li>Date           : 2011-04-06T00:59:02+00:00</li>
+<li>Severity       : Critical</li>
+<li>CPU            : CPU_0</li>
+<li>Bianca         : Bianca#1</li>
+<li>Failure        : CPU Firmware Authentication Failure</li>
+<li>Description    : The resource property CPU_0 Firmware has detected errors of type 'AP0_PRIMARY_AuthenticateError'.</li>
+<li>Recommendation : Reflash CPU firmware and collect ERoT logs.</li>
+<li>Resolution     : ERoT will try to recover AP by a reset/reboot. If there is still a problem, collect ERoT logs and reflash AP firmware with recovery flow.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 81</li>
+<li>Date           : 2011-04-06T00:59:07+00:00</li>
+<li>Severity       : Critical</li>
+<li>CPU            : CPU_1</li>
+<li>Bianca         : Bianca#2</li>
+<li>Failure        : CPU Firmware Authentication Failure</li>
+<li>Description    : The resource property CPU_1 Firmware has detected errors of type 'AP0_SECONDARY_AuthenticateError'.</li>
+<li>Recommendation : Reflash CPU firmware and collect ERoT logs.</li>
+<li>Resolution     : ERoT will try to recover AP by a reset/reboot. If there is still a problem, collect ERoT logs and reflash AP firmware with recovery flow.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 82</li>
+<li>Date           : 2011-04-06T00:59:07+00:00</li>
+<li>Severity       : Critical</li>
+<li>CPU            : CPU_1</li>
+<li>Bianca         : Bianca#2</li>
+<li>Failure        : CPU Firmware Authentication Failure</li>
+<li>Description    : The resource property CPU_1 Firmware has detected errors of type 'AP0_PRIMARY_AuthenticateError'.</li>
+<li>Recommendation : Reflash CPU firmware and collect ERoT logs.</li>
+<li>Resolution     : ERoT will try to recover AP by a reset/reboot. If there is still a problem, collect ERoT logs and reflash AP firmware with recovery flow.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 83</li>
+<li>Date           : 2011-04-06T00:59:07+00:00</li>
+<li>Severity       : Critical</li>
+<li>CPU            : CPU_1</li>
+<li>Bianca         : Bianca#2</li>
+<li>Failure        : CPU Firmware Authentication Failure</li>
+<li>Description    : The resource property CPU_1 Firmware has detected errors of type 'FATAL_ERROR_CODE_ErrorAuthApFw'.</li>
+<li>Recommendation : Collect ERoT logs and evaluate firmware recovery.</li>
+<li>Resolution     : Collect ERoT logs and isolate the server for RMA evaluation.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 84</li>
+<li>Date           : 2011-04-06T00:59:19+00:00</li>
+<li>Severity       : Critical</li>
+<li>CPU            : CPU_0</li>
+<li>Bianca         : Bianca#1</li>
+<li>Failure        : CPU Firmware Authentication Failure</li>
+<li>Description    : The resource property CPU_0 Firmware has detected errors of type 'AP0_PRIMARY_AuthenticateError'.</li>
+<li>Recommendation : Reflash CPU firmware and collect ERoT logs.</li>
+<li>Resolution     : ERoT will try to recover AP by a reset/reboot. If there is still a problem, collect ERoT logs and reflash AP firmware with recovery flow.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 85</li>
+<li>Date           : 2011-04-06T00:59:19+00:00</li>
+<li>Severity       : Critical</li>
+<li>CPU            : CPU_0</li>
+<li>Bianca         : Bianca#1</li>
+<li>Failure        : CPU Firmware Authentication Failure</li>
+<li>Description    : The resource property CPU_0 Firmware has detected errors of type 'AP0_SECONDARY_AuthenticateError'.</li>
+<li>Recommendation : Reflash CPU firmware and collect ERoT logs.</li>
+<li>Resolution     : ERoT will try to recover AP by a reset/reboot. If there is still a problem, collect ERoT logs and reflash AP firmware with recovery flow.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 86</li>
+<li>Date           : 2011-04-06T00:59:19+00:00</li>
+<li>Severity       : Critical</li>
+<li>CPU            : CPU_0</li>
+<li>Bianca         : Bianca#1</li>
+<li>Failure        : CPU Firmware Authentication Failure</li>
+<li>Description    : The resource property CPU_0 Firmware has detected errors of type 'FATAL_ERROR_CODE_ErrorAuthApFw'.</li>
+<li>Recommendation : Collect ERoT logs and evaluate firmware recovery.</li>
+<li>Resolution     : Collect ERoT logs and isolate the server for RMA evaluation.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 87</li>
+<li>Date           : 2011-04-06T00:59:23+00:00</li>
+<li>Severity       : Critical</li>
+<li>CPU            : CPU_1</li>
+<li>Bianca         : Bianca#2</li>
+<li>Failure        : CPU Firmware Authentication Failure</li>
+<li>Description    : The resource property CPU_1 Firmware has detected errors of type 'AP0_PRIMARY_AuthenticateError'.</li>
+<li>Recommendation : Reflash CPU firmware and collect ERoT logs.</li>
+<li>Resolution     : ERoT will try to recover AP by a reset/reboot. If there is still a problem, collect ERoT logs and reflash AP firmware with recovery flow.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 88</li>
+<li>Date           : 2011-04-06T00:59:23+00:00</li>
+<li>Severity       : Critical</li>
+<li>CPU            : CPU_1</li>
+<li>Bianca         : Bianca#2</li>
+<li>Failure        : CPU Firmware Authentication Failure</li>
+<li>Description    : The resource property CPU_1 Firmware has detected errors of type 'FATAL_ERROR_CODE_ErrorAuthApFw'.</li>
+<li>Recommendation : Collect ERoT logs and evaluate firmware recovery.</li>
+<li>Resolution     : Collect ERoT logs and isolate the server for RMA evaluation.</li>
+</ul>
+<h2>CRITICAL EVENT</h2>
+<ul>
+<li>Event ID       : 89</li>
+<li>Date           : 2011-04-06T00:59:23+00:00</li>
+<li>Severity       : Critical</li>
+<li>CPU            : CPU_1</li>
+<li>Bianca         : Bianca#2</li>
+<li>Failure        : CPU Firmware Authentication Failure</li>
+<li>Description    : The resource property CPU_1 Firmware has detected errors of type 'AP0_SECONDARY_AuthenticateError'.</li>
+<li>Recommendation : Reflash CPU firmware and collect ERoT logs.</li>
+<li>Resolution     : ERoT will try to recover AP by a reset/reboot. If there is still a problem, collect ERoT logs and reflash AP firmware with recovery flow.</li>
+</ul>
+<hr />
+<h1>ROOT CAUSE ANALYSIS</h1>
+<h2>PRIMARY ROOT CAUSE</h2>
+<p>Serial Number: P233262530256042</p>
+<p>Catalog Version: 1.0.0</p>
+<p>Rule ID: RCA-004</p>
+<p>Rule Version: 1.0</p>
+<p>Priority: 100</p>
+<p>Cause: PEX Switch 0.95V Rail Failure - Bianca 2</p>
+<p>Confidence: HIGH</p>
+<p>Evidence Supporting RCA:</p>
+<ul>
+<li>Event ID 243</li>
+<li>Event ID 248</li>
+<li>Event ID 257</li>
+<li>Event ID 329</li>
+<li>Event ID 373</li>
+<li>Event ID 379</li>
+<li>Event ID 509</li>
+<li>Event ID 518</li>
+</ul>
+<p>Affected Bianca Modules:</p>
+<ul>
+<li>Bianca 2</li>
+</ul>
+<p>Recommended Actions:</p>
+<pre><code>    Replace Bianca#2 (Right).
+    Re-run validation after replacement.
+</code></pre>
+<p>Implementation Notes:</p>
+<ul>
+<li>Bianca replacement includes the corresponding coldplate assembly.</li>
+</ul>
+<p>Additional Thermal Findings:</p>
+<ul>
+<li>Thermal event detected on Left Coldplate</li>
+</ul>
+<p>Recommended Thermal Actions:</p>
+<ul>
+<li>Inspect TIM condition</li>
+<li>Verify coldplate contact pressure</li>
+<li>Review temperature history</li>
+</ul>
+<h2>SECONDARY FINDINGS</h2>
+<ul>
+<li>Power Sequencing Failure (Priority 40)</li>
+</ul>
+
+</div>
+
+</body>
+
+</html>
