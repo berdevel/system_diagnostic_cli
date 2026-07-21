@@ -24,59 +24,215 @@ class MarkdownGenerator:
             encoding="utf-8"
         ) as file:
 
-            file.write(
-                "# FOXCONN FAILURE ANALYSIS REPORT\n\n"
-            )
-
-            report_timestamp = datetime.now()
+        report_timestamp = datetime.now()
 
             file.write(
-                f"Generated: "
-                f"{report_timestamp.strftime('%Y-%m-%d %H:%M:%S')}\n\n"
+    "# FOXCONN FAILURE ANALYSIS REPORT\n\n"
             )
 
             file.write(
-                f"Source Log: {source_log}\n\n"
+                "## System Information\n\n"
             )
 
             file.write(
-                f"Serial Number: "
-                f"{serial_number}\n\n"
+                f"- Serial Number: "
+                f"{serial_number}\n"
             )
 
             file.write(
-                f"Total Bianca Failures: {len(findings)}\n\n"
+                f"- Source Log: "
+                f"{source_log}\n"
+            )
+
+            file.write(
+                f"- Report Date: "
+                f"{report_timestamp.strftime('%Y-%m-%d %H:%M:%S')}\n"
+            )
+
+            file.write(
+                f"- Total Component Failures: "
+                f"{len(findings)}\n\n"
             )
 
             # ==========================================
-            # BIANCA FAILURES
+            # COMPONENT FAILURES
             # ==========================================
 
             file.write(
-                "# BIANCA FAILURE ANALYSIS\n\n"
+                "# COMPONENT FAILURE ANALYSIS\n\n"
             )
 
             if findings:
 
-                bianca_counter = Counter(
-                    item.get("bianca", "Unknown")
+                component_counter = Counter(
+                    item.get(
+                        "component",
+                        "Unknown"
+                    )
                     for item in findings
                 )
 
                 file.write(
-                    "## Bianca Failure Summary\n\n"
+                    "## Component Failure Summary\n\n"
                 )
 
-                for bianca, total in bianca_counter.items():
+                for component, total in component_counter.items():
 
                     file.write(
-                        f"- {bianca}: {total}\n"
+                        f"- {component}: {total}\n"
                     )
 
                 file.write("\n")
 
                 file.write(
-                    "## Bianca Failure Details\n\n"
+                    "## Component Statistics\n\n"
+                )
+
+                component_groups = {}
+
+                for item in findings:
+
+                    component = item.get(
+                        "component",
+                        "Unknown"
+                    )
+
+                    if component not in component_groups:
+
+                        component_groups[
+                            component
+                        ] = []
+
+                    component_groups[
+                        component
+                    ].append(item)
+
+                for component, items in component_groups.items():
+
+                    file.write(
+                        f"### {component}\n\n"
+                    )
+
+                    file.write(
+                        f"- Total Failures : "
+                        f"{len(items)}\n"
+                    )
+
+                    failure_counter = Counter(
+
+                        item.get("failure")
+
+                        for item in items
+
+                    )
+
+                    if failure_counter:
+
+                        file.write(
+                            "- Common Failures:\n"
+                        )
+
+                        for failure, qty in (
+
+                            failure_counter.most_common()
+
+                        ):
+
+                            file.write(
+                                f"  - {failure}: {qty}\n"
+                            )
+
+                    locations = set()
+
+                    recommendations = set()
+
+                    for item in items:
+
+                        if item.get(
+                            "bianca"
+                        ) not in [
+
+                            "Unknown",
+                            "N/A"
+
+                        ]:
+
+                            locations.add(
+                                item["bianca"]
+                            )
+
+                        if item.get(
+                            "coldplate"
+                        ) not in [
+
+                            "Unknown",
+                            "N/A"
+
+                        ]:
+
+                            locations.add(
+                                f"{item['coldplate']} Coldplate"
+                            )
+
+                        if item.get(
+                            "cx8"
+                        ) not in [
+
+                            "Unknown",
+                            "N/A"
+
+                        ]:
+
+                            locations.add(
+                                f"{item['cx8']} CX8"
+                            )
+
+                        if item.get(
+                            "action"
+                        ) not in [
+
+                            None,
+                            "",
+                            "N/A"
+
+                        ]:
+
+                            recommendations.add(
+                                item["action"]
+                            )
+
+                    if locations:
+
+                        file.write(
+                            "- Affected Components:\n"
+                        )
+
+                        for location in sorted(
+                            locations
+                        ):
+
+                            file.write(
+                                f"  - {location}\n"
+                            )
+
+                    if recommendations:
+
+                        file.write(
+                            "- Recommendations:\n"
+                        )
+
+                        for recommendation in sorted(
+                            recommendations
+                        ):
+
+                            file.write(
+                                f"  - {recommendation}\n"
+                            )
+
+                    file.write("\n")
+
+                file.write(
+                    "## Component Failure Details\n\n"
                 )
 
                 for item in findings:
@@ -86,7 +242,7 @@ class MarkdownGenerator:
                     )
 
                     file.write(
-                        f"- Event ID       : "
+                        f"- Event ID      : "
                         f"{item.get('event_id', 'Unknown')}\n"
                     )
 
@@ -96,24 +252,76 @@ class MarkdownGenerator:
                     )
 
                     file.write(
-                        f"- Bianca        : "
-                        f"{item.get('bianca', 'Unknown')}\n"
+                        f"- Component     : "
+                        f"{item.get('component', 'Unknown')}\n"
                     )
 
-                    file.write(
-                        f"- Module        : "
-                        f"{item.get('module', 'Unknown')}\n"
-                    )
+                    if item.get("module") != "Unknown":
 
-                    file.write(
-                        f"- GPU   : "
-                        f"{item.get('gpu', 'N/A')}\n"
-                    )
+                        file.write(
+                            f"- Module        : "
+                            f"{item.get('module')}\n"
+                        )
 
-                    file.write(
-                        f"- Coldplate   : "
-                        f"{item.get('coldplate', 'N/A')}\n"
-                    )
+                    if item.get("gpu") not in [
+                        "Unknown",
+                        "N/A",
+                        None,
+                        ""
+                    ]:
+                    
+                        file.write(
+                            f"- GPU           : "
+                            f"{item.get('gpu')}\n"
+                        )
+
+                    if item.get("cpu") not in [
+                        "Unknown",
+                        "N/A",
+                        None,
+                        ""
+                    ]:
+                    
+                        file.write(
+                            f"- CPU           : "
+                            f"{item.get('cpu')}\n"
+                        )
+
+                    if item.get("bianca") not in [
+                        "Unknown",
+                        "N/A",
+                        None,
+                        ""
+                    ]:
+                    
+                        file.write(
+                            f"- Bianca        : "
+                            f"{item.get('bianca')}\n"
+                        )
+
+                    if item.get("coldplate") not in [
+                        "Unknown",
+                        "N/A",
+                        None,
+                        ""
+                    ]:
+
+                        file.write(
+                            f"- Coldplate    : "
+                            f"{item.get('coldplate')}\n"
+                        )
+
+                    if item.get("cx8") not in [
+                        "Unknown",
+                        "N/A",
+                        None,
+                        ""
+                    ]:
+
+                        file.write(
+                            f"- CX8           : "
+                            f"{item.get('cx8')}\n"
+                        )
 
                     file.write(
                         f"- Line Number   : "
@@ -154,6 +362,33 @@ class MarkdownGenerator:
                     f"Total Critical Events: "
                     f"{len(critical_findings)}\n\n"
                 )
+
+                critical_counter = Counter(
+
+                    event.get(
+                        "failure",
+                        "Unknown"
+                    )
+
+                    for event in critical_findings
+
+                )
+
+                file.write(
+                    "## Critical Event Summary\n\n"
+                )
+
+                for failure, qty in (
+
+                    critical_counter.most_common()
+
+                ):
+
+                    file.write(
+                        f"- {failure}: {qty}\n"
+                    )
+
+                file.write("\n")
 
                 for event in critical_findings:
 
@@ -202,15 +437,19 @@ class MarkdownGenerator:
                         f"{event.get('bianca', 'Unknown')}\n"
                     )
 
-                    file.write(
-                        f"- Coldplate      : "
-                        f"{event.get('coldplate', 'N/A')}\n"
-                    )
+                    if event.get("coldplate") != "N/A":
 
-                    file.write(
-                        f"- XID            : "
-                        f"{event.get('xid', 'N/A')}\n"
-                    )
+                        file.write(
+                            f"- Coldplate      : "
+                            f"{event.get('coldplate')}\n"
+                        )
+
+                    if event.get("xid") != "N/A":
+
+                        file.write(
+                            f"- XID            : "
+                            f"{event.get('xid')}\n"
+                        )
 
                     file.write(
                         f"- Failure        : "

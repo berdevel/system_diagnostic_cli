@@ -21,27 +21,131 @@ class LogParser:
             errors="ignore"
         ) as file:
 
+            current_event_id = "Unknown"
+            seen = set()
+
             for line_number, line in enumerate(file, start=1):
 
                 line_lower = line.lower()
 
+                event_match = re.search(
+
+                    r'"Id"\s*:\s*"(\d+)"',
+
+                    line
+
+                )
+
+                if event_match:
+
+                    current_event_id = (
+                        event_match.group(1)
+                    )
+
                 for failure, module in FAILURE_CATALOG.items():
 
-                    if failure.lower() in line_lower:
+                    if failure in line_lower:
+
+                        # ==========================================
+                        # COMPONENT
+                        # ==========================================
+
+                        component = "Unknown"
+
+                        if module in [
+                            "Module 0",
+                            "Module 1"
+                        ]:
+
+                            component = "Bianca"
+
+                        elif "Coldplate" in module:
+
+                            component = "Coldplate"
+
+                        elif "CX8" in module:
+
+                            component = "CX8"
+
+                        # ==========================================
+                        # BIANCA
+                        # ==========================================
+
+                        bianca = "N/A"
+
+                        if module == "Module 0":
+
+                            bianca = "Bianca 1"
+
+                        elif module == "Module 1":
+
+                            bianca = "Bianca 2"
+
+                        # ==========================================
+                        # COLDPLATE
+                        # ==========================================
+
+                        coldplate = "N/A"
+
+                        if module == "Left Coldplate":
+
+                            coldplate = "Left"
+
+                        elif module == "Right Coldplate":
+
+                            coldplate = "Right"
+
+                        # ==========================================
+                        # CX8
+                        # ==========================================
+
+                        cx8 = "N/A"
+
+                        if module == "Left CX8":
+
+                            cx8 = "Left"
+
+                        elif module == "Right CX8":
+
+                            cx8 = "Right"
+
+                        elif module == "Both CX8":
+
+                            cx8 = "Both"
+
+                        finding_key = (
+
+                            current_event_id,
+
+                            failure
+
+                        )
+
+                        if finding_key in seen:
+
+                            continue
+
+                        seen.add(finding_key)
 
                         findings.append({
 
-                            "line": line_number,
+                            "event_id": current_event_id,
 
                             "failure": failure,
 
+                            "component": component,
+
+                            "bianca": bianca,
+
+                            "coldplate": coldplate,
+
+                            "cx8": cx8,
+
                             "module": module,
 
-                            "bianca": BIANCA_MAPPING[module],
+                            "line": line_number,
 
-                            "action": "Replace affected Bianca",
-
-                            "message": line.strip()
+                            "message": line
 
                         })
 

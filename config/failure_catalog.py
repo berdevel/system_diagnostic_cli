@@ -59,5 +59,27 @@ FAILURE_CATALOG = {
     "pwr_fail_pexdvdd_gpu_3": "Module 1",
     "pwr_fail_hbivdd_gpu_3": "Module 1",
     "pwr_fail_nvvdd_gpu_3_gb": "Module 1",
-    "pwr_fail_nvvdd_gpu_3_ga": "Module 1"
+    "pwr_fail_nvvdd_gpu_3_ga": "Module 1",
+
+    # LEFT COLDPLATE
+
+    "pwr_fail_gpu_therm_overt{0x2}": "Left Coldplate",
+
+    # RIGHT COLDPLATE
+
+    "pwr_fail_gpu_therm_overt{0x4}": "Right Coldplate",
+    "pwr_fail_gpu_therm_overt{0x8}": "Right Coldplate",
+
+    # LEFT CX8
+
+    "pwr_fail_io_mezz{0x1}": "Left CX8",
+
+    # RIGHT CX8
+
+    "pwr_fail_io_mezz{0x2}": "Right CX8​",
+
+    # BOTH CX8
+
+    "pwr_fail_io_mezz{0x3}": "Both CX8"
+
 }

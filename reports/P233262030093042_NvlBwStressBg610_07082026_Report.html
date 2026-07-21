@@ -91,12 +91,50 @@ Automated HGX / Bianca Diagnostic Report
 <div class="section">
 
 <h1>FOXCONN FAILURE ANALYSIS REPORT</h1>
-<p>Generated: 2026-07-20 13:16:25</p>
+<p>Generated: 2026-07-20 21:41:24</p>
 <p>Source Log: logs\P233262030093042_NvlBwStressBg610_07082026.txt</p>
 <p>Serial Number: Unknown</p>
-<p>Total Bianca Failures: 0</p>
-<h1>BIANCA FAILURE ANALYSIS</h1>
-<p>No Bianca failures detected.</p>
+<p>Total Bianca Failures: 2</p>
+<h1>COMPONENT FAILURE ANALYSIS</h1>
+<h2>Component Failure Summary</h2>
+<ul>
+<li>N/A: 2</li>
+</ul>
+<h2>Component Failure Details</h2>
+<h3>FAILURE DETECTED</h3>
+<ul>
+<li>Event ID      : 100</li>
+<li>Failure       : pwr_fail_gpu_therm_overt{0x4}</li>
+<li>Module        : Right Coldplate</li>
+<li>GPU           : None</li>
+<li>CPU           : None</li>
+<li>Bianca        : N/A</li>
+<li>Coldplate    : Right</li>
+<li>Line Number   : 30</li>
+<li>
+<p>Log Content   :       "Message": "The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_GPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_GPU_THERM_OVERT{0x4}'.",</p>
+</li>
+<li>
+<p>Recommendation: N/A</p>
+</li>
+</ul>
+<h3>FAILURE DETECTED</h3>
+<ul>
+<li>Event ID      : 80</li>
+<li>Failure       : pwr_fail_gpu_therm_overt{0x4}</li>
+<li>Module        : Right Coldplate</li>
+<li>GPU           : None</li>
+<li>CPU           : None</li>
+<li>Bianca        : N/A</li>
+<li>Coldplate    : Right</li>
+<li>Line Number   : 3181</li>
+<li>
+<p>Log Content   :       "Message": "The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_GPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_GPU_THERM_OVERT{0x4}'.",</p>
+</li>
+<li>
+<p>Recommendation: N/A</p>
+</li>
+</ul>
 <hr />
 <h1>NVIDIA CRITICAL EVENTS ANALYSIS</h1>
 <p>Total Critical Events: 6</p>
@@ -109,10 +147,9 @@ Automated HGX / Bianca Diagnostic Report
 <li>GPU            : GPU_2</li>
 <li>Bianca         : Bianca#2</li>
 <li>Coldplate      : Right</li>
-<li>XID            : N/A</li>
 <li>Failure        : GPU_2 Thermal Over Temperature</li>
 <li>Description    : The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_GPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_GPU_THERM_OVERT{0x4}'.</li>
-<li>Recommendation : GPU_2 overheating detected on Bianca#2. Replace cold plate and thermal interface material (TIM).</li>
+<li>Recommendation : GPU_2 overheating detected on Bianca#2. Replace coldplate and thermal interface material (TIM).</li>
 <li>Resolution     : AC cycle the system. If problem persists, collect all dumps per troubleshooting guide, isolate the system and evaluate for RMA.</li>
 </ul>
 <h2>CRITICAL EVENT</h2>
@@ -154,10 +191,9 @@ Automated HGX / Bianca Diagnostic Report
 <li>GPU            : GPU_2</li>
 <li>Bianca         : Bianca#2</li>
 <li>Coldplate      : Right</li>
-<li>XID            : N/A</li>
 <li>Failure        : GPU_2 Thermal Over Temperature</li>
 <li>Description    : The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_GPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_GPU_THERM_OVERT{0x4}'.</li>
-<li>Recommendation : GPU_2 overheating detected on Bianca#2. Replace cold plate and thermal interface material (TIM).</li>
+<li>Recommendation : GPU_2 overheating detected on Bianca#2. Replace coldplate and thermal interface material (TIM).</li>
 <li>Resolution     : AC cycle the system. If problem persists, collect all dumps per troubleshooting guide, isolate the system and evaluate for RMA.</li>
 </ul>
 <h2>CRITICAL EVENT</h2>

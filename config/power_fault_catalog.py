@@ -24,7 +24,7 @@ POWER_FAULT_CATALOG = {
         "GPU_1 Thermal Over Temperature",
 
         "recommendation":
-        "GPU_1 overheating detected on Bianca#1. Replace cold plate and thermal interface material (TIM)."
+        "GPU_1 overheating detected on Bianca#1. Replace coldplate and thermal interface material (TIM)."
     },
 
     "PWR_FAIL_GPU_THERM_OVERT{0x4}": {
@@ -33,7 +33,7 @@ POWER_FAULT_CATALOG = {
         "GPU_2 Thermal Over Temperature",
 
         "recommendation":
-        "GPU_2 overheating detected on Bianca#2. Replace cold plate and thermal interface material (TIM)."
+        "GPU_2 overheating detected on Bianca#2. Replace coldplate and thermal interface material (TIM)."
     },
 
     "PWR_FAIL_GPU_THERM_OVERT{0x8}": {
@@ -42,7 +42,7 @@ POWER_FAULT_CATALOG = {
         "GPU_3 Thermal Over Temperature",
 
         "recommendation":
-        "GPU_3 overheating detected on Bianca#2. Replace cold plate and thermal interface material (TIM)."
+        "GPU_3 overheating detected on Bianca#2. Replace coldplate and thermal interface material (TIM)."
     },
 
     "PWR_FAIL_3V3_ALWAYS_ON{0x0}": {

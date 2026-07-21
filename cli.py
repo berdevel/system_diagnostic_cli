@@ -74,6 +74,8 @@ class DiagnosticTool:
             "\n========== FOXCONN FAILURE ANALYZER =========="
         )
 
+        print()
+
         print(
             Fore.WHITE +
             f"Processing log: {logfile}"
@@ -114,35 +116,70 @@ class DiagnosticTool:
                     f"\n[ID {event['event_id']}]"
                 )
 
-                print(
-                    f"Line       : "
-                    f"{event.get('line', 'N/A')}"
-                )
+                if event.get("line"):
 
-                print(
-                    f"GPU        : "
-                    f"{event.get('gpu','Unknown')}"
-                )
+                    print(
+                        f"Line       : "
+                        f"{event['line']}"
+                    )
 
-                print(
-                    f"CPU        : "
-                    f"{event.get('cpu','Unknown')}"
-                )
+                if event.get("gpu") not in [
+                    None,
+                    "",
+                    "Unknown"
+                ]:
 
-                print(
-                    f"Bianca     : "
-                    f"{event.get('bianca','Unknown')}"
-                )
+                    print(
+                        f"GPU        : "
+                        f"{event['gpu']}"
+                    )
 
-                print(
-                    f"Coldplate  : "
-                    f"{event.get('coldplate','Unknown')}"
-                )
+                if event.get("cpu") not in [
+                    None,
+                    "",
+                    "Unknown"
+                ]:
 
-                print(
-                    f"XID        : "
-                    f"{event.get('xid','N/A')}"
-                )
+                    print(
+                        f"CPU        : "
+                        f"{event['cpu']}"
+                    )
+
+                if event.get("bianca") not in [
+                    None,
+                    "",
+                    "Unknown",
+                    "N/A"
+                ]:
+
+                    print(
+                        f"Bianca     : "
+                        f"{event['bianca']}"
+                    )
+
+                if event.get("coldplate") not in [
+                    None,
+                    "",
+                    "Unknown",
+                    "N/A"
+                ]:
+
+                    print(
+                        f"Coldplate  : "
+                        f"{event['coldplate']}"
+                    )
+
+                if event.get("xid") not in [
+                    None,
+                    "",
+                    "Unknown",
+                    "N/A"
+                ]:
+
+                    print(
+                        f"XID        : "
+                        f"{event['xid']}"
+                    )
 
                 print(
                     f"Failure    : "
@@ -262,16 +299,51 @@ class DiagnosticTool:
 
             for item in findings:
 
+                print()
+
                 print(
+                    f"Event ID  : "
+                    f"{item.get('event_id', 'N/A')}"
+                )
 
-                    f"[{item['bianca']}] "
+                print(
+                    f"Component : "
+                    f"{item.get('component', 'Unknown')}"
+                )
 
-                    f"{item['failure']} "
+                if item.get("bianca") != "N/A":
 
-                    f"[Event ID: {item.get('event_id', 'N/A')}]"
+                    print(
+                        f"Bianca    : "
+                        f"{item['bianca']}"
+                    )
 
-                    f"(Line {item['line']}) "
+                if item.get("coldplate") != "N/A":
 
+                    print(
+                        f"Coldplate : "
+                        f"{item['coldplate']}"
+                    )
+
+                if item.get("cx8") != "N/A":
+
+                    print(
+                        f"CX8       : "
+                        f"{item['cx8']}"
+                    )
+
+                print(
+                    f"Failure   : "
+                    f"{item['failure']}"
+                )
+
+                print(
+                    f"Line      : "
+                    f"{item['line']}"
+                )
+
+                print(
+                    "-" * 40
                 )
 
         except Exception as error:
