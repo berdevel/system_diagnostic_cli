@@ -95,9 +95,13 @@ Automated HGX / Bianca Diagnostic Report
 <ul>
 <li>Serial Number: P233262030093042</li>
 <li>Source Log: logs\P233262030093042_NvlBwStressBg610_07082026.txt</li>
-<li>Report Date: 2026-07-21 00:36:59</li>
+<li>Report Date: 2026-07-21 11:37:22</li>
 <li>Total Component Failures: 2</li>
 </ul>
+<h2>FAILURE HIGHLIGHTS</h2>
+<p>Primary Root Cause: GPU Thermal Event</p>
+<p>Most Frequent Failure: pwr_fail_gpu_therm_overt{0x4}</p>
+<p>Occurrences: 2</p>
 <h1>COMPONENT FAILURE ANALYSIS</h1>
 <h2>Component Failure Summary</h2>
 <ul>
@@ -115,36 +119,16 @@ Automated HGX / Bianca Diagnostic Report
 <li>Replace Right Coldplate</li>
 </ul>
 <h2>Component Failure Details</h2>
-<h3>FAILURE DETECTED</h3>
+<h3>pwr_fail_gpu_therm_overt{0x4}</h3>
+<p>Occurrences: 2</p>
+<p>Event IDs:</p>
 <ul>
-<li>Event ID      : 100</li>
-<li>Failure       : pwr_fail_gpu_therm_overt{0x4}</li>
-<li>Component     : Coldplate</li>
-<li>Module        : Right Coldplate</li>
-<li>Coldplate    : Right</li>
-<li>Line Number   : 30</li>
-<li>
-<p>Log Content   :       "Message": "The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_GPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_GPU_THERM_OVERT{0x4}'.",</p>
-</li>
-<li>
-<p>Recommendation: Replace Right Coldplate</p>
-</li>
+<li>100</li>
+<li>80</li>
 </ul>
-<h3>FAILURE DETECTED</h3>
-<ul>
-<li>Event ID      : 80</li>
-<li>Failure       : pwr_fail_gpu_therm_overt{0x4}</li>
-<li>Component     : Coldplate</li>
-<li>Module        : Right Coldplate</li>
-<li>Coldplate    : Right</li>
-<li>Line Number   : 3181</li>
-<li>
-<p>Log Content   :       "Message": "The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_GPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_GPU_THERM_OVERT{0x4}'.",</p>
-</li>
-<li>
+<p>Component: Coldplate</p>
+<p>Coldplate: Right</p>
 <p>Recommendation: Replace Right Coldplate</p>
-</li>
-</ul>
 <hr />
 <h1>NVIDIA CRITICAL EVENTS ANALYSIS</h1>
 <p>Total Critical Events: 6</p>

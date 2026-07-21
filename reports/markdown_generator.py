@@ -54,6 +54,66 @@ class MarkdownGenerator:
                 f"{len(findings)}\n\n"
             )
 
+            if findings:
+
+                most_common_failure = Counter(
+
+                    item["failure"]
+
+                    for item in findings
+
+                ).most_common(1)
+
+                if most_common_failure:
+
+                    failure_name = (
+                        most_common_failure[0][0]
+                    )
+
+                    failure_count = (
+                        most_common_failure[0][1]
+                    )
+
+                    file.write(
+                        "## FAILURE HIGHLIGHTS\n\n"
+                    )
+
+                    if (
+
+                        root_causes
+
+                        and
+
+                        root_causes.get(
+                            "primary"
+                        )
+
+                    ):
+
+                        file.write(
+
+                            f"Primary Root Cause: "
+
+                            f"{root_causes['primary']['name']}\n\n"
+
+                        )
+
+                    file.write(
+
+                        f"Most Frequent Failure: "
+
+                        f"{failure_name}\n\n"
+
+                    )
+
+                    file.write(
+
+                        f"Occurrences: "
+
+                        f"{failure_count}\n\n"
+
+                    )
+
             # ==========================================
             # COMPONENT FAILURES
             # ==========================================
@@ -235,107 +295,99 @@ class MarkdownGenerator:
                     "## Component Failure Details\n\n"
                 )
 
+                grouped_failures = {}
+
                 for item in findings:
 
+                    failure = item["failure"]
+
+                    if failure not in grouped_failures:
+
+                        grouped_failures[
+                            failure
+                        ] = []
+
+                    grouped_failures[
+                        failure
+                    ].append(item)
+
+                for failure, items in grouped_failures.items():
+
                     file.write(
-                        "### FAILURE DETECTED\n\n"
+                        f"### {failure}\n\n"
                     )
 
                     file.write(
-                        f"- Event ID      : "
-                        f"{item.get('event_id', 'Unknown')}\n"
+                        f"Occurrences: "
+                        f"{len(items)}\n\n"
                     )
 
                     file.write(
-                        f"- Failure       : "
-                        f"{item.get('failure', 'Unknown')}\n"
+                        "Event IDs:\n\n"
                     )
 
-                    file.write(
-                        f"- Component     : "
-                        f"{item.get('component', 'Unknown')}\n"
-                    )
-
-                    if item.get("module") != "Unknown":
+                    for item in items:
 
                         file.write(
-                            f"- Module        : "
-                            f"{item.get('module')}\n"
+                            f"- {item['event_id']}\n"
                         )
 
-                    if item.get("gpu") not in [
+                    file.write("\n")
+
+                    first_item = items[0]
+
+                    file.write(
+                        f"Component: "
+                        f"{first_item.get('component')}\n\n"
+                    )
+
+                    if first_item.get(
+                        "assembly"
+                    ) not in [
+
                         "Unknown",
                         "N/A",
                         None,
                         ""
+
                     ]:
-                    
+
                         file.write(
-                            f"- GPU           : "
-                            f"{item.get('gpu')}\n"
+                            f"Assembly: "
+                            f"{first_item['assembly']}\n\n"
                         )
 
-                    if item.get("cpu") not in [
+                    if first_item.get(
+                        "bianca"
+                    ) not in [
+
                         "Unknown",
-                        "N/A",
-                        None,
-                        ""
+                        "N/A"
+
                     ]:
-                    
+
                         file.write(
-                            f"- CPU           : "
-                            f"{item.get('cpu')}\n"
+                            f"Bianca: "
+                            f"{first_item['bianca']}\n\n"
                         )
 
-                    if item.get("bianca") not in [
-                        "Unknown",
-                        "N/A",
-                        None,
-                        ""
-                    ]:
-                    
-                        file.write(
-                            f"- Bianca        : "
-                            f"{item.get('bianca')}\n"
-                        )
+                    if first_item.get(
+                        "coldplate"
+                    ) not in [
 
-                    if item.get("coldplate") not in [
                         "Unknown",
-                        "N/A",
-                        None,
-                        ""
+                        "N/A"
+
                     ]:
 
                         file.write(
-                            f"- Coldplate    : "
-                            f"{item.get('coldplate')}\n"
-                        )
-
-                    if item.get("cx8") not in [
-                        "Unknown",
-                        "N/A",
-                        None,
-                        ""
-                    ]:
-
-                        file.write(
-                            f"- CX8           : "
-                            f"{item.get('cx8')}\n"
+                            f"Coldplate: "
+                            f"{first_item['coldplate']}\n\n"
                         )
 
                     file.write(
-                        f"- Line Number   : "
-                        f"{item.get('line', 'N/A')}\n"
-                    )
-
-                    file.write(
-                        f"- Log Content   : "
-                        f"{item.get('message', 'N/A')}\n"
-                    )
-
-                    file.write(
-                        f"- Recommendation: "
-                        f"{item.get('action', 'N/A')}\n\n"
+                        f"Recommendation: "
+                        f"{first_item.get('action','N/A')}\n\n"
                     )
 
             else:
@@ -583,6 +635,34 @@ class MarkdownGenerator:
                     ]
 
                 })
+
+                supporting_events = [
+
+                    item.get(
+                        "event_id"
+                    )
+
+                    for item in findings
+
+                    if item.get(
+                        "failure"
+                    ) == "pwr_fail_pex_sw_0v95_mod_1"
+
+                ]
+
+                if supporting_events:
+
+                    file.write(
+                        "Evidence Supporting RCA:\n\n"
+                    )
+
+                    for event_id in supporting_events:
+
+                        file.write(
+                            f"- Event ID {event_id}\n"
+                        )
+
+                    file.write("\n")
 
                 if affected_biancas:
 

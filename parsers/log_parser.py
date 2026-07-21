@@ -147,6 +147,16 @@ class LogParser:
 
                         seen.add(finding_key)
 
+                        assembly = "Unknown"
+
+                        if bianca == "Bianca 1":
+
+                            assembly = "Bianca#1 Assembly"
+
+                        elif bianca == "Bianca 2":
+
+                            assembly = "Bianca#2 Assembly"
+
                         findings.append({
 
                             "event_id": current_event_id,
@@ -156,6 +166,8 @@ class LogParser:
                             "component": component,
 
                             "bianca": bianca,
+
+                            "assembly": assembly,
 
                             "coldplate": coldplate,
 

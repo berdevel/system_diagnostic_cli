@@ -3,6 +3,9 @@ import re
 
 from config.xid_catalog import XID_CATALOG
 from config.power_fault_catalog import POWER_FAULT_CATALOG
+from config.cpu_firmware_catalog import (
+    CPU_FIRMWARE_CATALOG
+)
 
 
 class RedfishParser:
@@ -66,6 +69,20 @@ class RedfishParser:
                 "Review NVIDIA documentation."
             )
 
+            message_upper = message.upper()
+
+            for keyword, info in CPU_FIRMWARE_CATALOG.items():
+
+                if keyword in message_upper:
+
+                    failure = info["failure"]
+
+                    recommendation = (
+                        info["recommendation"]
+                    )
+
+                    break
+
             if xid != "N/A":
 
                 xid_info = XID_CATALOG.get(
@@ -97,7 +114,7 @@ class RedfishParser:
                     )
 
                     break
-            
+                        
             # ==========================================
             # Infer GPU from Failure Description
             # ==========================================
@@ -135,6 +152,22 @@ class RedfishParser:
             ]:
 
                 bianca = "Bianca#2"
+            
+            # ==========================================
+            # Infer Bianca from PWR_FAIL module
+            # ==========================================
+
+            message_upper = message.upper()
+
+            if bianca == "Unknown":
+
+                if "MOD_0" in message_upper:
+
+                    bianca = "Bianca#1"
+
+                elif "MOD_1" in message_upper:
+
+                    bianca = "Bianca#2"
 
             coldplate = "N/A"
 
@@ -196,13 +229,25 @@ class RedfishParser:
 
                 cpu = "Unknown"
 
-            if cpu == "CPU_0":
+            if bianca == "Unknown":
 
-                bianca = "Bianca#1"
+                if cpu == "CPU_0":
 
-            elif cpu == "CPU_1":
+                    bianca = "Bianca#1"
 
-                bianca = "Bianca#2"
+                elif cpu == "CPU_1":
+
+                    bianca = "Bianca#2"
+
+            assembly = "Unknown"
+
+            if bianca == "Bianca#1":
+
+                assembly = "Bianca#1 Assembly"
+
+            elif bianca == "Bianca#2":
+
+                assembly = "Bianca#2 Assembly"
 
             findings.append({
 
@@ -226,6 +271,8 @@ class RedfishParser:
                 "cpu": cpu,
 
                 "bianca": bianca,
+
+                "assembly": assembly,
 
                 "coldplate": coldplate,
 

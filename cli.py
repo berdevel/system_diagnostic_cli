@@ -18,7 +18,10 @@ init(autoreset=True)
 
 class DiagnosticTool:
 
-    def analyze_all_logs(self):
+    def analyze_all_logs(
+        self,
+        verbose=False
+    ):
 
         logs_directory = Path("logs")
 
@@ -56,9 +59,16 @@ class DiagnosticTool:
                 "=================================\n"
             )
 
-            self.run(str(logfile))
+            self.run(
+                str(logfile),
+                verbose=verbose
+            )
 
-    def run(self, logfile):
+    def run(
+        self,
+        logfile,
+        verbose=False
+    ):
 
         if not Path(logfile).exists():
             print(
@@ -78,7 +88,8 @@ class DiagnosticTool:
 
         print(
             Fore.WHITE +
-            f"Processing log: {logfile}"
+            f"Processing Log : "
+            f"{Path(logfile).name}"
         )
 
         try:
@@ -110,81 +121,83 @@ class DiagnosticTool:
                 "primary"
             )
 
-            for event in critical_events:
-
-                print(
-                    f"\n[ID {event['event_id']}]"
-                )
-
-                if event.get("line"):
+            if verbose:
+            
+                for event in critical_events:
 
                     print(
-                        f"Line       : "
-                        f"{event['line']}"
+                        f"\n[ID {event['event_id']}]"
                     )
 
-                if event.get("gpu") not in [
-                    None,
-                    "",
-                    "Unknown"
-                ]:
+                    if event.get("line"):
+
+                        print(
+                            f"Line       : "
+                            f"{event['line']}"
+                        )
+
+                    if event.get("gpu") not in [
+                        None,
+                        "",
+                        "Unknown"
+                    ]:
+
+                        print(
+                            f"GPU        : "
+                            f"{event['gpu']}"
+                        )
+
+                    if event.get("cpu") not in [
+                        None,
+                        "",
+                        "Unknown"
+                    ]:
+
+                        print(
+                            f"CPU        : "
+                            f"{event['cpu']}"
+                        )
+
+                    if event.get("bianca") not in [
+                        None,
+                        "",
+                        "Unknown",
+                        "N/A"
+                    ]:
+
+                        print(
+                            f"Bianca     : "
+                            f"{event['bianca']}"
+                        )
+
+                    if event.get("coldplate") not in [
+                        None,
+                        "",
+                        "Unknown",
+                        "N/A"
+                    ]:
+
+                        print(
+                            f"Coldplate  : "
+                            f"{event['coldplate']}"
+                        )
+
+                    if event.get("xid") not in [
+                        None,
+                        "",
+                        "Unknown",
+                        "N/A"
+                    ]:
+
+                        print(
+                            f"XID        : "
+                            f"{event['xid']}"
+                        )
 
                     print(
-                        f"GPU        : "
-                        f"{event['gpu']}"
+                        f"Failure    : "
+                        f"{event.get('failure','Unknown')}"
                     )
-
-                if event.get("cpu") not in [
-                    None,
-                    "",
-                    "Unknown"
-                ]:
-
-                    print(
-                        f"CPU        : "
-                        f"{event['cpu']}"
-                    )
-
-                if event.get("bianca") not in [
-                    None,
-                    "",
-                    "Unknown",
-                    "N/A"
-                ]:
-
-                    print(
-                        f"Bianca     : "
-                        f"{event['bianca']}"
-                    )
-
-                if event.get("coldplate") not in [
-                    None,
-                    "",
-                    "Unknown",
-                    "N/A"
-                ]:
-
-                    print(
-                        f"Coldplate  : "
-                        f"{event['coldplate']}"
-                    )
-
-                if event.get("xid") not in [
-                    None,
-                    "",
-                    "Unknown",
-                    "N/A"
-                ]:
-
-                    print(
-                        f"XID        : "
-                        f"{event['xid']}"
-                    )
-
-                print(
-                    f"Failure    : "
-                    f"{event.get('failure','Unknown')}"
-                )
 
             database = SQLiteManager()
             database.save_findings(findings)
@@ -222,33 +235,51 @@ class DiagnosticTool:
                 if item["bianca"] == "Bianca 2"
             )
 
+            coldplate_count = sum(
+
+                1
+
+                for item in findings
+
+                if item.get("component")
+                == "Coldplate"
+
+            )
+
+            cx8_count = sum(
+
+                1
+
+                for item in findings
+
+                if item.get("component")
+                == "CX8"
+
+            )
+
+            thermal_findings = sorted({
+
+                item.get(
+                    "coldplate"
+                )
+
+                for item in findings
+
+                if item.get(
+                    "coldplate"
+                ) not in [
+
+                    "Unknown",
+                    "N/A",
+                    None,
+                    ""
+
+                ]
+
+            })
+
             critical_count = len(
                 critical_events
-            )
-
-            print(
-                Fore.GREEN +
-                "\n========== RESULTS =========="
-            )
-
-            print(
-                Fore.CYAN +
-                f"Total Findings : {len(findings)}"
-            )
-
-            print(
-                Fore.YELLOW +
-                f"Bianca 1 Issues : {bianca1_count}"
-            )
-
-            print(
-                Fore.MAGENTA +
-                f"Bianca 2 Issues : {bianca2_count}"
-            )
-
-            print(
-                Fore.RED +
-                f"Critical Events: {critical_count}"
             )
 
             print(
@@ -256,104 +287,179 @@ class DiagnosticTool:
             )
 
             print(
-                "ROOT CAUSE ANALYSIS"
+                "SUMMARY"
             )
 
             print(
                 "=================================\n"
             )
 
-            if primary:
-
-                print(
-                    f"Primary Root Cause: "
-                    f"{primary['name']}"
-                )
-
-                print(
-                    f"Rule ID: "
-                    f"{primary['id']}"
-                )
-
-                print(
-                    f"Confidence: "
-                    f"{primary['confidence']}"
-                )
+            print(
+                f"Serial Number      : "
+                f"{serial_number}"
+            )
 
             print()
 
             print(
-                Fore.BLUE +
-                "Database       : diagnostics.db"
+                f"Total Findings     : "
+                f"{len(findings)}"
             )
 
-            report_name = Path(logfile).stem
+            print()
 
             print(
-                Fore.BLUE +
-                f"Markdown Report : reports/{report_name}_Report.md"
-            )
-
-            print(
-                Fore.BLUE +
-                f"HTML Report     : reports/{report_name}_Report.html"
+                f"Bianca Issues      : "
+                f"{bianca1_count + bianca2_count}"
             )
 
             print(
-                Fore.GREEN +
-                f"Process Time   : {elapsed_time} sec"
+                f"Coldplate Issues   : "
+                f"{coldplate_count}"
             )
 
-            print("\nDetected Failures:")
+            print(
+                f"CX8 Issues         : "
+                f"{cx8_count}"
+            )
 
-            for item in findings:
+            print()
+
+            print(
+                f"Critical Events    : "
+                f"{critical_count}"
+            )
+
+            print()
+
+            if primary:
+
+                print(
+                    "Primary Root Cause :"
+                )
+
+                print(
+                    primary["name"]
+                )
 
                 print()
 
                 print(
-                    f"Event ID  : "
-                    f"{item.get('event_id', 'N/A')}"
+                    f"Confidence         : "
+                    f"{primary['confidence']}"
+                )
+
+                print()
+
+                print(
+                    "Recommended Action :"
                 )
 
                 print(
-                    f"Component : "
-                    f"{item.get('component', 'Unknown')}"
+                    primary["recommendation"]
                 )
 
-                if item.get("bianca") != "N/A":
+            if thermal_findings:
+
+                print()
+
+                print(
+                    "Secondary Findings :"
+                )
+
+                for coldplate in thermal_findings:
 
                     print(
-                        f"Bianca    : "
-                        f"{item['bianca']}"
+                        f"- {coldplate} Coldplate Thermal Event"
                     )
 
-                if item.get("coldplate") != "N/A":
+            report_name = Path(logfile).stem
+
+            print(
+                "\n================================="
+            )
+
+            print(
+                "OUTPUTS"
+            )
+
+            print(
+                "=================================\n"
+            )
+
+            print(
+                "Database            : diagnostics.db"
+            )
+
+            print(
+                f"Markdown Report     : "
+                f"reports/{report_name}_Report.md"
+            )
+
+            print(
+                f"HTML Report         : "
+                f"reports/{report_name}_Report.html"
+            )
+
+            print()
+
+            print(
+                f"Process Time        : "
+                f"{elapsed_time} sec"
+            )
+
+            if verbose:
+            
+                print("\nDetected Failures:")
+
+                for item in findings:
+
+                    print()
 
                     print(
-                        f"Coldplate : "
-                        f"{item['coldplate']}"
+                        f"Event ID  : "
+                        f"{item.get('event_id', 'N/A')}"
                     )
-
-                if item.get("cx8") != "N/A":
 
                     print(
-                        f"CX8       : "
-                        f"{item['cx8']}"
+                        f"Component : "
+                        f"{item.get('component', 'Unknown')}"
                     )
 
-                print(
-                    f"Failure   : "
-                    f"{item['failure']}"
-                )
+                    if item.get("bianca") != "N/A":
 
-                print(
-                    f"Line      : "
-                    f"{item['line']}"
-                )
+                        print(
+                            f"Bianca    : "
+                            f"{item['bianca']}"
+                        )
 
-                print(
-                    "-" * 40
-                )
+                    if item.get("coldplate") != "N/A":
+
+                        print(
+                            f"Coldplate : "
+                            f"{item['coldplate']}"
+                        )
+
+                    if item.get("cx8") != "N/A":
+
+                        print(
+                            f"CX8       : "
+                            f"{item['cx8']}"
+                        )
+
+                    print(
+                        f"Failure   : "
+                        f"{item['failure']}"
+                    )
+
+                    print(
+                        f"Line      : "
+                        f"{item['line']}"
+                    )
+
+                    print(
+                        "-" * 40
+                    )
 
         except Exception as error:
 
@@ -401,6 +507,12 @@ if __name__ == "__main__":
         help="Analyze all logs in logs folder"
     )
 
+    parser.add_argument(
+        "--verbose",
+        action="store_true",
+        help="Show detailed findings and critical events"
+    )
+
     args = parser.parse_args()
 
     tool = DiagnosticTool()
@@ -424,11 +536,16 @@ if __name__ == "__main__":
 
     elif args.all:
 
-        tool.analyze_all_logs()
+        tool.analyze_all_logs(
+            verbose=args.verbose
+        )
 
     elif args.logfile:
 
-        tool.run(args.logfile)
+        tool.run(
+            args.logfile,
+            verbose=args.verbose
+        )
 
     else:
 
