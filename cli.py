@@ -323,8 +323,6 @@ class DiagnosticTool:
                 f"{cx8_count}"
             )
 
-            print()
-
             print(
                 f"Critical Events    : "
                 f"{critical_count}"
