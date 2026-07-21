@@ -199,14 +199,44 @@ class DiagnosticTool:
                         f"{event.get('failure','Unknown')}"
                     )
 
-            database = SQLiteManager()
-            database.save_findings(findings)
-
             serial_number = (
                 Path(logfile)
                 .stem
                 .split("_")[0]
             )
+
+            database = SQLiteManager()
+            database.save_analysis(
+
+                serial_number,
+
+                logfile,
+
+                root_causes,
+
+                len(findings),
+
+                len(critical_events)
+
+            )
+
+            database.save_findings(
+
+                serial_number,
+
+                findings
+
+            )
+
+            database.save_critical_events(
+
+                serial_number,
+
+                critical_events
+
+            )
+
+            database.close()
 
             report = MarkdownGenerator()
 
@@ -283,18 +313,22 @@ class DiagnosticTool:
             )
 
             print(
+                Fore.CYAN +
                 "\n================================="
             )
 
             print(
+                Fore.CYAN +
                 "SUMMARY"
             )
 
             print(
+                Fore.CYAN +
                 "=================================\n"
             )
 
             print(
+                Fore.WHITE +
                 f"Serial Number      : "
                 f"{serial_number}"
             )
@@ -302,6 +336,7 @@ class DiagnosticTool:
             print()
 
             print(
+                Fore.GREEN +
                 f"Total Findings     : "
                 f"{len(findings)}"
             )
@@ -309,21 +344,26 @@ class DiagnosticTool:
             print()
 
             print(
+                Fore.YELLOW +
                 f"Bianca Issues      : "
                 f"{bianca1_count + bianca2_count}"
             )
 
             print(
+                Fore.BLUE +
                 f"Coldplate Issues   : "
                 f"{coldplate_count}"
             )
 
             print(
+                Fore.MAGENTA +
                 f"CX8 Issues         : "
                 f"{cx8_count}"
             )
 
+
             print(
+                Fore.RED +
                 f"Critical Events    : "
                 f"{critical_count}"
             )
@@ -332,17 +372,22 @@ class DiagnosticTool:
 
             if primary:
 
+                print()
+
                 print(
+                    Fore.CYAN +
                     "Primary Root Cause :"
                 )
 
                 print(
+                    Fore.RED +
                     primary["name"]
                 )
 
                 print()
 
                 print(
+                    Fore.YELLOW +
                     f"Confidence         : "
                     f"{primary['confidence']}"
                 )
@@ -350,10 +395,12 @@ class DiagnosticTool:
                 print()
 
                 print(
+                    Fore.GREEN +
                     "Recommended Action :"
                 )
 
                 print(
+                    Fore.GREEN +
                     primary["recommendation"]
                 )
 
@@ -362,39 +409,47 @@ class DiagnosticTool:
                 print()
 
                 print(
+                    Fore.MAGENTA +
                     "Secondary Findings :"
                 )
 
                 for coldplate in thermal_findings:
 
                     print(
+                        Fore.MAGENTA +
                         f"- {coldplate} Coldplate Thermal Event"
                     )
 
             report_name = Path(logfile).stem
 
             print(
+                Fore.CYAN +
                 "\n================================="
             )
 
             print(
+                Fore.CYAN +
                 "OUTPUTS"
             )
 
             print(
+                Fore.CYAN +
                 "=================================\n"
             )
 
             print(
+                Fore.BLUE +
                 "Database            : diagnostics.db"
             )
 
             print(
+                Fore.BLUE +
                 f"Markdown Report     : "
                 f"reports/{report_name}_Report.md"
             )
 
             print(
+                Fore.BLUE +
                 f"HTML Report         : "
                 f"reports/{report_name}_Report.html"
             )
@@ -402,6 +457,7 @@ class DiagnosticTool:
             print()
 
             print(
+                Fore.GREEN +
                 f"Process Time        : "
                 f"{elapsed_time} sec"
             )
@@ -480,6 +536,137 @@ class DiagnosticTool:
 
             traceback.print_exc()
 
+        print("\n" * 1)
+
+    def show_history(
+        self,
+        serial_number
+    ):
+
+        database = SQLiteManager()
+
+        history = database.get_serial_history(
+            serial_number
+        )
+
+        print(
+            "\n================================="
+        )
+
+        print(
+            f"SERIAL HISTORY"
+        )
+
+        print(
+            "=================================\n"
+        )
+
+        print(
+            f"Serial Number : {serial_number}\n"
+        )
+
+        if not history:
+
+            print(
+                "No records found."
+            )
+
+            return
+
+        for row in history:
+
+            print(
+                f"Date       : {row[0]}"
+            )
+
+            print(
+                f"Root Cause : {row[1]}"
+            )
+
+            print(
+                f"Confidence : {row[2]}"
+            )
+
+            print("-" * 40)
+
+    def show_top_rca(self):
+
+        database = SQLiteManager()
+
+        results = (
+            database.get_top_root_causes()
+        )
+
+        print(
+            "\n================================="
+        )
+
+        print(
+            "TOP ROOT CAUSES"
+        )
+
+        print(
+            "=================================\n"
+        )
+
+        for name, total in results:
+
+            print(
+                f"{total:>5}  {name}"
+            )
+
+    def show_top_components(self):
+
+        database = SQLiteManager()
+
+        results = (
+            database.get_top_components()
+        )
+
+        print(
+            "\n================================="
+        )
+
+        print(
+            "TOP COMPONENT FAILURES"
+        )
+
+        print(
+            "=================================\n"
+        )
+
+        for component, total in results:
+
+            print(
+                f"{total:>5}  {component}"
+            )
+
+    def show_top_serials(self):
+
+        database = SQLiteManager()
+
+        results = (
+            database.get_top_serials()
+        )
+
+        print(
+            "\n================================="
+        )
+
+        print(
+            "MOST PROBLEMATIC SERIALS"
+        )
+
+        print(
+            "=================================\n"
+        )
+
+        for serial, total in results:
+
+            print(
+                f"{total:>5}  {serial}"
+            )
+
 
 if __name__ == "__main__":
 
@@ -511,6 +698,29 @@ if __name__ == "__main__":
         help="Show detailed findings and critical events"
     )
 
+    parser.add_argument(
+        "--history",
+        help="Show history for a serial number"
+    )
+
+    parser.add_argument(
+        "--top-rca",
+        action="store_true",
+        help="Show top root causes"
+    )
+
+    parser.add_argument(
+        "--top-components",
+        action="store_true",
+        help="Show top component failures"
+    )
+
+    parser.add_argument(
+        "--top-serials",
+        action="store_true",
+        help="Show most problematic serials"
+    )
+
     args = parser.parse_args()
 
     tool = DiagnosticTool()
@@ -537,6 +747,24 @@ if __name__ == "__main__":
         tool.analyze_all_logs(
             verbose=args.verbose
         )
+
+    elif args.history:
+
+        tool.show_history(
+            args.history
+        )
+
+    elif args.top_rca:
+
+        tool.show_top_rca()
+
+    elif args.top_components:
+
+        tool.show_top_components()
+
+    elif args.top_serials:
+
+        tool.show_top_serials()
 
     elif args.logfile:
 
