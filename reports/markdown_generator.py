@@ -24,7 +24,7 @@ class MarkdownGenerator:
             encoding="utf-8"
         ) as file:
 
-        report_timestamp = datetime.now()
+            report_timestamp = datetime.now()
 
             file.write(
     "# FOXCONN FAILURE ANALYSIS REPORT\n\n"
@@ -402,11 +402,6 @@ class MarkdownGenerator:
                     )
 
                     file.write(
-                        f"- Log Line       : "
-                        f"{event.get('line', 'N/A')}\n"
-                    )
-
-                    file.write(
                         f"- Date           : "
                         f"{event.get('created', 'Unknown')}\n"
                     )
@@ -512,6 +507,11 @@ class MarkdownGenerator:
                 )
 
                 file.write(
+                    f"Serial Number: "
+                    f"{serial_number}\n\n"
+                )
+
+                file.write(
                     f"Catalog Version: "
                     f"{root_causes['catalog_version']}\n\n"
                 )
@@ -544,15 +544,21 @@ class MarkdownGenerator:
                 affected_biancas = sorted({
 
                     event.get(
-                        "bianca",
-                        "Unknown"
+                        "bianca"
                     )
 
-                    for event in critical_findings
+                    for event in findings
 
                     if event.get(
                         "bianca"
-                    ) != "Unknown"
+                    ) not in [
+
+                        "Unknown",
+                        "N/A",
+                        None,
+                        ""
+
+                    ]
 
                 })
 
@@ -563,14 +569,16 @@ class MarkdownGenerator:
                         "N/A"
                     )
 
-                    for event in critical_findings
+                    for event in findings
 
                     if event.get(
                         "coldplate"
                     ) not in [
 
                         "Unknown",
-                        "N/A"
+                        "N/A",
+                        None,
+                        ""
 
                     ]
 
@@ -590,20 +598,6 @@ class MarkdownGenerator:
 
                     file.write("\n")
 
-                if affected_coldplates:
-
-                    file.write(
-                        "Affected Cooling Assemblies:\n\n"
-                    )
-
-                    for coldplate in affected_coldplates:
-
-                        file.write(
-                            f"- {coldplate} Coldplate\n"
-                        )
-
-                    file.write("\n")
-
                 file.write(
                     "Recommended Actions:\n\n"
                 )
@@ -613,6 +607,47 @@ class MarkdownGenerator:
                         "recommendation"
                     ] + "\n\n"
                 )
+
+                if affected_biancas:
+
+                    file.write(
+                        "Implementation Notes:\n\n"
+                    )
+
+                    file.write(
+                        "- Bianca replacement includes the corresponding coldplate assembly.\n\n"
+                    )
+
+                if affected_coldplates:
+
+                    file.write(
+                        "Additional Thermal Findings:\n\n"
+                    )
+
+                    for coldplate in affected_coldplates:
+
+                        file.write(
+                            f"- Thermal event detected on "
+                            f"{coldplate} Coldplate\n"
+                        )
+
+                    file.write("\n")
+
+                    file.write(
+                        "Recommended Thermal Actions:\n\n"
+                    )
+
+                    file.write(
+                        "- Inspect TIM condition\n"
+                    )
+
+                    file.write(
+                        "- Verify coldplate contact pressure\n"
+                    )
+
+                    file.write(
+                        "- Review temperature history\n\n"
+                    )
 
                 secondary = (
                     root_causes.get(

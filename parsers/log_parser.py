@@ -121,6 +121,26 @@ class LogParser:
 
                         )
 
+                        action = "Investigate"
+
+                        if component == "Bianca":
+
+                            action = (
+                                f"Replace {bianca}"
+                            )
+
+                        elif component == "Coldplate":
+
+                            action = (
+                                f"Replace {coldplate} Coldplate"
+                            )
+
+                        elif component == "CX8":
+
+                            action = (
+                                f"Replace {cx8} CX8"
+                            )
+
                         if finding_key in seen:
 
                             continue
@@ -142,6 +162,8 @@ class LogParser:
                             "cx8": cx8,
 
                             "module": module,
+
+                            "action": action,
 
                             "line": line_number,
 

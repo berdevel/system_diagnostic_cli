@@ -189,13 +189,20 @@ class DiagnosticTool:
             database = SQLiteManager()
             database.save_findings(findings)
 
+            serial_number = (
+                Path(logfile)
+                .stem
+                .split("_")[0]
+            )
+
             report = MarkdownGenerator()
 
             report.generate(
                 findings,
                 critical_events,
                 logfile,
-                root_causes
+                root_causes,
+                serial_number
             )
 
             elapsed_time = round(
@@ -272,6 +279,8 @@ class DiagnosticTool:
                     f"Confidence: "
                     f"{primary['confidence']}"
                 )
+
+            print()
 
             print(
                 Fore.BLUE +
