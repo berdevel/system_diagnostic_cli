@@ -81,7 +81,7 @@ class DiagnosticTool:
 
         print(
             Fore.CYAN +
-            "\n========== FOXCONN FAILURE ANALYZER v2.1 =========="
+            "\n========== FOXCONN FAILURE ANALYZER v2.2 =========="
         )
 
         print()
