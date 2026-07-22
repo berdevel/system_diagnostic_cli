@@ -1,7 +1,7 @@
 FOXCONN FAILURE ANALYZER
 NVIDIA HGX / BIANCA DIAGNOSTIC PLATFORM
 
-VERSION 2.1
+VERSION 2.2
 
 ==================================================
 
@@ -10,9 +10,9 @@ DESCRIPTION
 FOXCONN Failure Analyzer automates NVIDIA HGX
 system diagnostics and Root Cause Analysis.
 
-The tool analyzes logs and critical Redfish events,
-identifies hardware failures, stores historical data,
-and generates professional reports.
+The tool analyzes logs and Redfish critical events,
+stores historical analysis results, detects recurring
+failures, and generates professional reports.
 
 ==================================================
 
@@ -25,11 +25,12 @@ FEATURES
 - CPU Firmware Event Analysis
 - Redfish Critical Event Analysis
 - Root Cause Analysis (RCA)
+- Historical Database
+- Serial Reports
+- Historical Statistics
+- Date Filtering
 - Markdown Reports
 - HTML Reports
-- SQLite Historical Database
-- Historical Statistics
-- Date Range Filtering
 
 ==================================================
 
@@ -85,6 +86,20 @@ FoxconnFailureAnalyzer.exe --history P233262530256042
 
 ==================================================
 
+SERIAL REPORT
+
+FoxconnFailureAnalyzer.exe --serial-report SERIAL_NUMBER
+
+Provides:
+
+- Analysis History
+- Root Cause History
+- Component History
+- Critical Event Summary
+- Recurring Failure Detection
+
+==================================================
+
 TOP ROOT CAUSES
 
 FoxconnFailureAnalyzer.exe --top-rca
@@ -122,12 +137,12 @@ FoxconnFailureAnalyzer.exe ^
 
 REPORTS
 
-Generated Reports
+Generated:
 
 - Markdown Report (.md)
 - HTML Report (.html)
 
-Location
+Location:
 
 reports\
 
@@ -137,14 +152,14 @@ DATABASE
 
 diagnostics.db
 
-Stored Information
+Stores:
 
 - Analysis History
+- Serial History
 - Root Causes
 - Component Failures
 - Critical Events
-- Serial History
-- Statistics
+- Historical Statistics
 
 ==================================================
 
