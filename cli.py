@@ -81,7 +81,7 @@ class DiagnosticTool:
 
         print(
             Fore.CYAN +
-            "\n========== FOXCONN FAILURE ANALYZER =========="
+            "\n========== FOXCONN FAILURE ANALYZER v2.1 =========="
         )
 
         print()
@@ -792,6 +792,192 @@ class DiagnosticTool:
                 f"{qty:>5}  {component}"
             )
 
+    def show_serial_report(
+
+        self,
+        serial_number
+
+    ):
+
+        database = SQLiteManager()
+
+        report = (
+
+            database.get_serial_report(
+                serial_number
+            )
+
+        )
+
+        database.close()
+
+        print(
+            "\n================================="
+        )
+
+        print(
+            "SERIAL REPORT"
+        )
+
+        print(
+            "=================================\n"
+        )
+
+        print(
+            f"Serial Number : "
+            f"{serial_number}\n"
+        )
+
+        general = report["general"]
+
+        total_analyses = general[0] or 0
+
+        first_seen = general[1] or "N/A"
+
+        last_seen = general[2] or "N/A"
+
+        print(
+            f"Total Analyses : "
+            f"{total_analyses}"
+        )
+
+        print(
+            f"First Analysis : "
+            f"{first_seen}"
+        )
+
+        print(
+            f"Latest Analysis: "
+            f"{last_seen}"
+        )
+
+        print()
+
+        print(
+            "-" * 40
+        )
+
+        print(
+            "RCA HISTORY"
+        )
+
+        print(
+            "-" * 40
+        )
+
+        print()
+
+        for rca, qty in report["rca"]:
+
+            print(
+                f"{qty:>5}  {rca}"
+            )
+
+        print()
+
+        print(
+            "-" * 40
+        )
+
+        print(
+            "COMPONENT HISTORY"
+        )
+
+        print(
+            "-" * 40
+        )
+
+        print()
+
+        for component, qty in report["components"]:
+
+            print(
+                f"{qty:>5}  {component}"
+            )
+
+        print()
+
+        critical = report["critical"]
+
+        if critical:
+
+            print(
+                "-" * 40
+            )
+
+            print(
+                "CRITICAL EVENTS"
+            )
+
+            print(
+                "-" * 40
+            )
+
+            print()
+
+            total_criticals = sum(
+
+                qty
+
+                for _, qty in critical
+
+            )
+
+            print(
+                f"Total Critical Events : "
+                f"{total_criticals}"
+            )
+
+            print()
+
+            print(
+                "Most Frequent:"
+            )
+
+            print(
+                critical[0][0]
+            )
+
+            print()
+
+        if report["rca"]:
+
+            top_rca = report["rca"][0]
+
+            print(
+                "-" * 40
+            )
+
+            print(
+                "REPAIR RECOMMENDATION"
+            )
+
+            print(
+                "-" * 40
+            )
+
+            print()
+
+            print(
+                "Most Frequent RCA"
+            )
+
+            print(
+                top_rca[0]
+            )
+
+            print()
+
+            if top_rca[1] >= 3:
+
+                print(
+                    "Status"
+                )
+
+                print(
+                    "RECURRING FAILURE DETECTED"
+                )
+
 
 if __name__ == "__main__":
 
@@ -868,6 +1054,14 @@ if __name__ == "__main__":
 
     )
 
+    parser.add_argument(
+
+        "--serial-report",
+
+        help="Generate historical report for a serial number"
+
+    )
+
     args = parser.parse_args()
 
     tool = DiagnosticTool()
@@ -940,6 +1134,12 @@ if __name__ == "__main__":
 
             args.date_to
 
+        )
+
+    elif args.serial_report:
+
+        tool.show_serial_report(
+            args.serial_report
         )
 
     else:

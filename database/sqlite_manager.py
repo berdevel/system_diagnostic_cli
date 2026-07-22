@@ -553,6 +553,143 @@ class SQLiteManager:
 
         return self.cursor.fetchone()
 
+    def get_serial_report(
+
+        self,
+        serial_number
+
+    ):
+
+        report = {}
+
+        # =====================================
+        # General Information
+        # =====================================
+
+        self.cursor.execute(
+
+            """
+
+            SELECT
+
+                COUNT(*),
+
+                MIN(analysis_date),
+
+                MAX(analysis_date)
+
+            FROM analysis_history
+
+            WHERE serial_number = ?
+
+            """,
+
+            (serial_number,)
+
+        )
+
+        report["general"] = (
+            self.cursor.fetchone()
+        )
+
+        # =====================================
+        # RCA History
+        # =====================================
+
+        self.cursor.execute(
+
+            """
+
+            SELECT
+
+                root_cause_name,
+
+                COUNT(*)
+
+            FROM analysis_history
+
+            WHERE serial_number = ?
+
+            GROUP BY root_cause_name
+
+            ORDER BY COUNT(*) DESC
+
+            """,
+
+            (serial_number,)
+
+        )
+
+        report["rca"] = (
+            self.cursor.fetchall()
+        )
+
+        # =====================================
+        # Component History
+        # =====================================
+
+        self.cursor.execute(
+
+            """
+
+            SELECT
+
+                component,
+
+                COUNT(*)
+
+            FROM component_failures
+
+            WHERE serial_number = ?
+
+            GROUP BY component
+
+            ORDER BY COUNT(*) DESC
+
+            """,
+
+            (serial_number,)
+
+        )
+
+        report["components"] = (
+            self.cursor.fetchall()
+        )
+
+        # =====================================
+        # Critical Events
+        # =====================================
+
+        self.cursor.execute(
+
+            """
+
+            SELECT
+
+                failure,
+
+                COUNT(*)
+
+            FROM critical_events
+
+            WHERE serial_number = ?
+
+            GROUP BY failure
+
+            ORDER BY COUNT(*) DESC
+
+            """,
+
+            (serial_number,)
+
+        )
+
+        report["critical"] = (
+            self.cursor.fetchall()
+        )
+
+        return report
+
     def close(self):
 
         if self.connection:
