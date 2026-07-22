@@ -26,10 +26,11 @@ ROOT_CAUSE_CATALOG = [
 
         """
         Verify thermal interface material (TIM).
-        Verify cold plate installation.
+        Verify coldplate installation.
         Check airflow restrictions.
         Verify fan operation.
         Review GPU temperature history.
+        If the conditions are anormal replace afected coldplate.
         """
     },
 

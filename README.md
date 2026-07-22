@@ -8,11 +8,17 @@ The tool parses diagnostic logs and Redfish event data, identifies hardware fail
 
 ---
 
+## Version
+
+**FoxconnFailureAnalyzer v2.1**
+
+---
+
 ## Key Features
 
 ### Diagnostic Analysis
 
-- Automated log parsing
+- Automated Log Parsing
 - Redfish Critical Event Analysis
 - Component Failure Detection
 - Bianca Failure Identification
@@ -20,402 +26,304 @@ The tool parses diagnostic logs and Redfish event data, identifies hardware fail
 - CX8 Failure Identification
 - GPU Thermal Event Detection
 - NVIDIA XID Analysis
-- CPU Firmware Failure Detection
+- CPU Firmware Event Analysis
 - Power Sequencing Failure Detection
-- Rule-Based Hardware Correlation
 
 ### Root Cause Analysis
 
 - Rule-Based RCA Engine
 - Confidence Scoring
-- Evidence Correlation
+- Hardware Correlation
+- Evidence Tracking
 - Primary Root Cause Identification
 - Secondary Findings Detection
 - Corrective Action Recommendations
-- Failure-to-Component Mapping
 
-### Reporting
+### Reports
 
 - Executive Summary
 - Failure Highlights
 - Component Statistics
-- Component Failure Analysis
+- Component Failure Details
 - Critical Event Analysis
 - Root Cause Analysis
-- Evidence Supporting RCA
+- RCA Evidence
 - Secondary Findings
 - Markdown Report Generation
 - HTML Report Generation
 
-### Historical Analytics
+### Historical Database
 
-- SQLite Database Integration
+- SQLite Storage
 - Analysis History
 - Serial Number History
 - Root Cause Statistics
-- Component Failure Statistics
+- Component Statistics
 - Critical Event Tracking
-- Historical Trend Analysis
 
 ### CLI Features
 
-- Standard Analysis Mode
-- Verbose Analysis Mode
+- Single Log Analysis
+- Multiple Log Analysis
+- Verbose Mode
 - Historical Queries
-- Top Root Cause Reporting
-- Top Component Reporting
-- Top Serial Number Reporting
-- Single Log Processing
-- Multi-Log Processing
+- Top RCA Reports
+- Top Component Reports
+- Top Serial Reports
+- Date Range Filtering
 
 ---
 
 ## Project Structure
 
-```text
+```
 FoxconnFailureAnalyzer/
 
 ├── cli.py
 ├── diagnostics.db
 │
 ├── config/
-│   ├── power_fault_catalog.py
-│   ├── xid_catalog.py
-│   ├── cpu_firmware_catalog.py
-│   └── ...
 │
 ├── parsers/
-│   ├── log_parser.py
-│   ├── redfish_parser.py
-│   └── root_cause_analyzer.py
 │
 ├── database/
-│   └── sqlite_manager.py
 │
 ├── reports/
-│   ├── markdown_generator.py
-│   ├── *.md
-│   └── *.html
 │
-├── generator*/
-│   └── fake_log_generator.py
+├── logs/
 │
-*── logs/
+├── generators/
 │
 └── tests/
 ```
 
 ---
 
-##*Supported Components
-
-### HGX Comp*nents
+## Supported Components
 
 - Bianca 1
 - Bianca 2
-- Lef* Coldplate
+- Left Coldplate
 - Right Coldplate
-- CX8*Adapters
+- CX8
 - GPUs
 - CPUs
 
-### Assemb*ies
-
-- Bianca#1 Assembly
-- Bianca#* Assembly
-
 ---
 
-## Supported Event*Sources
+## Analyze a Log
 
-- Diagnostic Logs
-- Redfi*h Events
-- NVIDIA XID Events
-- Pow*r Sequencing Events
-- Thermal Even*s
-- CPU Firmware Events
-
----
-
-## R*n Analysis
-
-Analyze a single log:
-*```bash
-python cli.py logs\example*log.txt
+```bash
+python cli.py logs\example_log.txt
 ```
 
 ---
 
-## Run Analysis *Verbose)
+## Analyze a Log (Verbose)
 
-Displays all detected fa*lures and critical events.
-
-```bas*
-python cli.py logs\example_log.tx* --verbose
+```bash
+python cli.py logs\example_log.txt --verbose
 ```
 
 ---
 
-## Analyze Al* Logs
+## Analyze All Logs
 
-Process every log file foun* inside the logs directory.
-
-```ba*h
+```bash
 python cli.py --all
 ```
 
 ---
 
-##*Analyze All Logs (Verbose)
+## Analyze All Logs (Verbose)
 
-```bas*
+```bash
 python cli.py --all --verbose
-```*
+```
+
 ---
 
 ## Generate Sample Logs
 
-Gen*rate synthetic logs for testing.
-
-*``bash
-python cli.py --generate 50*00
+```bash
+python cli.py --generate 50000
 ```
 
 ---
 
-## Historical Databas* Queries
+## Historical Queries
 
 ### View Serial History
-*```bash
-python cli.py --history P2*3262530256042
+
+```bash
+python cli.py --history P233262530256042
 ```
 
-Example Output:*
-```text
-Date       : 2026-07-20
-R*ot Cause : PEX Switch 0.95V Rail F*ilure - Bianca 2
-Confidence : HIGH*```
+### View Serial History with Date Filter
+
+```bash
+python cli.py \
+--history P233262530256042 \
+--from 2026-07-01 \
+--to 2026-07-31
+```
 
 ---
 
-### View Top Root Causes*
+### Top Root Causes
+
 ```bash
 python cli.py --top-rca
-`*`
-
-Example Output:
-
-```text
-TOP RO*T CAUSES
-
-68   PEX Switch 0.95V Ra*l Failure - Bianca 2
-23   GPU Ther*al Event
-12   CX8 Failure
 ```
 
----*
-### View Top Components
+### Top Root Causes by Date Range
 
 ```bash
-*ython cli.py --top-components
-```
-*Example Output:
-
-```text
-TOP COMPO*ENT FAILURES
-
-187   Bianca
-44    C*ldplate
-19    CX8
+python cli.py \
+--top-rca \
+--from 2026-07-01 \
+--to 2026-07-31
 ```
 
 ---
 
-### Vi*w Most Problematic Serials
+### Top Components
 
-```bas*
+```bash
+python cli.py --top-components
+```
+
+---
+
+### Top Serials
+
+```bash
 python cli.py --top-serials
 ```
 
-*xample Output:
+---
 
-```text
-MOST PROBL*MATIC SERIALS
+### Historical Summary
 
-12   P2332625302560*2
-9    P233262530111010
-8    P2332*2530555123
+```bash
+python cli.py --summary
 ```
 
 ---
 
-## Report Out*uts
+### Historical Summary by Date Range
 
-Each successful analysis gene*ates:
+```bash
+python cli.py \
+--summary \
+--from 2026-07-01 \
+--to 2026-07-31
+```
 
-```text
+---
+
+## Report Outputs
+
+Each successful analysis generates:
+
+```
 reports/
 
-├── SERIA*_Report.md
-└── SERIAL_Report.html
-*``
+SERIAL_Report.md
 
-Generated Reports Include:
+SERIAL_Report.html
+```
 
-- *ystem Information
-- Failure Highli*hts
-- Component Failure Summary
-- *omponent Statistics
-- Critical Eve*t Analysis
-- Root Cause Analysis
--*Evidence Supporting RCA
-- Correcti*e Actions
-- Secondary Findings
-
---*
+---
 
 ## SQLite Database
 
-Historical a*alysis data is automatically store* in:
+The tool stores historical data in:
 
-```text
+```
 diagnostics.db
 ```
 
-*## Stored Information
+### Stored Information
 
-#### Analys*s History
+#### Analysis History
 
 - Serial Number
-- Analy*is Date
+- Analysis Date
 - Source Log
-- Root Cause *D
+- Root Cause ID
 - Root Cause Name
-- Confidence L*vel
+- Confidence Level
 - Total Findings
-- Total Criti*al Events
+- Total Critical Events
 
-#### Component Failures*
+#### Component Failures
+
 - Event ID
 - Component
-- Assembly*- Bianca
+- Assembly
+- Bianca
 - Coldplate
 - CX8
-- Failu*e
+- Failure
 - Recommendation
 - Line Number
 
-*### Critical Events
+#### Critical Events
 
 - Event ID
-- *imestamp
+- Timestamp
 - Severity
 - GPU
 - CPU
-- *ianca
+- Bianca
 - Assembly
 - Coldplate
-- XID*- Failure
+- XID
+- Failure
 - Recommendation
 
 ---
 
-#* Supported Detections
+## Current Roadmap
 
-### Bianca *ailures
+### v2.2
 
-- PWR_FAIL_CPU
-- PWR_FAIL*SOC
-- PWR_FAIL_PEX_SW
-- PWR_FAIL_I*_MEZZ
-- PWR_FAIL_NVVDD
-- PWR_FAIL_*BMVDD
+- Serial Report
+- Historical Repair Recommendations
 
-### Coldplate Failures
+### v2.3
 
-- G*U Thermal Over Temperature
-- GPU T*ermal Warning Events
-- Thermal Shu*down Events
+- Dashboard HTML
+- Charts and Visualizations
 
-### CPU Firmware Even*s
+### v2.4
 
-- AP0_PRIMARY_AuthenticateError*- AP0_SECONDARY_AuthenticateError
-* ErrorAuthApFw
+- Excel Export
 
-### NVIDIA Events
-*- XID 163
-- XID 154
-- XID 79
-- XID*48
-- XID 31
+### v3.0
 
----
-
-## Example Analy*is Workflow
-
-```text
-Log File
-    *
-Log Parser
-    ↓
-Redfish Parser
- *  ↓
-Failure Detection
-    ↓
-Critic*l Event Correlation
-    ↓
-Root Cau*e Analysis
-    ↓
-SQLite Storage
-  * ↓
-Markdown Report
-    ↓
-HTML Repo*t
-```
+- Web Interface
+- Fleet Dashboard
 
 ---
 
 ## Technology Stack
 
--*Python
-- Regular Expressions (Rege*)
+- Python
+- Regex
 - SQLite
-- Object-Oriented Progr*mming (OOP)
 - Markdown
 - HTML
-- Ro*t Cause Analysis
-- NVIDIA Diagnostics
 - Redfish
+- Root Cause Analysis
+- OOP
 - Automation
-
----
-
-## Business Value
-
-FOXCONN Failure Analyzer reduces troubleshooting time by automatically correlating failures, critical events, and hardware symptoms into a structured Root Cause Analysis workflow.
-
-The solution provides:
-
-- Faster Diagnostics
-- Standardized Reporting
-- Historical Trend Analysis
-- Failure Correlation
-- Automated Recommendations
-- Manufacturing Validation Support
-- QA Engineering Support
-- Test Engineering Support
-- Historical Failure Intelligence
-
----
-
-## Version
-
-**FoxconnFailureAnalyzer v2.0**
 
 ---
 
 ## Author
 
-**Juan Bernardo Perez Martinez**
+Juan Bernardo Perez Martinez
 
 FOXCONN Diagnostic Automation Project

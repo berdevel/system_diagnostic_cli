@@ -1,0 +1,5117 @@
+{
+  "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries",
+  "@odata.type": "#LogEntryCollection.LogEntryCollection",
+  "Description": "Collection of System Event Log Entries",
+  "Members": [
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/11",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:41+00:00",
+      "EntryType": "Event",
+      "Id": "11",
+      "Message": "BMC reset due to Unknown",
+      "Modified": "2024-02-27T17:26:41+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "Warning"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/148",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:41+00:00",
+      "EntryType": "Event",
+      "Id": "148",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:41+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/149",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:52+00:00",
+      "EntryType": "Event",
+      "Id": "149",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:52+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/153",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "153",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/154",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "154",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/158",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:40+00:00",
+      "EntryType": "Event",
+      "Id": "158",
+      "Message": "BMC power-on reset",
+      "Modified": "2024-02-27T17:26:40+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/159",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "159",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/162",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "162",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/163",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "163",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/166",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "166",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/169",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "169",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/170",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "170",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/174",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "174",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/175",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "175",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/179",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "179",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/18",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:45+00:00",
+      "EntryType": "Event",
+      "Id": "18",
+      "Message": "BMC reset due to Unknown",
+      "Modified": "2024-02-27T17:26:45+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "Warning"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/180",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "180",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/182",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "AdditionalDataURI": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/182/attachment",
+      "Created": "2011-04-06T06:02:08+00:00",
+      "EntryType": "Event",
+      "Id": "182",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0"
+        }
+      },
+      "Message": "The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}'.",
+      "MessageArgs": [
+        "PS_RUN_PWR_FAULT",
+        "PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Oem": {
+        "Nvidia": {
+          "@odata.type": "#NvidiaLogEntry.v1_1_0.NvidiaLogEntry",
+          "Device": "Power_0",
+          "ErrorId": "PS_RUN_PWR_FAULT-ERROR"
+        }
+      },
+      "Resolution": "AC cycle the system. If problem persists, collect all dumps per troubleshooting guide, isolate the system and evaluate for RMA.",
+      "Resolved": false,
+      "Severity": "Critical"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/185",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "185",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/188",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "188",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/189",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "189",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/192",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:31+00:00",
+      "EntryType": "Event",
+      "Id": "192",
+      "Message": "BMC power-on reset",
+      "Modified": "2024-02-27T17:26:31+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/193",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "193",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/194",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "194",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/197",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "197",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/2",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:45+00:00",
+      "EntryType": "Event",
+      "Id": "2",
+      "Message": "xyz.openbmc_project.Common.Error.InternalFailure",
+      "Modified": "2024-02-27T17:26:45+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "Critical"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/20",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:48+00:00",
+      "EntryType": "Event",
+      "Id": "20",
+      "Message": "BMC reset due to Unknown",
+      "Modified": "2024-02-27T17:26:48+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "Warning"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/200",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "200",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/207",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2011-04-06T11:36:47+00:00",
+      "EntryType": "Event",
+      "Id": "207",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2011-04-06T11:36:47+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/210",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "210",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/212",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "212",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/213",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "213",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/218",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2011-04-06T15:22:18+00:00",
+      "EntryType": "Event",
+      "Id": "218",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2011-04-06T15:22:18+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/221",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:51+00:00",
+      "EntryType": "Event",
+      "Id": "221",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:51+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/225",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2026-06-21T05:11:48+00:00",
+      "EntryType": "Event",
+      "Id": "225",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2026-06-21T05:11:48+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/228",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:51+00:00",
+      "EntryType": "Event",
+      "Id": "228",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:51+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/23",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:28:29+00:00",
+      "EntryType": "Event",
+      "Id": "23",
+      "Message": "HMC: FPGA0_READY-I starts with 0",
+      "Modified": "2024-02-27T17:28:29+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/233",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "233",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/234",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "234",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/236",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "AdditionalDataURI": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/236/attachment",
+      "Created": "2026-06-22T19:34:03+00:00",
+      "EntryType": "Event",
+      "Id": "236",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0"
+        }
+      },
+      "Message": "The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}'.",
+      "MessageArgs": [
+        "PS_RUN_PWR_FAULT",
+        "PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Oem": {
+        "Nvidia": {
+          "@odata.type": "#NvidiaLogEntry.v1_1_0.NvidiaLogEntry",
+          "Device": "Power_0",
+          "ErrorId": "PS_RUN_PWR_FAULT-ERROR"
+        }
+      },
+      "Resolution": "AC cycle the system. If problem persists, collect all dumps per troubleshooting guide, isolate the system and evaluate for RMA.",
+      "Resolved": false,
+      "Severity": "Critical"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/238",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:31+00:00",
+      "EntryType": "Event",
+      "Id": "238",
+      "Message": "BMC power-on reset",
+      "Modified": "2024-02-27T17:26:31+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/239",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "239",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/240",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "240",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/245",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "245",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/246",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "246",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/254",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:30+00:00",
+      "EntryType": "Event",
+      "Id": "254",
+      "Message": "BMC power-on reset",
+      "Modified": "2024-02-27T17:26:30+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/255",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "255",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/256",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "256",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/259",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:51+00:00",
+      "EntryType": "Event",
+      "Id": "259",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:51+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/262",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:51+00:00",
+      "EntryType": "Event",
+      "Id": "262",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:51+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/265",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "265",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/272",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2011-04-06T03:35:56+00:00",
+      "EntryType": "Event",
+      "Id": "272",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2011-04-06T03:35:56+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/275",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "275",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/278",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:51+00:00",
+      "EntryType": "Event",
+      "Id": "278",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:51+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/28",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:27:04+00:00",
+      "EntryType": "Event",
+      "Id": "28",
+      "Message": "BMC reset due to Unknown",
+      "Modified": "2024-02-27T17:27:04+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "Warning"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/281",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "AdditionalDataURI": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/281/attachment",
+      "Created": "2026-06-25T08:05:41+00:00",
+      "EntryType": "Event",
+      "Id": "281",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0"
+        }
+      },
+      "Message": "The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}'.",
+      "MessageArgs": [
+        "PS_RUN_PWR_FAULT",
+        "PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Oem": {
+        "Nvidia": {
+          "@odata.type": "#NvidiaLogEntry.v1_1_0.NvidiaLogEntry",
+          "Device": "Power_0",
+          "ErrorId": "PS_RUN_PWR_FAULT-ERROR"
+        }
+      },
+      "Resolution": "AC cycle the system. If problem persists, collect all dumps per troubleshooting guide, isolate the system and evaluate for RMA.",
+      "Resolved": false,
+      "Severity": "Critical"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/283",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "283",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/284",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "284",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/286",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "AdditionalDataURI": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/286/attachment",
+      "Created": "2026-06-25T11:22:45+00:00",
+      "EntryType": "Event",
+      "Id": "286",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0"
+        }
+      },
+      "Message": "The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}'.",
+      "MessageArgs": [
+        "PS_RUN_PWR_FAULT",
+        "PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Oem": {
+        "Nvidia": {
+          "@odata.type": "#NvidiaLogEntry.v1_1_0.NvidiaLogEntry",
+          "Device": "Power_0",
+          "ErrorId": "PS_RUN_PWR_FAULT-ERROR"
+        }
+      },
+      "Resolution": "AC cycle the system. If problem persists, collect all dumps per troubleshooting guide, isolate the system and evaluate for RMA.",
+      "Resolved": false,
+      "Severity": "Critical"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/289",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:31+00:00",
+      "EntryType": "Event",
+      "Id": "289",
+      "Message": "BMC power-on reset",
+      "Modified": "2024-02-27T17:26:31+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/29",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:28:29+00:00",
+      "EntryType": "Event",
+      "Id": "29",
+      "Message": "HMC: FPGA0_READY-I starts with 0",
+      "Modified": "2024-02-27T17:28:29+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/290",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "290",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/291",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "291",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/293",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "AdditionalDataURI": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/293/attachment",
+      "Created": "2026-06-29T21:08:08+00:00",
+      "EntryType": "Event",
+      "Id": "293",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0"
+        }
+      },
+      "Message": "The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}'.",
+      "MessageArgs": [
+        "PS_RUN_PWR_FAULT",
+        "PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Oem": {
+        "Nvidia": {
+          "@odata.type": "#NvidiaLogEntry.v1_1_0.NvidiaLogEntry",
+          "Device": "Power_0",
+          "ErrorId": "PS_RUN_PWR_FAULT-ERROR"
+        }
+      },
+      "Resolution": "AC cycle the system. If problem persists, collect all dumps per troubleshooting guide, isolate the system and evaluate for RMA.",
+      "Resolved": false,
+      "Severity": "Critical"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/295",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:41+00:00",
+      "EntryType": "Event",
+      "Id": "295",
+      "Message": "BMC power-on reset",
+      "Modified": "2024-02-27T17:26:41+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/296",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "296",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/3",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:46+00:00",
+      "EntryType": "Event",
+      "Id": "3",
+      "Message": "BMC reset due to Unknown",
+      "Modified": "2024-02-27T17:26:46+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "Warning"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/301",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:31+00:00",
+      "EntryType": "Event",
+      "Id": "301",
+      "Message": "BMC power-on reset",
+      "Modified": "2024-02-27T17:26:31+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/302",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "302",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/303",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "303",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/31",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2011-04-05T23:02:36+00:00",
+      "EntryType": "Event",
+      "Id": "31",
+      "Message": "BMC reset due to Unknown",
+      "Modified": "2011-04-05T23:02:36+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "Warning"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/311",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:31+00:00",
+      "EntryType": "Event",
+      "Id": "311",
+      "Message": "BMC power-on reset",
+      "Modified": "2024-02-27T17:26:31+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/312",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "312",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/313",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "313",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/316",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:41+00:00",
+      "EntryType": "Event",
+      "Id": "316",
+      "Message": "BMC power-on reset",
+      "Modified": "2024-02-27T17:26:41+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/317",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "317",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/320",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:41+00:00",
+      "EntryType": "Event",
+      "Id": "320",
+      "Message": "BMC power-on reset",
+      "Modified": "2024-02-27T17:26:41+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/321",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "321",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/324",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2011-04-06T02:23:55+00:00",
+      "EntryType": "Event",
+      "Id": "324",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2011-04-06T02:23:55+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/33",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2011-04-05T23:16:54+00:00",
+      "EntryType": "Event",
+      "Id": "33",
+      "Message": "BMC reset due to Unknown",
+      "Modified": "2011-04-05T23:16:54+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "Warning"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/331",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "331",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/332",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:51+00:00",
+      "EntryType": "Event",
+      "Id": "332",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:51+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/335",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:31+00:00",
+      "EntryType": "Event",
+      "Id": "335",
+      "Message": "BMC power-on reset",
+      "Modified": "2024-02-27T17:26:31+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/336",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "336",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/337",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "337",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/341",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:51+00:00",
+      "EntryType": "Event",
+      "Id": "341",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:51+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/344",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:41+00:00",
+      "EntryType": "Event",
+      "Id": "344",
+      "Message": "BMC power-on reset",
+      "Modified": "2024-02-27T17:26:41+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/345",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "345",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/347",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "AdditionalDataURI": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/347/attachment",
+      "Created": "2026-07-01T05:33:32+00:00",
+      "EntryType": "Event",
+      "Id": "347",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0"
+        }
+      },
+      "Message": "The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}'.",
+      "MessageArgs": [
+        "PS_RUN_PWR_FAULT",
+        "PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Oem": {
+        "Nvidia": {
+          "@odata.type": "#NvidiaLogEntry.v1_1_0.NvidiaLogEntry",
+          "Device": "Power_0",
+          "ErrorId": "PS_RUN_PWR_FAULT-ERROR"
+        }
+      },
+      "Resolution": "AC cycle the system. If problem persists, collect all dumps per troubleshooting guide, isolate the system and evaluate for RMA.",
+      "Resolved": false,
+      "Severity": "Critical"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/349",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:41+00:00",
+      "EntryType": "Event",
+      "Id": "349",
+      "Message": "BMC power-on reset",
+      "Modified": "2024-02-27T17:26:41+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/350",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2026-07-01T06:36:59+00:00",
+      "EntryType": "Event",
+      "Id": "350",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2026-07-01T06:36:59+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/353",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "353",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/354",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "354",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/358",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "358",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/359",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "359",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/361",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "AdditionalDataURI": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/361/attachment",
+      "Created": "2026-07-01T16:16:54+00:00",
+      "EntryType": "Event",
+      "Id": "361",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0"
+        }
+      },
+      "Message": "The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}'.",
+      "MessageArgs": [
+        "PS_RUN_PWR_FAULT",
+        "PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Oem": {
+        "Nvidia": {
+          "@odata.type": "#NvidiaLogEntry.v1_1_0.NvidiaLogEntry",
+          "Device": "Power_0",
+          "ErrorId": "PS_RUN_PWR_FAULT-ERROR"
+        }
+      },
+      "Resolution": "AC cycle the system. If problem persists, collect all dumps per troubleshooting guide, isolate the system and evaluate for RMA.",
+      "Resolved": false,
+      "Severity": "Critical"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/363",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "363",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/364",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "364",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/367",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "367",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/368",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "368",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/370",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "370",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/371",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "371",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/374",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "374",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/376",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "376",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/377",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "377",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/382",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "382",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/383",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "383",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/388",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2011-04-05T23:25:47+00:00",
+      "EntryType": "Event",
+      "Id": "388",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2011-04-05T23:25:47+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/396",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "396",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/397",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "397",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/400",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "400",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/401",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "401",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/404",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "404",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/406",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2011-04-06T08:16:41+00:00",
+      "EntryType": "Event",
+      "Id": "406",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Chassis/HGX_GPU_0"
+        }
+      },
+      "Message": "The resource property GPU_0 Driver Event Message has detected errors of type '[Thu Jul  2 20:39:03 2026][1][0] XID 163 PSHC disengaged due to thermal event - 0x4002040'.",
+      "MessageArgs": [
+        "GPU_0 Driver Event Message",
+        "[Thu Jul  2 20:39:03 2026][1][0] XID 163 PSHC disengaged due to thermal event - 0x4002040"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Resolution": "Regarding XID documentation and further actions please refer to XID and sXID Catalog for NVIDIA Data Center Products (NVOnline: 1115699)",
+      "Resolved": false,
+      "Severity": "Critical"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/407",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2011-04-06T08:16:41+00:00",
+      "EntryType": "Event",
+      "Id": "407",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Chassis/HGX_GPU_0"
+        }
+      },
+      "Message": "The resource property GPU_0 Driver Event Message has detected errors of type '[Thu Jul  2 20:39:03 2026][2][0] XID 162 PSHC reengaged'.",
+      "MessageArgs": [
+        "GPU_0 Driver Event Message",
+        "[Thu Jul  2 20:39:03 2026][2][0] XID 162 PSHC reengaged"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Resolution": "Regarding XID documentation and further actions please refer to XID and sXID Catalog for NVIDIA Data Center Products (NVOnline: 1115699)",
+      "Resolved": false,
+      "Severity": "Critical"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/408",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2011-04-06T08:16:45+00:00",
+      "EntryType": "Event",
+      "Id": "408",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Chassis/HGX_GPU_0"
+        }
+      },
+      "Message": "The resource property GPU_0 Driver Event Message has detected errors of type '[Thu Jul  2 20:39:07 2026][3][0] XID 163 PSHC disengaged due to thermal event - 0x4002040'.",
+      "MessageArgs": [
+        "GPU_0 Driver Event Message",
+        "[Thu Jul  2 20:39:07 2026][3][0] XID 163 PSHC disengaged due to thermal event - 0x4002040"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Resolution": "Regarding XID documentation and further actions please refer to XID and sXID Catalog for NVIDIA Data Center Products (NVOnline: 1115699)",
+      "Resolved": false,
+      "Severity": "Critical"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/409",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2011-04-06T08:16:45+00:00",
+      "EntryType": "Event",
+      "Id": "409",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Chassis/HGX_GPU_0"
+        }
+      },
+      "Message": "The resource property GPU_0 Driver Event Message has detected errors of type '[Thu Jul  2 20:39:07 2026][4][0] XID 162 PSHC reengaged'.",
+      "MessageArgs": [
+        "GPU_0 Driver Event Message",
+        "[Thu Jul  2 20:39:07 2026][4][0] XID 162 PSHC reengaged"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Resolution": "Regarding XID documentation and further actions please refer to XID and sXID Catalog for NVIDIA Data Center Products (NVOnline: 1115699)",
+      "Resolved": false,
+      "Severity": "Critical"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/410",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2011-04-06T08:17:00+00:00",
+      "EntryType": "Event",
+      "Id": "410",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Chassis/HGX_GPU_0"
+        }
+      },
+      "Message": "The resource property GPU_0 Driver Event Message has detected errors of type '[Thu Jul  2 20:39:22 2026][5][0] XID 163 PSHC disengaged due to thermal event - 0x4002040'.",
+      "MessageArgs": [
+        "GPU_0 Driver Event Message",
+        "[Thu Jul  2 20:39:22 2026][5][0] XID 163 PSHC disengaged due to thermal event - 0x4002040"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Resolution": "Regarding XID documentation and further actions please refer to XID and sXID Catalog for NVIDIA Data Center Products (NVOnline: 1115699)",
+      "Resolved": false,
+      "Severity": "Critical"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/411",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2011-04-06T08:17:00+00:00",
+      "EntryType": "Event",
+      "Id": "411",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Chassis/HGX_GPU_0"
+        }
+      },
+      "Message": "The resource property GPU_0 Driver Event Message has detected errors of type '[Thu Jul  2 20:39:22 2026][6][0] XID 162 PSHC reengaged'.",
+      "MessageArgs": [
+        "GPU_0 Driver Event Message",
+        "[Thu Jul  2 20:39:22 2026][6][0] XID 162 PSHC reengaged"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Resolution": "Regarding XID documentation and further actions please refer to XID and sXID Catalog for NVIDIA Data Center Products (NVOnline: 1115699)",
+      "Resolved": false,
+      "Severity": "Critical"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/412",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "AdditionalDataURI": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/412/attachment",
+      "Created": "2011-04-06T08:17:37+00:00",
+      "EntryType": "Event",
+      "Id": "412",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Chassis/HGX_GPU_3"
+        }
+      },
+      "Message": "The resource property GPU_3 THERM_WARN_INT has detected errors of type 'Abnormal State Change'.",
+      "MessageArgs": [
+        "GPU_3 THERM_WARN_INT",
+        "Abnormal State Change"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Oem": {
+        "Nvidia": {
+          "@odata.type": "#NvidiaLogEntry.v1_1_0.NvidiaLogEntry",
+          "Device": "GPU_3",
+          "ErrorId": "GPU_THERM_WARN_INT-ERROR"
+        }
+      },
+      "Resolution": "Increase the Baseboard cooling and check thermal environment to ensure the PCB Temperature reading is under UpperCritical threshold.",
+      "Resolved": false,
+      "Severity": "Warning"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/413",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "AdditionalDataURI": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/413/attachment",
+      "Created": "2011-04-06T08:17:57+00:00",
+      "EntryType": "Event",
+      "Id": "413",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Chassis/HGX_GPU_3"
+        }
+      },
+      "Message": "The resource property GPU_3 THERM_WARN_INT has detected errors of type 'Abnormal State Change'.",
+      "MessageArgs": [
+        "GPU_3 THERM_WARN_INT",
+        "Abnormal State Change"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Oem": {
+        "Nvidia": {
+          "@odata.type": "#NvidiaLogEntry.v1_1_0.NvidiaLogEntry",
+          "Device": "GPU_3",
+          "ErrorId": "GPU_THERM_WARN_INT-ERROR"
+        }
+      },
+      "Resolution": "Increase the Baseboard cooling and check thermal environment to ensure the PCB Temperature reading is under UpperCritical threshold.",
+      "Resolved": false,
+      "Severity": "Warning"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/414",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "AdditionalDataURI": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/414/attachment",
+      "Created": "2011-04-06T08:17:57+00:00",
+      "EntryType": "Event",
+      "Id": "414",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Chassis/HGX_GPU_1"
+        }
+      },
+      "Message": "The resource property GPU_1 THERM_WARN_INT has detected errors of type 'Abnormal State Change'.",
+      "MessageArgs": [
+        "GPU_1 THERM_WARN_INT",
+        "Abnormal State Change"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Oem": {
+        "Nvidia": {
+          "@odata.type": "#NvidiaLogEntry.v1_1_0.NvidiaLogEntry",
+          "Device": "GPU_1",
+          "ErrorId": "GPU_THERM_WARN_INT-ERROR"
+        }
+      },
+      "Resolution": "Increase the Baseboard cooling and check thermal environment to ensure the PCB Temperature reading is under UpperCritical threshold.",
+      "Resolved": false,
+      "Severity": "Warning"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/416",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "416",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/419",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "419",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/420",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "420",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/423",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "423",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/424",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "424",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/426",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "AdditionalDataURI": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/426/attachment",
+      "Created": "2011-04-06T12:02:30+00:00",
+      "EntryType": "Event",
+      "Id": "426",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0"
+        }
+      },
+      "Message": "The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}'.",
+      "MessageArgs": [
+        "PS_RUN_PWR_FAULT",
+        "PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Oem": {
+        "Nvidia": {
+          "@odata.type": "#NvidiaLogEntry.v1_1_0.NvidiaLogEntry",
+          "Device": "Power_0",
+          "ErrorId": "PS_RUN_PWR_FAULT-ERROR"
+        }
+      },
+      "Resolution": "AC cycle the system. If problem persists, collect all dumps per troubleshooting guide, isolate the system and evaluate for RMA.",
+      "Resolved": false,
+      "Severity": "Critical"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/429",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "429",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/431",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "AdditionalDataURI": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/431/attachment",
+      "Created": "2011-04-06T13:32:18+00:00",
+      "EntryType": "Event",
+      "Id": "431",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0"
+        }
+      },
+      "Message": "The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}'.",
+      "MessageArgs": [
+        "PS_RUN_PWR_FAULT",
+        "PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Oem": {
+        "Nvidia": {
+          "@odata.type": "#NvidiaLogEntry.v1_1_0.NvidiaLogEntry",
+          "Device": "Power_0",
+          "ErrorId": "PS_RUN_PWR_FAULT-ERROR"
+        }
+      },
+      "Resolution": "AC cycle the system. If problem persists, collect all dumps per troubleshooting guide, isolate the system and evaluate for RMA.",
+      "Resolved": false,
+      "Severity": "Critical"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/434",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "434",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/439",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "439",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/447",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "447",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/448",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "448",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/451",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "451",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/452",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "452",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/455",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "455",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/458",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:51+00:00",
+      "EntryType": "Event",
+      "Id": "458",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:51+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/465",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "465",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/468",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:51+00:00",
+      "EntryType": "Event",
+      "Id": "468",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:51+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/471",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:51+00:00",
+      "EntryType": "Event",
+      "Id": "471",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:51+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/474",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "AdditionalDataURI": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/474/attachment",
+      "Created": "2026-07-04T07:35:27+00:00",
+      "EntryType": "Event",
+      "Id": "474",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0"
+        }
+      },
+      "Message": "The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}'.",
+      "MessageArgs": [
+        "PS_RUN_PWR_FAULT",
+        "PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Oem": {
+        "Nvidia": {
+          "@odata.type": "#NvidiaLogEntry.v1_1_0.NvidiaLogEntry",
+          "Device": "Power_0",
+          "ErrorId": "PS_RUN_PWR_FAULT-ERROR"
+        }
+      },
+      "Resolution": "AC cycle the system. If problem persists, collect all dumps per troubleshooting guide, isolate the system and evaluate for RMA.",
+      "Resolved": false,
+      "Severity": "Critical"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/476",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "476",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/477",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "477",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/480",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "480",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/481",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:51+00:00",
+      "EntryType": "Event",
+      "Id": "481",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:51+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/483",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "AdditionalDataURI": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/483/attachment",
+      "Created": "2026-07-04T10:31:22+00:00",
+      "EntryType": "Event",
+      "Id": "483",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0"
+        }
+      },
+      "Message": "The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}'.",
+      "MessageArgs": [
+        "PS_RUN_PWR_FAULT",
+        "PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Oem": {
+        "Nvidia": {
+          "@odata.type": "#NvidiaLogEntry.v1_1_0.NvidiaLogEntry",
+          "Device": "Power_0",
+          "ErrorId": "PS_RUN_PWR_FAULT-ERROR"
+        }
+      },
+      "Resolution": "AC cycle the system. If problem persists, collect all dumps per troubleshooting guide, isolate the system and evaluate for RMA.",
+      "Resolved": false,
+      "Severity": "Critical"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/485",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2026-07-04T18:04:32+00:00",
+      "EntryType": "Event",
+      "Id": "485",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2026-07-04T18:04:32+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/488",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "488",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/493",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "493",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/494",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "494",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/5",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:27:06+00:00",
+      "EntryType": "Event",
+      "Id": "5",
+      "Message": "BMC reset due to Unknown",
+      "Modified": "2024-02-27T17:27:06+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "Warning"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/502",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "502",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/505",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2011-04-06T00:46:30+00:00",
+      "EntryType": "Event",
+      "Id": "505",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2011-04-06T00:46:30+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/508",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:51+00:00",
+      "EntryType": "Event",
+      "Id": "508",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:51+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/511",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "511",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/517",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:41+00:00",
+      "EntryType": "Event",
+      "Id": "517",
+      "Message": "BMC Boot",
+      "Modified": "2024-02-27T17:26:41+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/518",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2011-04-06T03:47:27+00:00",
+      "EntryType": "Event",
+      "Id": "518",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2011-04-06T03:47:27+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/519",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2011-04-06T03:53:14+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "519",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/520",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "AdditionalDataURI": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/520/attachment",
+      "Created": "2011-04-06T03:56:08+00:00",
+      "EntryType": "Event",
+      "Id": "520",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Chassis/HGX_GPU_1"
+        }
+      },
+      "Message": "The resource property GPU_1 THERM_WARN_INT has detected errors of type 'Abnormal State Change'.",
+      "MessageArgs": [
+        "GPU_1 THERM_WARN_INT",
+        "Abnormal State Change"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Oem": {
+        "Nvidia": {
+          "@odata.type": "#NvidiaLogEntry.v1_1_0.NvidiaLogEntry",
+          "Device": "GPU_1",
+          "ErrorId": "GPU_THERM_WARN_INT-ERROR"
+        }
+      },
+      "Resolution": "Increase the Baseboard cooling and check thermal environment to ensure the PCB Temperature reading is under UpperCritical threshold.",
+      "Resolved": false,
+      "Severity": "Warning"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/521",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "AdditionalDataURI": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/521/attachment",
+      "Created": "2011-04-06T03:56:20+00:00",
+      "EntryType": "Event",
+      "Id": "521",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Chassis/HGX_GPU_0"
+        }
+      },
+      "Message": "The resource property GPU_0 THERM_WARN_INT has detected errors of type 'Abnormal State Change'.",
+      "MessageArgs": [
+        "GPU_0 THERM_WARN_INT",
+        "Abnormal State Change"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Oem": {
+        "Nvidia": {
+          "@odata.type": "#NvidiaLogEntry.v1_1_0.NvidiaLogEntry",
+          "Device": "GPU_0",
+          "ErrorId": "GPU_THERM_WARN_INT-ERROR"
+        }
+      },
+      "Resolution": "Increase the Baseboard cooling and check thermal environment to ensure the PCB Temperature reading is under UpperCritical threshold.",
+      "Resolved": false,
+      "Severity": "Warning"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/522",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "AdditionalDataURI": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/522/attachment",
+      "Created": "2011-04-06T03:56:20+00:00",
+      "EntryType": "Event",
+      "Id": "522",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Chassis/HGX_GPU_3"
+        }
+      },
+      "Message": "The resource property GPU_3 THERM_WARN_INT has detected errors of type 'Abnormal State Change'.",
+      "MessageArgs": [
+        "GPU_3 THERM_WARN_INT",
+        "Abnormal State Change"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Oem": {
+        "Nvidia": {
+          "@odata.type": "#NvidiaLogEntry.v1_1_0.NvidiaLogEntry",
+          "Device": "GPU_3",
+          "ErrorId": "GPU_THERM_WARN_INT-ERROR"
+        }
+      },
+      "Resolution": "Increase the Baseboard cooling and check thermal environment to ensure the PCB Temperature reading is under UpperCritical threshold.",
+      "Resolved": false,
+      "Severity": "Warning"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/523",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "AdditionalDataURI": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/523/attachment",
+      "Created": "2011-04-06T03:56:20+00:00",
+      "EntryType": "Event",
+      "Id": "523",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Chassis/HGX_GPU_2"
+        }
+      },
+      "Message": "The resource property GPU_2 THERM_WARN_INT has detected errors of type 'Abnormal State Change'.",
+      "MessageArgs": [
+        "GPU_2 THERM_WARN_INT",
+        "Abnormal State Change"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Oem": {
+        "Nvidia": {
+          "@odata.type": "#NvidiaLogEntry.v1_1_0.NvidiaLogEntry",
+          "Device": "GPU_2",
+          "ErrorId": "GPU_THERM_WARN_INT-ERROR"
+        }
+      },
+      "Resolution": "Increase the Baseboard cooling and check thermal environment to ensure the PCB Temperature reading is under UpperCritical threshold.",
+      "Resolved": false,
+      "Severity": "Warning"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/524",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "AdditionalDataURI": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/524/attachment",
+      "Created": "2011-04-06T03:56:23+00:00",
+      "EntryType": "Event",
+      "Id": "524",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Chassis/HGX_GPU_2"
+        }
+      },
+      "Message": "The resource property GPU_2 THERM_WARN_INT has detected errors of type 'Abnormal State Change'.",
+      "MessageArgs": [
+        "GPU_2 THERM_WARN_INT",
+        "Abnormal State Change"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Oem": {
+        "Nvidia": {
+          "@odata.type": "#NvidiaLogEntry.v1_1_0.NvidiaLogEntry",
+          "Device": "GPU_2",
+          "ErrorId": "GPU_THERM_WARN_INT-ERROR"
+        }
+      },
+      "Resolution": "Increase the Baseboard cooling and check thermal environment to ensure the PCB Temperature reading is under UpperCritical threshold.",
+      "Resolved": false,
+      "Severity": "Warning"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/525",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "AdditionalDataURI": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/525/attachment",
+      "Created": "2011-04-06T03:56:23+00:00",
+      "EntryType": "Event",
+      "Id": "525",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Chassis/HGX_GPU_3"
+        }
+      },
+      "Message": "The resource property GPU_3 THERM_WARN_INT has detected errors of type 'Abnormal State Change'.",
+      "MessageArgs": [
+        "GPU_3 THERM_WARN_INT",
+        "Abnormal State Change"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Oem": {
+        "Nvidia": {
+          "@odata.type": "#NvidiaLogEntry.v1_1_0.NvidiaLogEntry",
+          "Device": "GPU_3",
+          "ErrorId": "GPU_THERM_WARN_INT-ERROR"
+        }
+      },
+      "Resolution": "Increase the Baseboard cooling and check thermal environment to ensure the PCB Temperature reading is under UpperCritical threshold.",
+      "Resolved": false,
+      "Severity": "Warning"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/526",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "AdditionalDataURI": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/526/attachment",
+      "Created": "2011-04-06T03:56:44+00:00",
+      "EntryType": "Event",
+      "Id": "526",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0"
+        }
+      },
+      "Message": "The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_GPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_GPU_THERM_OVERT{0x2}'.",
+      "MessageArgs": [
+        "PS_RUN_PWR_FAULT",
+        "PWR_FAIL_GPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_GPU_THERM_OVERT{0x2}"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Oem": {
+        "Nvidia": {
+          "@odata.type": "#NvidiaLogEntry.v1_1_0.NvidiaLogEntry",
+          "Device": "Power_0",
+          "ErrorId": "PS_RUN_PWR_FAULT-ERROR"
+        }
+      },
+      "Resolution": "AC cycle the system. If problem persists, collect all dumps per troubleshooting guide, isolate the system and evaluate for RMA.",
+      "Resolved": false,
+      "Severity": "Critical"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/527",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "AdditionalDataURI": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/527/attachment",
+      "Created": "2011-04-06T03:56:47+00:00",
+      "EntryType": "Event",
+      "Id": "527",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Chassis/HGX_GPU_3"
+        }
+      },
+      "Message": "The resource property GPU_3 THERM_WARN_INT has detected errors of type 'Abnormal State Change'.",
+      "MessageArgs": [
+        "GPU_3 THERM_WARN_INT",
+        "Abnormal State Change"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Oem": {
+        "Nvidia": {
+          "@odata.type": "#NvidiaLogEntry.v1_1_0.NvidiaLogEntry",
+          "Device": "GPU_3",
+          "ErrorId": "GPU_THERM_WARN_INT-ERROR"
+        }
+      },
+      "Resolution": "Increase the Baseboard cooling and check thermal environment to ensure the PCB Temperature reading is under UpperCritical threshold.",
+      "Resolved": false,
+      "Severity": "Warning"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/528",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "AdditionalDataURI": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/528/attachment",
+      "Created": "2011-04-06T03:56:47+00:00",
+      "EntryType": "Event",
+      "Id": "528",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Chassis/HGX_GPU_2"
+        }
+      },
+      "Message": "The resource property GPU_2 THERM_WARN_INT has detected errors of type 'Abnormal State Change'.",
+      "MessageArgs": [
+        "GPU_2 THERM_WARN_INT",
+        "Abnormal State Change"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Oem": {
+        "Nvidia": {
+          "@odata.type": "#NvidiaLogEntry.v1_1_0.NvidiaLogEntry",
+          "Device": "GPU_2",
+          "ErrorId": "GPU_THERM_WARN_INT-ERROR"
+        }
+      },
+      "Resolution": "Increase the Baseboard cooling and check thermal environment to ensure the PCB Temperature reading is under UpperCritical threshold.",
+      "Resolved": false,
+      "Severity": "Warning"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/529",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:41+00:00",
+      "EntryType": "Event",
+      "Id": "529",
+      "Message": "BMC Boot",
+      "Modified": "2024-02-27T17:26:41+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/530",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:51+00:00",
+      "EntryType": "Event",
+      "Id": "530",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:51+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/531",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2011-04-06T04:09:26+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "531",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/532",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:31+00:00",
+      "EntryType": "Event",
+      "Id": "532",
+      "Message": "BMC Boot",
+      "Modified": "2024-02-27T17:26:31+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/533",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "533",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/534",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:51+00:00",
+      "EntryType": "Event",
+      "Id": "534",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:51+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/535",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2026-07-07T01:38:39+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "535",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/536",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:41+00:00",
+      "EntryType": "Event",
+      "Id": "536",
+      "Message": "BMC Boot",
+      "Modified": "2024-02-27T17:26:41+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/537",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:51+00:00",
+      "EntryType": "Event",
+      "Id": "537",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:51+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/538",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2026-07-07T01:59:06+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "538",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/539",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2026-07-07T02:17:14+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "539",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/540",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:41+00:00",
+      "EntryType": "Event",
+      "Id": "540",
+      "Message": "BMC Boot",
+      "Modified": "2024-02-27T17:26:41+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/541",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "541",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/542",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2026-07-07T03:25:05+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "542",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/543",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:40+00:00",
+      "EntryType": "Event",
+      "Id": "543",
+      "Message": "BMC Boot",
+      "Modified": "2024-02-27T17:26:40+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/544",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:51+00:00",
+      "EntryType": "Event",
+      "Id": "544",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:51+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/545",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2026-07-07T06:08:31+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "545",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/546",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "AdditionalDataURI": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/546/attachment",
+      "Created": "2026-07-07T09:04:13+00:00",
+      "EntryType": "Event",
+      "Id": "546",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0"
+        }
+      },
+      "Message": "The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}'.",
+      "MessageArgs": [
+        "PS_RUN_PWR_FAULT",
+        "PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Oem": {
+        "Nvidia": {
+          "@odata.type": "#NvidiaLogEntry.v1_1_0.NvidiaLogEntry",
+          "Device": "Power_0",
+          "ErrorId": "PS_RUN_PWR_FAULT-ERROR"
+        }
+      },
+      "Resolution": "AC cycle the system. If problem persists, collect all dumps per troubleshooting guide, isolate the system and evaluate for RMA.",
+      "Resolved": false,
+      "Severity": "Critical"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/547",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2026-07-07T09:18:09+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "547",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/548",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:31+00:00",
+      "EntryType": "Event",
+      "Id": "548",
+      "Message": "BMC Boot",
+      "Modified": "2024-02-27T17:26:31+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/549",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "549",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/550",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "550",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/551",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2026-07-07T10:22:55+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "551",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/552",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2026-07-07T10:25:26+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "552",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/553",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "AdditionalDataURI": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/553/attachment",
+      "Created": "2026-07-07T11:10:41+00:00",
+      "EntryType": "Event",
+      "Id": "553",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0"
+        }
+      },
+      "Message": "The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}'.",
+      "MessageArgs": [
+        "PS_RUN_PWR_FAULT",
+        "PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Oem": {
+        "Nvidia": {
+          "@odata.type": "#NvidiaLogEntry.v1_1_0.NvidiaLogEntry",
+          "Device": "Power_0",
+          "ErrorId": "PS_RUN_PWR_FAULT-ERROR"
+        }
+      },
+      "Resolution": "AC cycle the system. If problem persists, collect all dumps per troubleshooting guide, isolate the system and evaluate for RMA.",
+      "Resolved": false,
+      "Severity": "Critical"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/554",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:40+00:00",
+      "EntryType": "Event",
+      "Id": "554",
+      "Message": "BMC Boot",
+      "Modified": "2024-02-27T17:26:40+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/555",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "555",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/556",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2026-07-07T17:14:06+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "556",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/557",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:41+00:00",
+      "EntryType": "Event",
+      "Id": "557",
+      "Message": "BMC Boot",
+      "Modified": "2024-02-27T17:26:41+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/558",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:51+00:00",
+      "EntryType": "Event",
+      "Id": "558",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:51+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/559",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2026-07-07T17:31:44+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "559",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/560",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2026-07-07T17:43:34+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "560",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/561",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2011-04-05T23:21:13+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "561",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/562",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2011-04-05T23:22:47+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "562",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/563",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:30+00:00",
+      "EntryType": "Event",
+      "Id": "563",
+      "Message": "BMC Boot",
+      "Modified": "2024-02-27T17:26:30+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/564",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "564",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/565",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "565",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/566",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2011-04-05T23:31:28+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "566",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/567",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2011-04-05T23:33:32+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "567",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/568",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2011-04-05T23:37:25+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "568",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/569",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2011-04-05T23:42:33+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "569",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/570",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2011-04-05T23:46:35+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "570",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/571",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2011-04-05T23:51:53+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "571",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/572",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:31+00:00",
+      "EntryType": "Event",
+      "Id": "572",
+      "Message": "BMC Boot",
+      "Modified": "2024-02-27T17:26:31+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/573",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "573",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/574",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "574",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/575",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2011-04-06T00:03:32+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "575",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/576",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:30+00:00",
+      "EntryType": "Event",
+      "Id": "576",
+      "Message": "BMC Boot",
+      "Modified": "2024-02-27T17:26:30+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/577",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "577",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/578",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "578",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/579",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2011-04-06T00:48:33+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "579",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/580",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2011-04-06T01:00:54+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "580",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/581",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:38+00:00",
+      "EntryType": "Event",
+      "Id": "581",
+      "Message": "BMC Boot",
+      "Modified": "2024-02-27T17:26:38+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/582",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "582",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/583",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "583",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/584",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2011-04-06T01:08:00+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "584",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/585",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:31+00:00",
+      "EntryType": "Event",
+      "Id": "585",
+      "Message": "BMC Boot",
+      "Modified": "2024-02-27T17:26:31+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/586",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "586",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/587",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "587",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/588",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2011-04-06T02:17:19+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "588",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/589",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:41+00:00",
+      "EntryType": "Event",
+      "Id": "589",
+      "Message": "BMC Boot",
+      "Modified": "2024-02-27T17:26:41+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/590",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "590",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/591",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2011-04-06T02:43:39+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "591",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/592",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2011-04-06T03:04:28+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "592",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/593",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2011-04-06T03:10:49+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "593",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/594",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2011-04-06T03:43:30+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "594",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/595",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2011-04-06T03:46:47+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "595",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/596",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:41+00:00",
+      "EntryType": "Event",
+      "Id": "596",
+      "Message": "BMC Boot",
+      "Modified": "2024-02-27T17:26:41+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/597",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "597",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/598",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:30+00:00",
+      "EntryType": "Event",
+      "Id": "598",
+      "Message": "BMC Boot",
+      "Modified": "2024-02-27T17:26:30+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/599",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:38+00:00",
+      "EntryType": "Event",
+      "Id": "599",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:38+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/600",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "600",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/601",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "CPER": {
+        "NotificationType": "09a9d5ac-5204-4214-96e5-94992e752bcd",
+        "Oem": {
+          "Nvidia": {
+            "@odata.type": "#NvidiaCPER.v0_8_0.NvidiaCPER",
+            "Message": "A Informational DRAM-CHANNELS NVIDIA Error occurred on CPU 0",
+            "Nvidia": {
+              "ErrorInstance": 0,
+              "ErrorType": 0,
+              "InstanceBase": 0,
+              "RegisterCount": 4,
+              "Registers": [
+                {
+                  "Address": 67288580,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 17592253332996,
+                  "Value": 1073741823
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                },
+                {
+                  "Address": 0,
+                  "Value": 0
+                }
+              ],
+              "Severity": {
+                "Code": 3,
+                "Name": "Informational"
+              },
+              "Signature": "DRAM-CHANNELS",
+              "Socket": 0
+            }
+          }
+        },
+        "SectionType": "6d5244f2-2712-11ec-bea7-cb3fdb95c786"
+      },
+      "Created": "2011-04-06T04:03:14+00:00",
+      "DiagnosticData": "Q1BFUgEB/////wEAAwAAAAAAAAAoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjkAalzEe8Rlqhfpr717qSs1akJBFIUQpbllJkudSvNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAQAAAAAA8kRSbRIn7BG+p8s/25XHhkozT8xjxesRj4ifesdsbwwDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEUkFNLUNIQU5ORUxTAAAAAAAAAAMABAAAAAAAAAAAAAS+AgQAAAAA////PwAAAAAEvgIEABAAAP///z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "DiagnosticDataType": "CPERSection",
+      "EntryType": "Event",
+      "Id": "601",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/Processors/CPU_0"
+        }
+      },
+      "Message": "A platform error occurred.",
+      "MessageArgs": [],
+      "MessageId": "Platform.1.0.PlatformError",
+      "Name": "System Event Log Entry",
+      "Resolution": "Check additional diagnostic data if available.",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/602",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "AdditionalDataURI": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/602/attachment",
+      "Created": "2011-04-06T04:51:32+00:00",
+      "EntryType": "Event",
+      "Id": "602",
+      "Links": {
+        "OriginOfCondition": {
+          "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0"
+        }
+      },
+      "Message": "The resource property PS_RUN_PWR_FAULT has detected errors of type 'PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}'.",
+      "MessageArgs": [
+        "PS_RUN_PWR_FAULT",
+        "PWR_FAIL_CPU{0x1};PWRSEQ_FAIL_STATE{0xf};PWRSEQ_GPU_FAIL_STATE{0x5};PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}"
+      ],
+      "MessageId": "ResourceEvent.1.0.ResourceErrorsDetected",
+      "Name": "System Event Log Entry",
+      "Oem": {
+        "Nvidia": {
+          "@odata.type": "#NvidiaLogEntry.v1_1_0.NvidiaLogEntry",
+          "Device": "Power_0",
+          "ErrorId": "PS_RUN_PWR_FAULT-ERROR"
+        }
+      },
+      "Resolution": "AC cycle the system. If problem persists, collect all dumps per troubleshooting guide, isolate the system and evaluate for RMA.",
+      "Resolved": false,
+      "Severity": "Critical"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/603",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:41+00:00",
+      "EntryType": "Event",
+      "Id": "603",
+      "Message": "BMC Boot",
+      "Modified": "2024-02-27T17:26:41+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/604",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:50+00:00",
+      "EntryType": "Event",
+      "Id": "604",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:50+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/7",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:37+00:00",
+      "EntryType": "Event",
+      "Id": "7",
+      "Message": "BMC reset due to Unknown",
+      "Modified": "2024-02-27T17:26:37+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "Warning"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/70",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:41+00:00",
+      "EntryType": "Event",
+      "Id": "70",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:41+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/71",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:52+00:00",
+      "EntryType": "Event",
+      "Id": "71",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:52+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/75",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "75",
+      "Message": "hmc_ready.sh completed",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/76",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2011-04-06T00:01:14+00:00",
+      "EntryType": "Event",
+      "Id": "76",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2011-04-06T00:01:14+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/9",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:39+00:00",
+      "EntryType": "Event",
+      "Id": "9",
+      "Message": "BMC reset due to Unknown",
+      "Modified": "2024-02-27T17:26:39+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "Warning"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/HGX_Baseboard_0/LogServices/EventLog/Entries/91",
+      "@odata.type": "#LogEntry.v1_15_0.LogEntry",
+      "Created": "2024-02-27T17:26:49+00:00",
+      "EntryType": "Event",
+      "Id": "91",
+      "Message": "HMC: FPGA0_READY-I starts with 1",
+      "Modified": "2024-02-27T17:26:49+00:00",
+      "Name": "System Event Log Entry",
+      "Resolved": false,
+      "Severity": "OK"
+    }
+  ],
+  "Members@odata.count": 251,
+  "Name": "System Event Log Entries"
+}

@@ -102,7 +102,13 @@ class DiagnosticTool:
 
             critical_events = (
                 redfish_parser.parse_critical_events(
-                    logfile
+
+                    logfile,
+
+                    args.date_from,
+
+                    args.date_to
+
                 )
             )
 
@@ -539,14 +545,24 @@ class DiagnosticTool:
         print("\n" * 1)
 
     def show_history(
+
         self,
-        serial_number
+        serial_number,
+        date_from=None,
+        date_to=None
+
     ):
 
         database = SQLiteManager()
 
         history = database.get_serial_history(
-            serial_number
+
+            serial_number,
+
+            date_from,
+
+            date_to
+
         )
 
         print(
@@ -589,12 +605,24 @@ class DiagnosticTool:
 
             print("-" * 40)
 
-    def show_top_rca(self):
+    def show_top_rca(
+
+        self,
+        date_from=None,
+        date_to=None
+
+    ):
 
         database = SQLiteManager()
 
         results = (
-            database.get_top_root_causes()
+            database.get_top_root_causes(
+
+                date_from,
+
+                date_to
+
+            )
         )
 
         print(
@@ -667,6 +695,103 @@ class DiagnosticTool:
                 f"{total:>5}  {serial}"
             )
 
+    def show_summary(
+
+        self,
+        date_from=None,
+        date_to=None
+
+    ):
+
+        database = SQLiteManager()
+
+        summary = database.get_summary(
+
+            date_from,
+            date_to
+
+        )
+
+        top_rca = database.get_top_root_causes(
+
+            date_from,
+            date_to
+
+        )
+
+        top_components = (
+            database.get_top_components()
+        )
+
+        print(
+            "\n================================="
+        )
+
+        print(
+            "DIAGNOSTIC SUMMARY"
+        )
+
+        print(
+            "=================================\n"
+        )
+
+        if date_from or date_to:
+
+            print(
+                f"From : {date_from}"
+            )
+
+            print(
+                f"To   : {date_to}\n"
+            )
+
+        print(
+            f"Total Analyses   : "
+            f"{summary[0] or 0}"
+        )
+
+        print(
+            f"Total Findings   : "
+            f"{summary[1] or 0}"
+        )
+
+        print(
+            f"Critical Events  : "
+            f"{summary[2] or 0}"
+        )
+
+        print()
+
+        print(
+            "Top RCA"
+        )
+
+        print(
+            "-" * 25
+        )
+
+        for name, qty in top_rca[:5]:
+
+            print(
+                f"{qty:>5}  {name}"
+            )
+
+        print()
+
+        print(
+            "Top Components"
+        )
+
+        print(
+            "-" * 25
+        )
+
+        for component, qty in top_components[:5]:
+
+            print(
+                f"{qty:>5}  {component}"
+            )
+
 
 if __name__ == "__main__":
 
@@ -721,6 +846,28 @@ if __name__ == "__main__":
         help="Show most problematic serials"
     )
 
+    parser.add_argument(
+        "--from",
+        dest="date_from",
+        help="Start date (YYYY-MM-DD)"
+    )
+
+    parser.add_argument(
+        "--to",
+        dest="date_to",
+        help="End date (YYYY-MM-DD)"
+    )
+
+    parser.add_argument(
+
+        "--summary",
+
+        action="store_true",
+
+        help="Show historical summary"
+
+    )
+
     args = parser.parse_args()
 
     tool = DiagnosticTool()
@@ -751,12 +898,24 @@ if __name__ == "__main__":
     elif args.history:
 
         tool.show_history(
-            args.history
+
+            args.history,
+
+            args.date_from,
+
+            args.date_to
+
         )
 
     elif args.top_rca:
 
-        tool.show_top_rca()
+        tool.show_top_rca(
+
+            args.date_from,
+
+            args.date_to
+
+        )
 
     elif args.top_components:
 
@@ -771,6 +930,16 @@ if __name__ == "__main__":
         tool.run(
             args.logfile,
             verbose=args.verbose
+        )
+
+    elif args.summary:
+
+        tool.show_summary(
+
+            args.date_from,
+
+            args.date_to
+
         )
 
     else:

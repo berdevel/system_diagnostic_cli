@@ -1,6 +1,7 @@
 import json
 import re
 
+from datetime import datetime
 from config.xid_catalog import XID_CATALOG
 from config.power_fault_catalog import POWER_FAULT_CATALOG
 from config.cpu_firmware_catalog import (
@@ -10,7 +11,14 @@ from config.cpu_firmware_catalog import (
 
 class RedfishParser:
 
-    def parse_critical_events(self, logfile):
+    def parse_critical_events(
+
+        self,
+        logfile,
+        date_from=None,
+        date_to=None
+
+    ):
 
         findings = []
 
@@ -26,6 +34,25 @@ class RedfishParser:
         events = data.get("Members", [])
 
         for event in events:
+
+            event_date = datetime.fromisoformat(
+                event["Created"].replace(
+                    "Z",
+                    "+00:00"
+                )
+            )
+
+            if date_from:
+
+                if event_date.date() < date_from:
+
+                    continue
+
+            if date_to:
+
+                if event_date.date() > date_to:
+
+                    continue
 
             if event.get("Severity") != "Critical":
                 continue

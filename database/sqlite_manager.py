@@ -321,18 +321,16 @@ class SQLiteManager:
 
         self.connection.commit()
 
-    def close(self):
-
-        self.connection.close()
-
     def get_serial_history(
+
         self,
-        serial_number
+        serial_number,
+        date_from=None,
+        date_to=None
+
     ):
 
-        self.cursor.execute(
-
-            """
+        query = """
 
             SELECT
 
@@ -346,21 +344,53 @@ class SQLiteManager:
 
             WHERE serial_number = ?
 
+        """
+
+        params = [serial_number]
+
+        if date_from:
+
+            query += """
+                AND DATE(analysis_date)
+                >= DATE(?)
+            """
+
+            params.append(
+                date_from
+            )
+
+        if date_to:
+
+            query += """
+                AND DATE(analysis_date)
+                <= DATE(?)
+            """
+
+            params.append(
+                date_to
+            )
+
+        query += """
             ORDER BY analysis_date DESC
+        """
 
-            """,
-
-            (serial_number,)
-
+        self.cursor.execute(
+            query,
+            params
         )
 
         return self.cursor.fetchall()
+
     
-    def get_top_root_causes(self):
+    def get_top_root_causes(
 
-        self.cursor.execute(
+        self,
+        date_from=None,
+        date_to=None
 
-            """
+    ):
+
+        query = """
 
             SELECT
 
@@ -370,17 +400,51 @@ class SQLiteManager:
 
             FROM analysis_history
 
+            WHERE 1=1
+
+        """
+
+        params = []
+
+        if date_from:
+
+            query += """
+                AND DATE(analysis_date)
+                >= DATE(?)
+            """
+
+            params.append(
+                date_from
+            )
+
+        if date_to:
+
+            query += """
+                AND DATE(analysis_date)
+                <= DATE(?)
+            """
+
+            params.append(
+                date_to
+            )
+
+        query += """
+
             GROUP BY root_cause_name
 
             ORDER BY COUNT(*) DESC
 
             LIMIT 10
 
-            """
+        """
 
+        self.cursor.execute(
+            query,
+            params
         )
 
         return self.cursor.fetchall()
+
     
     def get_top_components(self):
 
@@ -405,6 +469,7 @@ class SQLiteManager:
         )
 
         return self.cursor.fetchall()
+
     
     def get_top_serials(self):
 
@@ -431,3 +496,65 @@ class SQLiteManager:
         )
 
         return self.cursor.fetchall()
+
+    
+    def get_summary(
+
+        self,
+        date_from=None,
+        date_to=None
+
+    ):
+
+        query = """
+
+            SELECT
+
+                COUNT(*) AS analyses,
+
+                SUM(total_findings),
+
+                SUM(critical_events)
+
+            FROM analysis_history
+
+            WHERE 1=1
+
+        """
+
+        params = []
+
+        if date_from:
+
+            query += """
+                AND DATE(analysis_date)
+                >= DATE(?)
+            """
+
+            params.append(
+                date_from
+            )
+
+        if date_to:
+
+            query += """
+                AND DATE(analysis_date)
+                <= DATE(?)
+            """
+
+            params.append(
+                date_to
+            )
+
+        self.cursor.execute(
+            query,
+            params
+        )
+
+        return self.cursor.fetchone()
+
+    def close(self):
+
+        if self.connection:
+
+            self.connection.close()
