@@ -369,6 +369,10 @@
    'C:\\Users\\Bernardo '
    'PC\\Documents\\dev-projects\\system_diagnostic_cli\\config\\failure_catalog.py',
    'PYMODULE'),
+  ('config.location_mapper',
+   'C:\\Users\\Bernardo '
+   'PC\\Documents\\dev-projects\\system_diagnostic_cli\\config\\location_mapper.py',
+   'PYMODULE'),
   ('config.power_fault_catalog',
    'C:\\Users\\Bernardo '
    'PC\\Documents\\dev-projects\\system_diagnostic_cli\\config\\power_fault_catalog.py',

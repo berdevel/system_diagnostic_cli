@@ -7,6 +7,18 @@ from config.power_fault_catalog import POWER_FAULT_CATALOG
 from config.cpu_firmware_catalog import (
     CPU_FIRMWARE_CATALOG
 )
+from config.failure_catalog import (
+    FAILURE_CATALOG
+)
+from config.location_mapper import (
+
+    LOCATION_TO_BIANCA,
+
+    LOCATION_TO_COLDPLATE,
+
+    LOCATION_TO_CX8
+
+)
 
 
 class RedfishParser:
@@ -19,6 +31,20 @@ class RedfishParser:
         date_to=None
 
     ):
+
+        if isinstance(date_from, str):
+
+            date_from = datetime.strptime(
+                date_from,
+                "%Y-%m-%d"
+            ).date()
+
+        if isinstance(date_to, str):
+
+            date_to = datetime.strptime(
+                date_to,
+                "%Y-%m-%d"
+            ).date()
 
         findings = []
 
@@ -35,22 +61,46 @@ class RedfishParser:
 
         for event in events:
 
-            event_date = datetime.fromisoformat(
-                event["Created"].replace(
-                    "Z",
-                    "+00:00"
-                )
+            created = event.get(
+                "Created"
             )
 
-            if date_from:
+            event_date = None
 
-                if event_date.date() < date_from:
+            if created:
+
+                try:
+
+                    event_date = datetime.fromisoformat(
+                        created.replace(
+                            "Z",
+                            "+00:00"
+                        )
+                    )
+
+                except ValueError:
+
+                    event_date = None
+
+            invalid_timestamp = True
+
+            if event_date:
+
+                invalid_timestamp = (
+
+                    event_date.year < 2020
+
+                )
+
+            # Apply date filters only if timestamp looks valid
+
+            if not invalid_timestamp:
+
+                if date_from and event_date.date() < date_from:
 
                     continue
 
-            if date_to:
-
-                if event_date.date() > date_to:
+                if date_to and event_date.date() > date_to:
 
                     continue
 
@@ -98,6 +148,8 @@ class RedfishParser:
 
             message_upper = message.upper()
 
+            location = None
+
             for keyword, info in CPU_FIRMWARE_CATALOG.items():
 
                 if keyword in message_upper:
@@ -139,6 +191,16 @@ class RedfishParser:
                     recommendation = (
                         info["recommendation"]
                     )
+
+                    break
+
+            for fault, mapped_location in (
+                FAILURE_CATALOG.items()
+            ):
+
+                if fault.upper() in message_upper:
+
+                    location = mapped_location
 
                     break
                         
@@ -188,15 +250,31 @@ class RedfishParser:
 
             if bianca == "Unknown":
 
-                if "MOD_0" in message_upper:
+                bianca = (
 
-                    bianca = "Bianca#1"
+                    LOCATION_TO_BIANCA.get(
 
-                elif "MOD_1" in message_upper:
+                        location,
 
-                    bianca = "Bianca#2"
+                        "Unknown"
+
+                    )
+
+                )
 
             coldplate = "N/A"
+
+            catalog_coldplate = (
+
+                LOCATION_TO_COLDPLATE.get(
+                    location
+                )
+
+            )
+
+            if catalog_coldplate:
+
+                coldplate = catalog_coldplate
 
             thermal_event = (
 
@@ -276,6 +354,18 @@ class RedfishParser:
 
                 assembly = "Bianca#2 Assembly"
 
+            cx8 = (
+
+                LOCATION_TO_CX8.get(
+
+                    location,
+
+                    "N/A"
+
+                )
+
+            )
+
             findings.append({
 
                 "event_id": event.get(
@@ -298,6 +388,10 @@ class RedfishParser:
                 "cpu": cpu,
 
                 "bianca": bianca,
+
+                "location": location,
+
+                "cx8": cx8,
 
                 "assembly": assembly,
 
