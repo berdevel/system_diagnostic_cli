@@ -152,5 +152,16 @@ XID_CATALOG = {
         "severity": "Critical",
         "recommendation":
         "Check heatsink contact, TIM, airflow, fan speed, PCB temperature and thermal throttling history."
+    },
+
+    "149": {
+
+        "name": "NETIR Link Down",
+
+        "recommendation": (
+            "Inspect NVLink/NVSwitch connectivity, "
+            "GPU communication channels and fabric health."
+        )
+
     }
 }

@@ -1,15 +1,13 @@
-CATALOG_VERSION = "1.0.0"
-
-CATALOG_VERSION = "1.0.0"
+CATALOG_VERSION = "2.2.2"
 
 ROOT_CAUSE_CATALOG = [
 
     {
         "id": "RCA-001",
 
-        "version": "1.0",
+        "version": "2.0",
 
-        "priority": 80,
+        "priority": 120,
 
         "name": "GPU Thermal Event",
 
@@ -25,12 +23,19 @@ ROOT_CAUSE_CATALOG = [
         "recommendation":
 
         """
-        Verify thermal interface material (TIM).
-        Verify coldplate installation.
-        Check airflow restrictions.
-        Verify fan operation.
-        Review GPU temperature history.
-        If the conditions are anormal replace afected coldplate.
+        Verify coldplate installation and assembly condition.
+
+        Confirm all coldplate screws are properly installed and torqued according to manufacturing specifications.
+
+        Verify proper coldplate seating and thermal interface material (TIM) contact.
+
+        If any assembly issue is found, correct the installation and perform a complete validation and retest.
+
+        If the thermal fault is not reproducible after retest, return the unit to service.
+
+        If the same thermal fault reoccurs after installation correction and retest, replace the affected coldplate assembly.
+
+        Re-run validation after replacement.
         """
     },
 
@@ -67,21 +72,35 @@ ROOT_CAUSE_CATALOG = [
 
         "priority": 100,
 
-        "name": "PEX Switch 0.95V Rail Failure - Bianca 1",
+        "name": "Bianca#1 Power Distribution Fault",
 
         "confidence": "HIGH",
 
         "conditions": [
 
-            "PWR_FAIL_PEX_SW_0V95_MOD_0"
+            "PWR_FAIL_CPU_DVDD_0",
+            "PWR_FAIL_SOCVDD_0",
+            "PWR_FAIL_1V8_MOD_0",
+            "PWR_FAIL_1V2_MOD_0",
+            "PWR_FAIL_12V_0",
+            "PWR_FAIL_C2C_0"
 
         ],
 
         "recommendation":
 
         """
-        Replace Bianca#1 (Left).
-        Re-run validation after replacement.
+        Perform a complete Bus-Bar reseat procedure.
+
+        Verify Bus-Bar installation, torque and connector engagement.
+
+        Run full validation and retest.
+
+        If the fault is not reproducible after retest, return the unit to service.
+
+        If the same failure reoccurs after Bus-Bar reseat and retest, replace Bianca#1 (Left).
+
+        Re-run validation after Bianca replacement.
         """
     },
 
@@ -92,32 +111,46 @@ ROOT_CAUSE_CATALOG = [
 
         "priority": 100,
 
-        "name": "PEX Switch 0.95V Rail Failure - Bianca 2",
+        "name": "Bianca#2 Power Distribution Fault",
 
         "confidence": "HIGH",
 
         "conditions": [
 
-            "PWR_FAIL_PEX_SW_0V95_MOD_1"
+            "PWR_FAIL_12V_INPUT_VALID_1",
+            "PWR_FAIL_12V_INPUT_VALID_0",
+            "PWR_FAIL_CPU_DVDD_1",
+            "PWR_FAIL_SOCVDD_1",
+            "PWR_FAIL_1V8_MOD_1",
+            "PWR_FAIL_1V2_MOD_1"
 
         ],
 
         "recommendation":
 
         """
-        Replace Bianca#2 (Right).
-        Re-run validation after replacement.
+        Perform a complete Bus-Bar reseat procedure.
+
+        Verify Bus-Bar installation, torque and connector engagement.
+
+        Run full validation and retest.
+
+        If the fault is not reproducible after retest, return the unit to service.
+
+        If the same failure reoccurs after Bus-Bar reseat and retest, replace Bianca#2 (Right).
+
+        Re-run validation after Bianca replacement.
         """
     },
 
     {
         "id": "RCA-005",
 
-        "version": "1.0",
+        "version": "2.0",
 
-        "priority": 100,
+        "priority": 115,
 
-        "name": "CPUVDD Failure - Bianca 1",
+        "name": "CPUVDD Rail Failure - Bianca#1",
 
         "confidence": "HIGH",
 
@@ -130,19 +163,26 @@ ROOT_CAUSE_CATALOG = [
         "recommendation":
 
         """
-        Replace Bianca#1 (Left).
+        Perform complete Bus-Bar reseat.
+
         Verify power rail stability.
+
+        Execute validation and retest.
+
+        If the failure reoccurs after retest, replace Bianca#1 (Left).
+
+        Re-run validation after replacement.
         """
     },
 
     {
         "id": "RCA-006",
 
-        "version": "1.0",
+        "version": "2.0",
 
-        "priority": 100,
+        "priority": 115,
 
-        "name": "CPUVDD Failure - Bianca 2",
+        "name": "CPUVDD Rail Failure - Bianca#2",
 
         "confidence": "HIGH",
 
@@ -155,19 +195,26 @@ ROOT_CAUSE_CATALOG = [
         "recommendation":
 
         """
-        Replace Bianca#2 (Right).
+        Perform complete Bus-Bar reseat.
+
         Verify power rail stability.
+
+        Execute validation and retest.
+
+        If the failure reoccurs after retest, replace Bianca#2 (Right).
+
+        Re-run validation after replacement.
         """
     },
 
     {
         "id": "RCA-007",
 
-        "version": "1.0",
+        "version": "2.0",
 
-        "priority": 100,
+        "priority": 115,
 
-        "name": "GPU Core Power Failure",
+        "name": "GPU Core Power Rail Failure",
 
         "confidence": "HIGH",
 
@@ -180,19 +227,26 @@ ROOT_CAUSE_CATALOG = [
         "recommendation":
 
         """
-        Verify GPU power rail.
-        Replace affected Bianca if failure persists.
+        Perform complete Bus-Bar reseat.
+
+        Verify GPU power rail integrity.
+
+        Execute validation and retest.
+
+        If the same fault reoccurs, replace the affected Bianca assembly.
+
+        Re-run validation after replacement.
         """
     },
 
     {
         "id": "RCA-008",
 
-        "version": "1.0",
+        "version": "2.0",
 
-        "priority": 100,
+        "priority": 110,
 
-        "name": "FBVDDP Failure",
+        "name": "FBVDDP Power Rail Failure",
 
         "confidence": "HIGH",
 
@@ -205,9 +259,15 @@ ROOT_CAUSE_CATALOG = [
         "recommendation":
 
         """
-        Reseat affected cables.
-        Verify connectors.
-        Replace Bianca if failure persists.
+        Perform complete Bus-Bar reseat.
+
+        Verify rail stability and connectors.
+
+        Execute validation and retest.
+
+        If the same fault reoccurs, replace the affected Bianca assembly.
+
+        Re-run validation after replacement.
         """
     },
 
@@ -216,7 +276,7 @@ ROOT_CAUSE_CATALOG = [
 
         "version": "1.0",
 
-        "priority": 40,
+        "priority": 20,
 
         "name": "Power Sequencing Failure",
 
@@ -239,7 +299,7 @@ ROOT_CAUSE_CATALOG = [
     {
         "id": "RCA-010",
 
-        "version": "1.0",
+        "version": "2.0",
 
         "priority": 100,
 
@@ -256,8 +316,154 @@ ROOT_CAUSE_CATALOG = [
         "recommendation":
 
         """
-        Replace affected CX8 card.
-        Re-run validation.
+        Perform complete CX8 reseat procedure.
+
+        Verify CX8 card installation, connector engagement and retention mechanism.
+
+        Execute full validation and retest.
+
+        If the fault is not reproducible after retest, return the unit to service.
+
+        If the same failure reoccurs after CX8 reseat and retest, replace the affected CX8 card.
+
+        Re-run validation after replacement.
+        """
+    },
+
+    {
+        "id": "RCA-011",
+
+        "version": "2.0",
+
+        "name": "GPU Thermal Interrupt",
+
+        "priority": 130,
+
+        "confidence": "HIGH",
+
+        "conditions": [
+
+            "THERM_OVERT_INT"
+
+        ],
+
+        "recommendation":
+
+        """
+        Verify coldplate installation and mechanical assembly.
+
+        Confirm all coldplate screws are properly installed and torqued.
+
+        Verify proper coldplate contact and TIM coverage.
+
+        If any installation issue is found, correct the assembly and perform a complete validation and retest.
+
+        If the issue is not reproducible after retest, return the unit to service.
+
+        If the thermal interrupt reoccurs after installation correction and retest, replace the affected coldplate assembly.
+
+        Re-run validation after replacement.
+        """
+    },
+
+    {
+        "id": "RCA-012",
+
+        "version": "2.0",
+
+        "name": "GPU Thermal Protection Triggered",
+
+        "priority": 125,
+
+        "confidence": "HIGH",
+
+        "conditions": [
+
+            "XID_163",
+            "PSHC disengaged due to thermal event"
+
+        ],
+
+        "recommendation":
+
+        """
+        Inspect coldplate installation before replacement.
+
+        Verify coldplate seating, screw torque and overall mechanical assembly.
+
+        Verify TIM condition and proper contact pressure.
+
+        If any assembly issue is identified, correct the installation and execute full validation and retest.
+
+        If the fault is not reproducible after retest, return the unit to service.
+
+        If the same thermal protection event reoccurs after installation correction and retest, replace the affected coldplate assembly.
+
+        Re-run validation after replacement.
+        """
+    },
+
+    {
+        "id": "RCA-013",
+
+        "version": "1.0",
+
+        "priority": 115,
+
+        "name": "Bianca#1 - PEX Switch 0.95V Rail Failure",
+
+        "confidence": "HIGH",
+
+        "conditions": [
+
+            "PWR_FAIL_PEX_SW_0V95_MOD_0"
+
+        ],
+
+        "recommendation":
+
+        """
+        Perform complete Bus-Bar reseat.
+
+        Verify PEX rail stability.
+
+        Execute validation and retest.
+
+        If the same failure reoccurs after retest, replace Bianca#1 (Left) assembly.
+
+        Re-run validation after replacement.
+        """
+    },
+
+    {
+        "id": "RCA-014",
+
+        "version": "1.0",
+
+        "priority": 115,
+
+        "name": "Bianca#2 - PEX Switch 0.95V Rail Failure",
+
+        "confidence": "HIGH",
+
+        "conditions": [
+
+            "PWR_FAIL_PEX_SW_0V95_MOD_1"
+
+        ],
+
+        "recommendation":
+
+        """
+        Perform complete Bus-Bar reseat.
+
+        Verify PEX rail stability.
+
+        Execute validation and retest.
+
+        If the same failure reoccurs after retest, replace Bianca#2 (Right) assembly.
+
+        Re-run validation after replacement.
         """
     }
 

@@ -1,7 +1,23 @@
 FOXCONN FAILURE ANALYZER
 NVIDIA HGX / BIANCA DIAGNOSTIC PLATFORM
 
-VERSION 2.2
+VERSION 2.2.2
+
+==================================================
+
+WHAT'S NEW IN V2.2.2
+
+- Improved thermal event correlation
+- Added GPU Thermal Interrupt RCA
+- Added GPU Thermal Protection RCA
+- Added CX8 correlation and RCA workflow
+- Added Location visibility in Critical Events
+- Added CX8 visibility in Critical Events
+- Added RCA Evidence section
+- Added Timestamp Validation Warnings
+- Added Bus-Bar reseat workflow before Bianca replacement
+- Added CX8 reseat workflow before replacement
+- Added Coldplate verification workflow before replacement
 
 ==================================================
 
@@ -22,9 +38,13 @@ FEATURES
 - Coldplate Failure Detection
 - CX8 Failure Detection
 - NVIDIA XID Detection
+- GPU Thermal Event Detection
+- GPU Thermal Interrupt Detection
+- GPU Thermal Protection Detection
 - CPU Firmware Event Analysis
 - Redfish Critical Event Analysis
 - Root Cause Analysis (RCA)
+- RCA Evidence Correlation
 - Historical Database
 - Serial Reports
 - Historical Statistics
@@ -141,10 +161,47 @@ Generated:
 
 - Markdown Report (.md)
 - HTML Report (.html)
+- RCA Evidence
+- Component Correlation
+- Coldplate Correlation
+- CX8 Correlation
+- Location Correlation
+- Timestamp Validation Warnings
 
 Location:
 
 reports\
+
+==================================================
+
+REPAIR WORKFLOWS
+
+THERMAL FAILURES
+
+1. Verify coldplate installation.
+2. Verify coldplate screw torque.
+3. Verify TIM condition and contact pressure.
+4. Correct assembly issues if found.
+5. Execute validation and retest.
+6. Replace the affected coldplate only if the issue reoccurs.
+
+--------------------------------------------------
+
+CX8 FAILURES
+
+1. Perform complete CX8 reseat.
+2. Verify connector engagement.
+3. Execute validation and retest.
+4. Replace the affected CX8 only if the issue reoccurs.
+
+--------------------------------------------------
+
+BIANCA POWER FAULTS
+
+1. Perform complete Bus-Bar reseat.
+2. Verify connector engagement and torque.
+3. Execute validation and retest.
+4. Replace the affected Bianca only if the issue reoccurs.
 
 ==================================================
 
@@ -165,11 +222,12 @@ Stores:
 
 SUPPORTED COMPONENTS
 
-- Bianca 1
-- Bianca 2
+- Bianca#1 (Left)
+- Bianca#2 (Right)
 - Left Coldplate
 - Right Coldplate
-- CX8
+- Left CX8
+- Right CX8
 - GPUs
 - CPUs
 

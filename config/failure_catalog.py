@@ -64,6 +64,7 @@ FAILURE_CATALOG = {
     # LEFT COLDPLATE
 
     "pwr_fail_gpu_therm_overt{0x2}": "Left Coldplate",
+    "pwr_fail_gpu_therm_overt{0x1}": "Left Coldplate",
 
     # RIGHT COLDPLATE
 

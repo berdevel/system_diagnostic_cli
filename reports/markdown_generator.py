@@ -326,7 +326,27 @@ class MarkdownGenerator:
                         "Event IDs:\n\n"
                     )
 
-                    for item in items:
+                    sorted_items = sorted(
+
+                        items,
+
+                        key=lambda x: (
+
+                            int(
+                                x["event_id"]
+                            )
+
+                            if str(
+                                x["event_id"]
+                            ).isdigit()
+
+                            else 999999
+
+                        )
+
+                    )
+
+                    for item in sorted_items:
 
                         file.write(
                             f"- {item['event_id']}\n"
@@ -385,6 +405,24 @@ class MarkdownGenerator:
                             f"{first_item['coldplate']}\n\n"
                         )
 
+                    if first_item.get(
+                        "cx8"
+                    ) not in [
+
+                        "Unknown",
+                        "N/A",
+                        None,
+                        ""
+
+                    ]:
+
+                        file.write(
+
+                            f"CX8: "
+                            f"{first_item['cx8']}\n\n"
+
+                        )
+
                     file.write(
                         f"Recommendation: "
                         f"{first_item.get('action','N/A')}\n\n"
@@ -393,8 +431,20 @@ class MarkdownGenerator:
             else:
 
                 file.write(
-                    "No Bianca failures detected.\n\n"
+
+                    "No repairable component "
+                    "was identified.\n\n"
+
                 )
+
+                file.write(
+
+                    "Critical events may exist "
+                    "but could not be mapped "
+                    "to a replaceable assembly.\n\n"
+
+                )
+
 
             # ==========================================
             # NVIDIA CRITICAL EVENTS
@@ -404,9 +454,38 @@ class MarkdownGenerator:
                 "\n---\n\n"
             )
 
+            legacy_timestamps = any(
+
+                event.get(
+                    "invalid_timestamp",
+                    False
+                )
+
+                for event in (
+
+                    critical_findings
+
+                    or
+
+                    []
+
+                )
+
+            )
+
             file.write(
                 "# NVIDIA CRITICAL EVENTS ANALYSIS\n\n"
             )
+
+            if legacy_timestamps:
+
+                file.write(
+
+                    "WARNING: Legacy or invalid "
+                    "BMC timestamps detected.\n\n"
+
+                )
+
 
             if critical_findings:
 
@@ -484,11 +563,55 @@ class MarkdownGenerator:
                         f"{event.get('bianca', 'Unknown')}\n"
                     )
 
+                    if (
+
+                        event.get("location") not in [
+
+                            None,
+                            "",
+                            "Unknown",
+                            "N/A"
+
+                        ]
+
+                        and
+
+                        event.get("coldplate") == "N/A"
+
+                        and
+
+                        event.get("cx8") == "N/A"
+
+                    ):
+
+                        file.write(
+
+                            f"- Location       : "
+                            f"{event.get('location')}\n"
+
+                        )
+
                     if event.get("coldplate") != "N/A":
 
                         file.write(
                             f"- Coldplate      : "
                             f"{event.get('coldplate')}\n"
+                        )
+
+                    if event.get("cx8") not in [
+
+                        None,
+                        "",
+                        "Unknown",
+                        "N/A"
+
+                    ]:
+
+                        file.write(
+
+                            f"- CX8            : "
+                            f"{event.get('cx8')}\n"
+
                         )
 
                     if event.get("xid") != "N/A":
@@ -614,6 +737,27 @@ class MarkdownGenerator:
 
                 })
 
+                affected_cx8 = sorted({
+
+                    event.get(
+                        "cx8"
+                    )
+
+                    for event in findings
+
+                    if event.get(
+                        "cx8"
+                    ) not in [
+
+                        "Unknown",
+                        "N/A",
+                        None,
+                        ""
+
+                    ]
+
+                })
+
                 affected_coldplates = sorted({
 
                     event.get(
@@ -636,19 +780,26 @@ class MarkdownGenerator:
 
                 })
 
-                supporting_events = [
+                supporting_events = sorted(
 
-                    item.get(
-                        "event_id"
-                    )
+                    {
 
-                    for item in findings
+                        item.get(
+                            "event_id"
+                        )
 
-                    if item.get(
-                        "failure"
-                    ) == "pwr_fail_pex_sw_0v95_mod_1"
+                        for item in findings
 
-                ]
+                        if item.get(
+                            "event_id"
+                        )
+
+                    },
+
+                    key=int
+
+                )
+
 
                 if supporting_events:
 
@@ -728,6 +879,20 @@ class MarkdownGenerator:
                     file.write(
                         "- Review temperature history\n\n"
                     )
+
+                if affected_cx8:
+
+                    file.write(
+                        "Affected CX8 Modules:\n\n"
+                    )
+
+                    for cx8 in affected_cx8:
+
+                        file.write(
+                            f"- {cx8} CX8\n"
+                        )
+
+                    file.write("\n")
 
                 secondary = (
                     root_causes.get(

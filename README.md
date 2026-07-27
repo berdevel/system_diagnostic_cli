@@ -10,7 +10,22 @@ The tool parses diagnostic logs and Redfish event data, identifies hardware fail
 
 ## Version
 
-**FoxconnFailureAnalyzer v2.2**
+**FoxconnFailureAnalyzer v2.2.2**
+
+---
+
+### What's New in v2.2.2
+
+- Improved thermal event correlation.
+- Added GPU Thermal Interrupt RCA.
+- Added GPU Thermal Protection RCA.
+- Added CX8 visibility in Critical Events.
+- Added Location visibility in Critical Events.
+- Improved RCA evidence generation.
+- Added timestamp validation warnings.
+- Added Bus-Bar reseat workflow before Bianca replacement.
+- Added CX8 reseat workflow before replacement.
+- Added coldplate verification workflow before replacement.
 
 ---
 
@@ -38,6 +53,10 @@ The tool parses diagnostic logs and Redfish event data, identifies hardware fail
 - Secondary Findings Detection
 - Corrective Action Recommendations
 - Recurring Failure Detection
+- Thermal Interrupt Detection
+- Thermal Protection Correlation
+- Power Distribution Fault Analysis
+- CX8 Root Cause Analysis
 
 ### Reporting
 
@@ -263,6 +282,10 @@ Generated Reports Include:
 - RCA Evidence
 - Corrective Actions
 - Secondary Findings
+- Location Correlation
+- Coldplate Correlation
+- CX8 Correlation
+- Timestamp Validation Warnings
 
 ---
 
@@ -328,6 +351,8 @@ diagnostics.db
 
 - GPU Thermal Over Temperature
 - GPU Thermal Warning Events
+- GPU Thermal Interrupt Events (THERM_OVERT_INT)
+- GPU Thermal Protection Events (XID 163)
 - Thermal Shutdown Events
 
 ### CPU Firmware Events
@@ -340,6 +365,7 @@ diagnostics.db
 
 - XID 163
 - XID 154
+- XID 149
 - XID 79
 - XID 48
 - XID 31
@@ -358,6 +384,33 @@ diagnostics.db
 - NVIDIA Diagnostics
 - Root Cause Analysis
 - Automation
+
+---
+
+## Troubleshooting Workflows
+
+### Thermal Failures
+
+1. Verify coldplate installation.
+2. Verify coldplate screw torque.
+3. Verify TIM condition and coldplate contact.
+4. Correct installation issues if identified.
+5. Execute validation and retest.
+6. Replace the affected coldplate only if the failure reoccurs after retest.
+
+### CX8 / IO Mezzanine Failures
+
+1. Perform complete CX8 reseat.
+2. Verify connector engagement and retention mechanism.
+3. Execute validation and retest.
+4. Replace the affected CX8 only if the failure reoccurs after retest.
+
+### Bianca Power Distribution Faults
+
+1. Perform complete Bus-Bar reseat.
+2. Verify connector engagement and torque.
+3. Execute validation and retest.
+4. Replace the affected Bianca only if the failure reoccurs after retest.
 
 ---
 

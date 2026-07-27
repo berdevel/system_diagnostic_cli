@@ -203,7 +203,51 @@ class RedfishParser:
                     location = mapped_location
 
                     break
-                        
+
+            if "THERM_OVERT_INT" in message_upper:
+
+                failure = (
+                    "GPU Thermal Interrupt"
+                )
+
+                recommendation = (
+
+                    "Inspect thermal interface "
+                    "material, coldplate condition "
+                    "and airflow."
+
+                )
+
+            if gpu == "Unknown":
+
+                if (
+                    "PWR_FAIL_GPU_THERM_OVERT{0X1}"
+                    in message_upper
+                ):
+
+                    gpu = "GPU_0"
+
+                elif (
+                    "PWR_FAIL_GPU_THERM_OVERT{0X2}"
+                    in message_upper
+                ):
+
+                    gpu = "GPU_1"
+
+                elif (
+                    "PWR_FAIL_GPU_THERM_OVERT{0X4}"
+                    in message_upper
+                ):
+
+                    gpu = "GPU_2"
+
+                elif (
+                    "PWR_FAIL_GPU_THERM_OVERT{0X8}"
+                    in message_upper
+                ):
+
+                    gpu = "GPU_3"
+                                    
             # ==========================================
             # Infer GPU from Failure Description
             # ==========================================
@@ -275,6 +319,33 @@ class RedfishParser:
             if catalog_coldplate:
 
                 coldplate = catalog_coldplate
+
+            if (
+                "PWR_FAIL_GPU_THERM_OVERT"
+                in message_upper
+            ):
+
+                if gpu in [
+
+                    "GPU_0",
+                    "GPU_1",
+                    "GPU_2",
+                    "GPU_3"
+
+                ]:
+
+                    failure = (
+                        f"{gpu} "
+                        f"Thermal Over Temperature"
+                    )
+
+                    recommendation = (
+
+                        f"{gpu} overheating "
+                        f"detected. Replace "
+                        f"coldplate and inspect TIM."
+
+                    )
 
             thermal_event = (
 
@@ -377,6 +448,8 @@ class RedfishParser:
                     "Created",
                     "Unknown"
                 ),
+
+                "invalid_timestamp": invalid_timestamp,
 
                 "severity": event.get(
                     "Severity",
