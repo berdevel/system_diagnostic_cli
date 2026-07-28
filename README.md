@@ -10,11 +10,11 @@ The tool parses diagnostic logs and Redfish event data, identifies hardware fail
 
 ## Version
 
-**FoxconnFailureAnalyzer v2.2.2**
+**FoxconnFailureAnalyzer v2.2.3**
 
 ---
 
-### What's New in v2.2.2
+### What's New in v2.2.3
 
 - Improved thermal event correlation.
 - Added GPU Thermal Interrupt RCA.

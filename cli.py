@@ -81,7 +81,7 @@ class DiagnosticTool:
 
         print(
             Fore.CYAN +
-            "\n========== FOXCONN FAILURE ANALYZER v2.2.2 =========="
+            "\n========== FOXCONN FAILURE ANALYZER v2.2.3 =========="
         )
 
         print()
@@ -260,16 +260,38 @@ class DiagnosticTool:
             )
 
             bianca1_count = sum(
+
                 1
+
                 for item in findings
-                if item["bianca"] == "Bianca 1"
+
+                if item.get(
+                    "bianca"
+                ) in [
+
+                    "Bianca#1",
+                    "Bianca 1"
+
+                ]
+
             )
 
             bianca2_count = sum(
+
                 1
+
                 for item in findings
-                if item["bianca"] == "Bianca 2"
-            )
+
+                if item.get(
+                    "bianca"
+                ) in [
+
+                    "Bianca#2",
+                    "Bianca 2"
+
+                ]
+
+)
 
             coldplate_count = sum(
 
@@ -394,21 +416,58 @@ class DiagnosticTool:
 
                 print(
                     Fore.YELLOW +
-                    f"Confidence         : "
-                    f"{primary['confidence']}"
+                    f"Rule ID            : "
+                    f"{primary['id']}"
                 )
 
                 print()
 
                 print(
-                    Fore.GREEN +
-                    "Recommended Action :"
+                    Fore.YELLOW +
+                    f"Confidence         : "
+                    f"{primary['confidence']}"
                 )
 
-                print(
-                    Fore.GREEN +
-                    primary["recommendation"]
+                recommendation = (
+
+                    primary.get(
+                        "recommendation",
+                        ""
+                    )
+                    .strip()
+
                 )
+
+                for line in recommendation.splitlines():
+
+                    if line.strip():
+
+                        print(
+                            Fore.GREEN +
+                            line.strip()
+                        )
+
+            secondary = root_causes.get(
+                "secondary",
+                []
+            )
+
+            if secondary:
+
+                print()
+
+                print(
+                    Fore.MAGENTA +
+                    "Additional RCA Matches :"
+                )
+
+                for rule in secondary[:5]:
+
+                    print(
+                        Fore.MAGENTA +
+                        f"- {rule['id']} "
+                        f"({rule['name']})"
+                    )
 
             if thermal_findings:
 

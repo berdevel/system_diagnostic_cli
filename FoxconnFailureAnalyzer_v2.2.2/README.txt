@@ -1,11 +1,11 @@
 FOXCONN FAILURE ANALYZER
 NVIDIA HGX / BIANCA DIAGNOSTIC PLATFORM
 
-VERSION 2.2.2
+VERSION 2.2.3
 
 ==================================================
 
-WHAT'S NEW IN V2.2.2
+WHAT'S NEW IN V2.2.3
 
 - Improved thermal event correlation
 - Added GPU Thermal Interrupt RCA

@@ -379,8 +379,7 @@ ROOT_CAUSE_CATALOG = [
 
         "conditions": [
 
-            "XID_163",
-            "PSHC disengaged due to thermal event"
+            "XID_163"
 
         ],
 

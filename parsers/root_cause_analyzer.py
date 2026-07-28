@@ -14,11 +14,24 @@ class RootCauseAnalyzer:
 
         evidence = set()
 
+        # ==========================
+        # Findings
+        # ==========================
+
         for finding in findings:
 
             evidence.add(
-                finding["failure"].upper()
+
+                finding.get(
+                    "failure",
+                    ""
+                ).upper()
+
             )
+
+        # ==========================
+        # Critical Events
+        # ==========================
 
         for event in critical_events:
 
@@ -33,40 +46,63 @@ class RootCauseAnalyzer:
                     f"XID_{xid}"
                 )
 
+            failure = (
+
+                event.get(
+                    "failure",
+                    ""
+                ).upper()
+
+            )
+
+            evidence.add(
+                failure
+            )
+
             description = (
+
                 event.get(
                     "description",
                     ""
                 ).upper()
+
             )
 
-            if "PWR_FAIL_GPU_THERM_OVERT" in description:
-
-                evidence.add(
-                    "PWR_FAIL_GPU_THERM_OVERT"
-                )
-
-            if "PS_RUN_PWR_FAULT" in description:
-
-                evidence.add(
-                    "PS_RUN_PWR_FAULT"
-                )
+            evidence.add(
+                description
+            )
 
         matches = []
 
+        # ==========================
+        # Rule Evaluation
+        # ==========================
+
         for rule in ROOT_CAUSE_CATALOG:
 
-            if all(
+            matched = True
 
-                condition in evidence
+            for condition in rule["conditions"]:
 
-                for condition in rule[
-                    "conditions"
-                ]
+                condition_found = any(
 
-            ):
+                    condition.upper() in token
 
-                matches.append(rule)
+                    for token in evidence
+
+                )
+
+                if not condition_found:
+
+                    matched = False
+
+                    break
+
+            if matched:
+
+                matches.append(
+                    rule
+                )
 
         matches.sort(
 
