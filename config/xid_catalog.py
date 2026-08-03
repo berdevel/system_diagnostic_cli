@@ -1,15 +1,15 @@
 XID_CATALOG = {
 
     "8": {
-        "name": "GPU stopped processing",
+        "name": "GPU Stopped Processing",
         "severity": "Error",
         "recommendation":
-        "Restart application and verify GPU health."
+        "Restart application. If issue persists, collect diagnostic data and escalate."
     },
 
     "11": {
         "name": "Invalid or corrupted push buffer stream",
-        "severity": "Error",
+        "severity": "Critical",
         "recommendation":
         "Check CUDA application and driver."
     },
@@ -25,7 +25,14 @@ XID_CATALOG = {
         "name": "GPU Memory Page Fault",
         "severity": "Critical",
         "recommendation":
-        "Check memory accesses and CUDA code."
+        "Investigate CUDA application memory accesses. Run Compute Sanitizer or cuda-gdb."
+    },
+
+    "32": {
+        "name": "PCIe / DMA Communication Fault",
+        "severity": "Critical",
+        "recommendation":
+        "Inspect PCIe communication path and review GPU connectivity."
     },
 
     "43": {
@@ -46,7 +53,7 @@ XID_CATALOG = {
         "name": "Double Bit ECC Error",
         "severity": "Critical",
         "recommendation":
-        "Reset GPU. Consider replacement if recurring."
+        "Perform GPU reset. Review ECC counters. Execute field diagnostics."
     },
 
     "54": {
@@ -95,28 +102,28 @@ XID_CATALOG = {
         "name": "NVLink Error",
         "severity": "Critical",
         "recommendation":
-        "Check NVLink connectivity and topology."
+        "Inspect NVLink connectivity and review GPU-to-GPU communication errors."
     },
 
     "79": {
-        "name": "GPU Fallen Off The Bus",
+        "name": "GPU Fell Off Bus",
         "severity": "Critical",
         "recommendation":
-        "Power cycle system and evaluate for RMA."
+        "Inspect PCIe connectivity and GPU hardware integrity."
     },
 
     "94": {
-        "name": "Contained ECC Error",
-        "severity": "Warning",
+        "name": "Contained Memory Error",
+        "severity": "Critical",
         "recommendation":
-        "Restart affected workload."
+        "Restart affected application and review GPU memory health."
     },
 
     "95": {
-        "name": "Uncontained ECC Error",
+        "name": "Uncontained Memory Error",
         "severity": "Critical",
         "recommendation":
-        "Reset GPU and investigate hardware."
+        "Reset GPU and execute memory diagnostics."
     },
 
     "110": {
@@ -130,14 +137,21 @@ XID_CATALOG = {
         "name": "GSP RPC Timeout",
         "severity": "Critical",
         "recommendation":
-        "Update firmware and GPU driver."
+        "Reset GPU and investigate GSP firmware behavior."
     },
 
     "120": {
         "name": "GSP Error",
         "severity": "Critical",
         "recommendation":
-        "Collect logs and evaluate firmware."
+        "Reset GPU and collect firmware diagnostics."
+    },
+
+    "149": {
+        "name": "NVLink NETIR Error",
+        "severity": "Critical",
+        "recommendation":
+        "Inspect NVLink communication path and reset GPU if required."
     },
 
     "154": {
@@ -148,20 +162,9 @@ XID_CATALOG = {
     },
 
     "163": {
-        "name": "PSHC disengaged due to thermal event",
+        "name": "Power Smoothing Disabled Due To Thermal Event",
         "severity": "Critical",
         "recommendation":
-        "Check heatsink contact, TIM, airflow, fan speed, PCB temperature and thermal throttling history."
-    },
-
-    "149": {
-
-        "name": "NETIR Link Down",
-
-        "recommendation": (
-            "Inspect NVLink/NVSwitch connectivity, "
-            "GPU communication channels and fabric health."
-        )
-
+        "Inspect thermal subsystem and resolve thermal condition before retest."
     }
 }

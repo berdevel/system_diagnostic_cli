@@ -532,10 +532,26 @@ class MarkdownGenerator:
                         f"{event.get('event_id', 'Unknown')}\n"
                     )
 
+                    event_date = event.get(
+                        "created",
+                        "Unknown"
+                    )
+
+                    if event.get(
+                        "invalid_timestamp",
+                        False
+                    ):
+
+                        event_date = (
+                            "Legacy / Invalid "
+                            "BMC Timestamp"
+                        )
+
                     file.write(
                         f"- Date           : "
-                        f"{event.get('created', 'Unknown')}\n"
+                        f"{event_date}\n"
                     )
+
 
                     file.write(
                         f"- Severity       : "
@@ -721,6 +737,14 @@ class MarkdownGenerator:
                     event.get(
                         "bianca"
                     )
+                    .replace(
+                        "Bianca 1",
+                        "Bianca#1"
+                    )
+                    .replace(
+                        "Bianca 2",
+                        "Bianca#2"
+                    )
 
                     for event in findings
 
@@ -780,25 +804,50 @@ class MarkdownGenerator:
 
                 })
 
-                supporting_events = sorted(
+                primary_conditions = []
 
-                    {
+                if root_causes and root_causes.get(
+                    "primary"
+                ):
+
+                    primary_conditions = (
+
+                        root_causes["primary"]
+                        .get(
+                            "conditions",
+                            []
+                        )
+
+                    )
+
+                supporting_events = []
+
+                for item in findings:
+
+                    failure = (
 
                         item.get(
-                            "event_id"
+                            "failure",
+                            ""
+                        ).upper()
+
+                    )
+
+                    if any(
+
+                        condition.upper() in failure
+
+                        for condition in primary_conditions
+
+                    ):
+
+                        supporting_events.append(
+
+                            item.get(
+                                "event_id"
+                            )
+
                         )
-
-                        for item in findings
-
-                        if item.get(
-                            "event_id"
-                        )
-
-                    },
-
-                    key=int
-
-                )
 
 
                 if supporting_events:

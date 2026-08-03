@@ -23,45 +23,28 @@ ROOT_CAUSE_CATALOG = [
         "recommendation":
 
         """
-        Verify coldplate installation and assembly condition.
+        Verify coldplate installation and mechanical assembly.
 
-        Confirm all coldplate screws are properly installed and torqued according to manufacturing specifications.
+        Confirm all coldplate screws are properly installed and torqued.
 
-        Verify proper coldplate seating and thermal interface material (TIM) contact.
+        Verify proper coldplate contact and TIM coverage.
 
-        If any assembly issue is found, correct the installation and perform a complete validation and retest.
+        Correct any installation issue identified.
 
-        If the thermal fault is not reproducible after retest, return the unit to service.
+        Perform HMC Log Clear.
 
-        If the same thermal fault reoccurs after installation correction and retest, replace the affected coldplate assembly.
+        Execute validation and retest.
 
-        Re-run validation after replacement.
-        """
-    },
+        If the issue is not reproducible after retest, return the unit to service.
 
-    {
-        "id": "RCA-002",
+        If the thermal fault reoccurs after installation correction and retest, replace the affected coldplate assembly.
 
-        "version": "1.0",
+        Perform HMC Log Clear again.
 
-        "priority": 60,
+        Execute final validation after replacement.
 
-        "name": "GPU Thermal Degradation",
-
-        "confidence": "MEDIUM",
-
-        "conditions": [
-
-            "XID_163"
-
-        ],
-
-        "recommendation":
-
-        """
-        Review thermal performance.
-        Check TIM condition.
-        Verify heatsink pressure.
+        IMPORTANT:
+        Always perform HMC Log Clear before every retest and before collecting final validation results.
         """
     },
 

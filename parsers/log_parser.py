@@ -3,8 +3,8 @@ import re
 from config.failure_catalog import FAILURE_CATALOG
 
 BIANCA_MAPPING = {
-    "Module 0": "Bianca 1",
-    "Module 1": "Bianca 2"
+    "Module 0": "Bianca#1",
+    "Module 1": "Bianca#2"
 }
 
 

@@ -1,21 +1,13 @@
 POWER_FAULT_CATALOG = {
 
-    "PWR_FAIL_FBVDDP_1": {
-
-        "failure":
-        "Bianca#1 Power Failure (FBVDDP)",
-
-        "recommendation":
-        "Replace Bianca#1 (Left Bianca)."
-    },
-
     "PWR_FAIL_PEX_SW_0V95_MOD_0": {
 
         "failure":
         "Bianca#1 Power Failure (PEX_SW_0V95)",
 
         "recommendation":
-        "Replace Bianca#1 (Left Bianca)."
+        "Verify PEX rail stability, perform Bus-Bar reseat and retest. "
+        "Replace Bianca#1 only if the issue reoccurs."
     },
 
     "PWR_FAIL_GPU_THERM_OVERT{0x2}": {
@@ -24,7 +16,8 @@ POWER_FAULT_CATALOG = {
         "GPU_1 Thermal Over Temperature",
 
         "recommendation":
-        "GPU_1 overheating detected on Bianca#1. Replace coldplate and thermal interface material (TIM)."
+        "GPU_1 overheating detected on Bianca#1. Inspect left coldplate, verify screw torque and TIM condition. Perform retest. "
+        "Replace left coldplate only if the issue reoccurs."
     },
 
     "PWR_FAIL_GPU_THERM_OVERT{0x4}": {
@@ -33,7 +26,8 @@ POWER_FAULT_CATALOG = {
         "GPU_2 Thermal Over Temperature",
 
         "recommendation":
-        "GPU_2 overheating detected on Bianca#2. Replace coldplate and thermal interface material (TIM)."
+        "GPU_2 overheating detected on Bianca#2. Inspect right coldplate, verify screw torque and TIM condition. Perform retest. "
+        "Replace right coldplate only if the issue reoccurs."
     },
 
     "PWR_FAIL_GPU_THERM_OVERT{0x8}": {
@@ -42,7 +36,8 @@ POWER_FAULT_CATALOG = {
         "GPU_3 Thermal Over Temperature",
 
         "recommendation":
-        "GPU_3 overheating detected on Bianca#2. Replace coldplate and thermal interface material (TIM)."
+        "GPU_3 overheating detected on Bianca#2. Inspect right coldplate, verify screw torque and TIM condition. Perform retest. "
+        "Replace right coldplate only if the issue reoccurs."
     },
 
     "PWR_FAIL_3V3_ALWAYS_ON{0x0}": {
@@ -51,6 +46,7 @@ POWER_FAULT_CATALOG = {
         "Bianca Board Failure",
 
         "recommendation":
+        "Perform Bus-Bar reseat, verify connector engagement and torque, then retest."
         "Inspect and replace the affected Bianca board."
     },
 
@@ -60,16 +56,18 @@ POWER_FAULT_CATALOG = {
         "3V3 Always-On Rail Failure",
 
         "recommendation":
-        "Replace Left Bianca."
+        "Perform Bus-Bar reseat, verify connector engagement and torque, then retest."
+        "Replace Bianca#1 only if the issue reoccurs."
     },
 
-    "PWR_FAIL_FBVDDP_0{0x1}": {
+    "PWR_FAIL_FBVDDP_0": {
 
         "failure":
-        "FBVDDP Failure",
+        "Bianca#1 Power Failure (FBVDDP)",
 
         "recommendation":
-        "Reseat and reroute cables first. If the issue persists, replace the primary Bianca card."
+        "Verify memory power rail integrity, perform Bus-Bar reseat and retest. "
+        "Replace Bianca#1 only if the issue reoccurs."
     },
 
     "PS_RUN_PWR_FAULT": {
@@ -78,7 +76,7 @@ POWER_FAULT_CATALOG = {
         "Power Sequencing Failure",
 
         "recommendation":
-        "Review associated PWR_FAIL codes to determine the root cause."
+        "Review associated PWR_FAIL events and validate the identified component before retest."
     },
 
     "PWR_FAIL_1V2_MOD_0": {
@@ -87,7 +85,8 @@ POWER_FAULT_CATALOG = {
         "1V2 Rail Failure",
 
         "recommendation":
-        "Replace Left Bianca."
+        "Verify 1V2 rail stability, perform Bus-Bar reseat and retest. "
+        "Replace Bianca#1 only if the issue reoccurs."
     },
 
     "PWR_FAIL_1V2_MOD_1": {
@@ -96,16 +95,18 @@ POWER_FAULT_CATALOG = {
         "1V2 Rail Failure",
 
         "recommendation":
-        "Replace Right Bianca."
+        "Verify 1V2 rail stability, perform Bus-Bar reseat and retest. "
+        "Replace Bianca#2 only if the issue reoccurs."
     },
 
-    "PWR_FAIL_FBVDDP_1{0x1}": {
+    "PWR_FAIL_FBVDDP_1": {
 
         "failure":
-        "FBVDDP Failure",
+        "Bianca#2 Power Failure (FBVDDP)",
 
         "recommendation":
-        "Replace Right Bianca."
+        "Verify memory power rail integrity, perform Bus-Bar reseat and retest. "
+        "Replace Bianca#2 only if the issue reoccurs."
     },
 
     "PWR_FAIL_NVVDD_GPU_0": {
@@ -114,7 +115,8 @@ POWER_FAULT_CATALOG = {
         "GPU Core Power Failure",
 
         "recommendation":
-        "Replace Left Bianca."
+        "Perform Bus-Bar reseat, verify connector engagement and torque, then retest."
+        "Replace Bianca#1 only if the issue reoccurs."
     },
 
     "PWR_FAIL_NVVDD_GPU_1": {
@@ -123,7 +125,8 @@ POWER_FAULT_CATALOG = {
         "GPU Core Power Failure",
 
         "recommendation":
-        "Replace Left Bianca."
+        "Perform Bus-Bar reseat, verify connector engagement and torque, then retest."
+        "Replace Bianca#1 only if the issue reoccurs."
     },
 
     "PWR_FAIL_NVVDD_GPU_2": {
@@ -132,7 +135,8 @@ POWER_FAULT_CATALOG = {
         "GPU Core Power Failure",
 
         "recommendation":
-        "Replace Right Bianca."
+        "Perform Bus-Bar reseat, verify connector engagement and torque, then retest."
+        "Replace Bianca#2 only if the issue reoccurs."
     },
 
     "PWR_FAIL_NVVDD_GPU_3": {
@@ -141,7 +145,8 @@ POWER_FAULT_CATALOG = {
         "GPU Core Power Failure",
 
         "recommendation":
-        "Replace Right Bianca."
+        "Perform Bus-Bar reseat, verify connector engagement and torque, then retest."
+        "Replace Bianca#2 only if the issue reoccurs."
     },
 
     "PWR_FAIL_CPUVDD_0{0x1}": {
@@ -150,7 +155,8 @@ POWER_FAULT_CATALOG = {
         "CPUVDD Power Failure",
 
         "recommendation":
-        "Replace Left Bianca."
+        "Verify CPUVDD power delivery, perform Bus-Bar reseat and retest. "
+        "Replace Bianca#1 only if the issue reoccurs."
     },
 
     "PWR_FAIL_CPUVDD_1{0x1}": {
@@ -159,25 +165,18 @@ POWER_FAULT_CATALOG = {
         "CPUVDD Power Failure",
 
         "recommendation":
-        "Replace Right Bianca."
+        "Verify CPUVDD power delivery, perform Bus-Bar reseat and retest. "
+        "Replace Bianca#2 only if the issue reoccurs."
     },
 
-    "PWR_FAIL_PEX_SW_0V95_MOD_0{0x1}": {
+    "PWR_FAIL_PEX_SW_0V95_MOD_1": {
 
         "failure":
-        "PEX Switch 0.95V Rail Failure",
+        "Bianca#2 Power Failure (PEX_SW_0V95)",
 
         "recommendation":
-        "Replace Left Bianca."
-    },
-
-    "PWR_FAIL_PEX_SW_0V95_MOD_1{0x1}": {
-
-        "failure":
-        "PEX Switch 0.95V Rail Failure",
-
-        "recommendation":
-        "Replace Right Bianca."
+        "Verify PEX rail stability, perform Bus-Bar reseat and retest. "
+        "Replace Bianca#2 only if the issue reoccurs."
     },
 
     "PWR_FAIL_LPCAMM_0{0x1}": {
@@ -186,7 +185,8 @@ POWER_FAULT_CATALOG = {
         "LPCAMM Power Failure",
 
         "recommendation":
-        "Replace Left Bianca."
+        "Perform Bus-Bar reseat, verify connector engagement and torque, then retest."
+        "Replace Bianca#1 only if the issue reoccurs."
     },
 
     "PWR_FAIL_LPCAMM_1{0x1}": {
@@ -195,7 +195,8 @@ POWER_FAULT_CATALOG = {
         "LPCAMM Power Failure",
 
         "recommendation":
-        "Replace Right Bianca."
+        "Perform Bus-Bar reseat, verify connector engagement and torque, then retest."
+        "Replace Bianca#2 only if the issue reoccurs."
     },
 
     "PWR_FAIL_IO_MEZZ{0x1}": {
@@ -204,7 +205,8 @@ POWER_FAULT_CATALOG = {
         "IO Mezzanine Failure",
 
         "recommendation":
-        "Replace Left CX8."
+        "Reseat affected CX8, verify connector engagement and perform retest. "
+        "Replace Left CX8 only if the issue reoccurs."
     },
 
     "PWR_FAIL_IO_MEZZ{0x2}": {
@@ -213,7 +215,8 @@ POWER_FAULT_CATALOG = {
         "IO Mezzanine Failure",
 
         "recommendation":
-        "Replace Right CX8."
+        "Reseat affected CX8, verify connector engagement and perform retest. "
+        "Replace Right CX8 only if the issue reoccurs."
     },
 
     "PWR_FAIL_IO_MEZZ{0x3}": {
