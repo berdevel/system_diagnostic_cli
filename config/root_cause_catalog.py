@@ -1,4 +1,4 @@
-CATALOG_VERSION = "2.2.2"
+CATALOG_VERSION = "2.2.4"
 
 ROOT_CAUSE_CATALOG = [
 
@@ -15,7 +15,6 @@ ROOT_CAUSE_CATALOG = [
 
         "conditions": [
 
-            "XID_163",
             "PWR_FAIL_GPU_THERM_OVERT"
 
         ],
@@ -41,7 +40,13 @@ ROOT_CAUSE_CATALOG = [
 
         Perform HMC Log Clear again.
 
-        Execute final validation after replacement.
+        Execute validation and retest.
+
+        If the thermal issue persists after coldplate replacement, replace the Bianca assembly associated with the affected GPU.
+
+        Perform HMC Log Clear again.
+
+        Execute final validation after Bianca replacement.
 
         IMPORTANT:
         Always perform HMC Log Clear before every retest and before collecting final validation results.
@@ -49,7 +54,7 @@ ROOT_CAUSE_CATALOG = [
     },
 
     {
-        "id": "RCA-003",
+        "id": "RCA-002",
 
         "version": "1.0",
 
@@ -77,18 +82,25 @@ ROOT_CAUSE_CATALOG = [
 
         Verify Bus-Bar installation, torque and connector engagement.
 
-        Run full validation and retest.
+        Perform HMC Log Clear.
+
+        Execute validation and retest.
 
         If the fault is not reproducible after retest, return the unit to service.
 
         If the same failure reoccurs after Bus-Bar reseat and retest, replace Bianca#1 (Left).
 
-        Re-run validation after Bianca replacement.
+        Perform HMC Log Clear again.
+
+        Execute final validation after replacement.
+
+        IMPORTANT:
+        Always perform HMC Log Clear before every retest and before collecting final validation results.
         """
     },
 
     {
-        "id": "RCA-004",
+        "id": "RCA-003",
 
         "version": "1.0",
 
@@ -116,18 +128,25 @@ ROOT_CAUSE_CATALOG = [
 
         Verify Bus-Bar installation, torque and connector engagement.
 
-        Run full validation and retest.
+        Perform HMC Log Clear.
+
+        Execute validation and retest.
 
         If the fault is not reproducible after retest, return the unit to service.
 
         If the same failure reoccurs after Bus-Bar reseat and retest, replace Bianca#2 (Right).
 
-        Re-run validation after Bianca replacement.
+        Perform HMC Log Clear again.
+
+        Execute final validation after replacement.
+
+        IMPORTANT:
+        Always perform HMC Log Clear before every retest and before collecting final validation results.
         """
     },
 
     {
-        "id": "RCA-005",
+        "id": "RCA-004",
 
         "version": "2.0",
 
@@ -146,20 +165,29 @@ ROOT_CAUSE_CATALOG = [
         "recommendation":
 
         """
-        Perform complete Bus-Bar reseat.
+        Perform a complete Bus-Bar reseat procedure.
 
-        Verify power rail stability.
+        Verify Bus-Bar installation, torque and connector engagement.
+
+        Perform HMC Log Clear.
 
         Execute validation and retest.
 
-        If the failure reoccurs after retest, replace Bianca#1 (Left).
+        If the fault is not reproducible after retest, return the unit to service.
 
-        Re-run validation after replacement.
+        If the same failure reoccurs after Bus-Bar reseat and retest, replace Bianca#1 (Left).
+
+        Perform HMC Log Clear again.
+
+        Execute final validation after replacement.
+
+        IMPORTANT:
+        Always perform HMC Log Clear before every retest and before collecting final validation results.
         """
     },
 
     {
-        "id": "RCA-006",
+        "id": "RCA-005",
 
         "version": "2.0",
 
@@ -177,21 +205,30 @@ ROOT_CAUSE_CATALOG = [
 
         "recommendation":
 
-        """
-        Perform complete Bus-Bar reseat.
+       """
+        Perform a complete Bus-Bar reseat procedure.
 
-        Verify power rail stability.
+        Verify Bus-Bar installation, torque and connector engagement.
+
+        Perform HMC Log Clear.
 
         Execute validation and retest.
 
-        If the failure reoccurs after retest, replace Bianca#2 (Right).
+        If the fault is not reproducible after retest, return the unit to service.
 
-        Re-run validation after replacement.
+        If the same failure reoccurs after Bus-Bar reseat and retest, replace Bianca#2 (Right).
+
+        Perform HMC Log Clear again.
+
+        Execute final validation after replacement.
+
+        IMPORTANT:
+        Always perform HMC Log Clear before every retest and before collecting final validation results.
         """
     },
 
     {
-        "id": "RCA-007",
+        "id": "RCA-006",
 
         "version": "2.0",
 
@@ -210,20 +247,29 @@ ROOT_CAUSE_CATALOG = [
         "recommendation":
 
         """
-        Perform complete Bus-Bar reseat.
+        Perform a complete Bus-Bar reseat procedure.
 
-        Verify GPU power rail integrity.
+        Verify Bus-Bar installation, torque and connector engagement.
+
+        Perform HMC Log Clear.
 
         Execute validation and retest.
 
-        If the same fault reoccurs, replace the affected Bianca assembly.
+        If the fault is not reproducible after retest, return the unit to service.
 
-        Re-run validation after replacement.
+        If the same failure reoccurs after Bus-Bar reseat and retest, replace the Bianca assembly associated with the affected GPU.
+
+        Perform HMC Log Clear again.
+
+        Execute final validation after replacement.
+
+        IMPORTANT:
+        Always perform HMC Log Clear before every retest and before collecting final validation results.
         """
     },
 
     {
-        "id": "RCA-008",
+        "id": "RCA-007",
 
         "version": "2.0",
 
@@ -242,20 +288,29 @@ ROOT_CAUSE_CATALOG = [
         "recommendation":
 
         """
-        Perform complete Bus-Bar reseat.
+        Perform a complete Bus-Bar reseat procedure.
 
-        Verify rail stability and connectors.
+        Verify Bus-Bar installation, torque and connector engagement.
+
+        Perform HMC Log Clear.
 
         Execute validation and retest.
 
-        If the same fault reoccurs, replace the affected Bianca assembly.
+        If the fault is not reproducible after retest, return the unit to service.
 
-        Re-run validation after replacement.
+        If the same failure reoccurs after Bus-Bar reseat and retest, replace the associated Bianca assembly.
+
+        Perform HMC Log Clear again.
+
+        Execute final validation after replacement.
+
+        IMPORTANT:
+        Always perform HMC Log Clear before every retest and before collecting final validation results.
         """
     },
 
     {
-        "id": "RCA-009",
+        "id": "RCA-008",
 
         "version": "1.0",
 
@@ -274,13 +329,27 @@ ROOT_CAUSE_CATALOG = [
         "recommendation":
 
         """
-        Review related PWR_FAIL events.
-        Verify power sequence integrity.
+        Review all associated PWR_FAIL events and identify the originating component or power rail.
+
+        Verify power sequence integrity and confirm the primary source of the fault.
+
+        Perform the corrective action associated with the identified failing component.
+
+        Perform HMC Log Clear.
+
+        Execute validation and retest.
+
+        If no specific failing component can be identified, perform complete Bus-Bar reseat and retest.
+
+        If the issue persists, continue troubleshooting based on the newly generated events after retest.
+
+        IMPORTANT:
+        Always perform HMC Log Clear before every retest and before collecting final validation results.
         """
     },
 
     {
-        "id": "RCA-010",
+        "id": "RCA-009",
 
         "version": "2.0",
 
@@ -303,18 +372,31 @@ ROOT_CAUSE_CATALOG = [
 
         Verify CX8 card installation, connector engagement and retention mechanism.
 
+        Perform HMC Log Clear.
+
         Execute full validation and retest.
 
         If the fault is not reproducible after retest, return the unit to service.
 
         If the same failure reoccurs after CX8 reseat and retest, replace the affected CX8 card.
 
-        Re-run validation after replacement.
+        Perform HMC Log Clear again.
+
+        Execute validation and retest.
+
+        If the issue persists after CX8 replacement, replace the Bianca assembly associated with the affected CX8.
+
+        Perform HMC Log Clear again.
+
+        Execute final validation after Bianca replacement.
+
+        IMPORTANT:
+        Always perform HMC Log Clear before every retest and before collecting final validation results.
         """
     },
 
     {
-        "id": "RCA-011",
+        "id": "RCA-010",
 
         "version": "2.0",
 
@@ -339,18 +421,33 @@ ROOT_CAUSE_CATALOG = [
 
         Verify proper coldplate contact and TIM coverage.
 
-        If any installation issue is found, correct the assembly and perform a complete validation and retest.
+        Correct any installation issue identified.
+
+        Perform HMC Log Clear.
+
+        Execute validation and retest.
 
         If the issue is not reproducible after retest, return the unit to service.
 
-        If the thermal interrupt reoccurs after installation correction and retest, replace the affected coldplate assembly.
+        If the thermal fault reoccurs after installation correction and retest, replace the affected coldplate assembly.
 
-        Re-run validation after replacement.
+        Perform HMC Log Clear again.
+
+        Execute validation and retest.
+
+        If the thermal issue persists after coldplate replacement, replace the Bianca assembly associated with the affected GPU.
+
+        Perform HMC Log Clear again.
+
+        Execute final validation after Bianca replacement.
+
+        IMPORTANT:
+        Always perform HMC Log Clear before every retest and before collecting final validation results.
         """
     },
 
     {
-        "id": "RCA-012",
+        "id": "RCA-011",
 
         "version": "2.0",
 
@@ -368,25 +465,40 @@ ROOT_CAUSE_CATALOG = [
 
         "recommendation":
 
-        """
-        Inspect coldplate installation before replacement.
+       """
+        Verify coldplate installation and mechanical assembly.
 
-        Verify coldplate seating, screw torque and overall mechanical assembly.
+        Confirm all coldplate screws are properly installed and torqued.
 
-        Verify TIM condition and proper contact pressure.
+        Verify proper coldplate contact and TIM coverage.
 
-        If any assembly issue is identified, correct the installation and execute full validation and retest.
+        Correct any installation issue identified.
 
-        If the fault is not reproducible after retest, return the unit to service.
+        Perform HMC Log Clear.
 
-        If the same thermal protection event reoccurs after installation correction and retest, replace the affected coldplate assembly.
+        Execute validation and retest.
 
-        Re-run validation after replacement.
+        If the issue is not reproducible after retest, return the unit to service.
+
+        If the thermal fault reoccurs after installation correction and retest, replace the affected coldplate assembly.
+
+        Perform HMC Log Clear again.
+
+        Execute validation and retest.
+
+        If the thermal issue persists after coldplate replacement, replace the Bianca assembly associated with the affected GPU.
+
+        Perform HMC Log Clear again.
+
+        Execute final validation after Bianca replacement.
+
+        IMPORTANT:
+        Always perform HMC Log Clear before every retest and before collecting final validation results.
         """
     },
 
     {
-        "id": "RCA-013",
+        "id": "RCA-012",
 
         "version": "1.0",
 
@@ -405,20 +517,29 @@ ROOT_CAUSE_CATALOG = [
         "recommendation":
 
         """
-        Perform complete Bus-Bar reseat.
+        Perform a complete Bus-Bar reseat procedure.
 
-        Verify PEX rail stability.
+        Verify Bus-Bar installation, torque and connector engagement.
+
+        Perform HMC Log Clear.
 
         Execute validation and retest.
 
-        If the same failure reoccurs after retest, replace Bianca#1 (Left) assembly.
+        If the fault is not reproducible after retest, return the unit to service.
 
-        Re-run validation after replacement.
+        If the same failure reoccurs after Bus-Bar reseat and retest, replace Bianca#1 (Left).
+
+        Perform HMC Log Clear again.
+
+        Execute final validation after replacement.
+
+        IMPORTANT:
+        Always perform HMC Log Clear before every retest and before collecting final validation results.
         """
     },
 
     {
-        "id": "RCA-014",
+        "id": "RCA-013",
 
         "version": "1.0",
 
@@ -437,15 +558,24 @@ ROOT_CAUSE_CATALOG = [
         "recommendation":
 
         """
-        Perform complete Bus-Bar reseat.
+        Perform a complete Bus-Bar reseat procedure.
 
-        Verify PEX rail stability.
+        Verify Bus-Bar installation, torque and connector engagement.
+
+        Perform HMC Log Clear.
 
         Execute validation and retest.
 
-        If the same failure reoccurs after retest, replace Bianca#2 (Right) assembly.
+        If the fault is not reproducible after retest, return the unit to service.
 
-        Re-run validation after replacement.
+        If the same failure reoccurs after Bus-Bar reseat and retest, replace Bianca#2 (Right).
+
+        Perform HMC Log Clear again.
+
+        Execute final validation after replacement.
+
+        IMPORTANT:
+        Always perform HMC Log Clear before every retest and before collecting final validation results.
         """
     }
 

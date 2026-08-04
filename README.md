@@ -10,11 +10,11 @@ The tool parses diagnostic logs and Redfish event data, identifies hardware fail
 
 ## Version
 
-**FoxconnFailureAnalyzer v2.2.3**
+**FoxconnFailureAnalyzer v2.2.4**
 
 ---
 
-### What's New in v2.2.3
+### What's New in v2.2.4
 
 - Improved thermal event correlation.
 - Added GPU Thermal Interrupt RCA.
@@ -26,6 +26,14 @@ The tool parses diagnostic logs and Redfish event data, identifies hardware fail
 - Added Bus-Bar reseat workflow before Bianca replacement.
 - Added CX8 reseat workflow before replacement.
 - Added coldplate verification workflow before replacement.
+- Added RCA scoring and prioritization.
+- Added event recency weighting for RCA selection.
+- Added latest supporting event tracking.
+- Expanded Power Fault Catalog coverage.
+- Added HMC Log Clear recommendations across all repair workflows.
+- Added Bianca escalation workflow after unsuccessful coldplate replacement.
+- Added Bianca escalation workflow after unsuccessful CX8 replacement.
+- Improved RCA rule matching and evidence correlation.
 
 ---
 
@@ -48,7 +56,11 @@ The tool parses diagnostic logs and Redfish event data, identifies hardware fail
 
 - Rule-Based RCA Engine
 - Confidence Scoring
+- RCA Scoring Engine
 - Evidence Correlation
+- Event Recency Based RCA Prioritization
+- Latest Supporting Event Correlation
+- Matched Condition Tracking
 - Primary Root Cause Identification
 - Secondary Findings Detection
 - Corrective Action Recommendations
@@ -70,6 +82,9 @@ The tool parses diagnostic logs and Redfish event data, identifies hardware fail
 - Secondary Findings
 - Markdown Report Generation
 - HTML Report Generation
+- RCA Score
+- Latest Supporting Event
+- Matched Conditions
 
 ### Historical Analytics
 
@@ -124,11 +139,12 @@ FoxconnFailureAnalyzer/
 
 ## Supported Components
 
-- Bianca 1
-- Bianca 2
+- Bianca#1 (Left)
+- Bianca#2 (Right)
 - Left Coldplate
 - Right Coldplate
-- CX8
+- Left CX8
+- Right CX8
 - GPUs
 - CPUs
 
@@ -286,6 +302,9 @@ Generated Reports Include:
 - Coldplate Correlation
 - CX8 Correlation
 - Timestamp Validation Warnings
+- RCA Score
+- Latest Supporting Event
+- Matched Conditions
 
 ---
 
@@ -337,6 +356,26 @@ diagnostics.db
 ---
 
 ## Supported Detections
+
+### Power Rail Failures
+
+- CPUVDD
+- CPU_DVDD
+- SOCVDD
+- C2C
+- PEX Switch 0.95V
+- NVVDD GPU Core
+- HBMVDD
+- HBMVDDQ
+- HBMVPP
+- HBI
+- PEXDVDD
+- FBVDDP
+- FBVDDQ
+- 1V2 Rail
+- 1V8 Rail
+- 12V Rail
+- 3V3 Always-On Rail
 
 ### Bianca Failures
 
@@ -395,22 +434,57 @@ diagnostics.db
 2. Verify coldplate screw torque.
 3. Verify TIM condition and coldplate contact.
 4. Correct installation issues if identified.
-5. Execute validation and retest.
-6. Replace the affected coldplate only if the failure reoccurs after retest.
+5. Perform HMC Log Clear.
+6. Execute validation and retest.
+7. Replace the affected coldplate only if the failure reoccurs after retest.
+8. Perform HMC Log Clear.
+9. Execute validation and retest.
+10. If the issue persists, replace the Bianca assembly associated with the affected GPU.
+11. Perform HMC Log Clear.
+12. Execute final validation.
 
 ### CX8 / IO Mezzanine Failures
 
 1. Perform complete CX8 reseat.
 2. Verify connector engagement and retention mechanism.
-3. Execute validation and retest.
-4. Replace the affected CX8 only if the failure reoccurs after retest.
+3. Perform HMC Log Clear.
+4. Execute validation and retest.
+5. Replace the affected CX8 only if the failure reoccurs after retest.
+6. Perform HMC Log Clear.
+7. Execute validation and retest.
+8. If the issue persists, replace the Bianca assembly associated with the affected CX8.
+9. Perform HMC Log Clear.
+10. Execute final validation.
 
 ### Bianca Power Distribution Faults
 
 1. Perform complete Bus-Bar reseat.
 2. Verify connector engagement and torque.
-3. Execute validation and retest.
-4. Replace the affected Bianca only if the failure reoccurs after retest.
+3. Perform HMC Log Clear.
+4. Execute validation and retest.
+5. Replace the affected Bianca only if the failure reoccurs after retest.
+6. Perform HMC Log Clear.
+7. Execute final validation.
+
+---
+
+## RCA Prioritization
+
+Primary Root Cause selection considers:
+
+- RCA Priority
+- Matched Evidence
+- Matched Conditions
+- Event Recency
+- Latest Supporting Event ID
+
+More recent events are weighted higher than historical events when selecting the Primary Root Cause.
+
+---
+
+## Validation Notice
+
+Always perform HMC Log Clear before every retest and before collecting final validation results.
 
 ---
 

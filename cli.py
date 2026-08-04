@@ -428,6 +428,26 @@ class DiagnosticTool:
                     f"{primary['confidence']}"
                 )
 
+                print()
+
+                print(
+                    Fore.YELLOW +
+                    f"Matched Conditions : "
+                    f"{primary.get('matched_conditions', 'N/A')}"
+                )
+
+                print(
+                    Fore.YELLOW +
+                    f"RCA Score          : "
+                    f"{primary.get('score', 'N/A')}"
+                )
+
+                print(
+                    Fore.YELLOW +
+                    f"Latest Event ID    : "
+                    f"{primary.get('latest_event_id', 'N/A')}"
+                )
+
                 recommendation = (
 
                     primary.get(

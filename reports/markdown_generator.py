@@ -732,6 +732,27 @@ class MarkdownGenerator:
                     f"{primary['confidence']}\n\n"
                 )
 
+                if primary.get("matched_conditions"):
+
+                    file.write(
+                        f"Matched Conditions: "
+                        f"{primary['matched_conditions']}\n\n"
+                    )
+
+                if primary.get("score"):
+
+                    file.write(
+                        f"RCA Score: "
+                        f"{primary['score']}\n\n"
+                    )
+
+                if primary.get("latest_event_id"):
+
+                    file.write(
+                        f"Latest Supporting Event: "
+                        f"{primary['latest_event_id']}\n\n"
+                    )
+
                 affected_biancas = sorted({
 
                     event.get(
@@ -746,7 +767,7 @@ class MarkdownGenerator:
                         "Bianca#2"
                     )
 
-                    for event in findings
+                    for event in findings + (critical_findings or [])
 
                     if event.get(
                         "bianca"
@@ -820,7 +841,9 @@ class MarkdownGenerator:
 
                     )
 
-                supporting_events = []
+                supporting_events = set()
+
+                # Component Findings
 
                 for item in findings:
 
@@ -841,9 +864,50 @@ class MarkdownGenerator:
 
                     ):
 
-                        supporting_events.append(
+                        supporting_events.add(
 
                             item.get(
+                                "event_id"
+                            )
+
+                        )
+
+                # Critical Events
+
+                for event in (critical_findings or []):
+
+                    event_text = (
+
+                        (
+                            event.get(
+                                "failure",
+                                ""
+                            )
+
+                            + " "
+
+                            +
+
+                            event.get(
+                                "description",
+                                ""
+                            )
+
+                        ).upper()
+
+                    )
+
+                    if any(
+
+                        condition.upper() in event_text
+
+                        for condition in primary_conditions
+
+                    ):
+
+                        supporting_events.add(
+
+                            event.get(
                                 "event_id"
                             )
 
@@ -856,7 +920,9 @@ class MarkdownGenerator:
                         "Evidence Supporting RCA:\n\n"
                     )
 
-                    for event_id in supporting_events:
+                    for event_id in sorted(
+                        supporting_events
+                    ):
 
                         file.write(
                             f"- Event ID {event_id}\n"

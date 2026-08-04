@@ -5,7 +5,7 @@ VERSION 2.2.3
 
 ==================================================
 
-WHAT'S NEW IN V2.2.3
+WHAT'S NEW IN V2.2.4
 
 - Improved thermal event correlation
 - Added GPU Thermal Interrupt RCA
@@ -14,10 +14,16 @@ WHAT'S NEW IN V2.2.3
 - Added Location visibility in Critical Events
 - Added CX8 visibility in Critical Events
 - Added RCA Evidence section
+- Added RCA scoring and prioritization
+- Added latest event weighting for RCA selection
 - Added Timestamp Validation Warnings
 - Added Bus-Bar reseat workflow before Bianca replacement
 - Added CX8 reseat workflow before replacement
 - Added Coldplate verification workflow before replacement
+- Added Bianca escalation workflow for persistent thermal failures
+- Added HMC Log Clear guidance across RCA workflows
+- Expanded Power Fault Catalog coverage
+- Improved Root Cause Analysis accuracy
 
 ==================================================
 
@@ -51,6 +57,10 @@ FEATURES
 - Date Filtering
 - Markdown Reports
 - HTML Reports
+- RCA Scoring Engine
+- Event Recency Based RCA Prioritization
+- HMC Log Clear Workflow Guidance
+- Power Rail Failure Classification
 
 ==================================================
 
@@ -167,6 +177,9 @@ Generated:
 - CX8 Correlation
 - Location Correlation
 - Timestamp Validation Warnings
+- RCA Score
+- Latest Supporting Event
+- Secondary RCA Findings
 
 Location:
 
@@ -230,6 +243,22 @@ SUPPORTED COMPONENTS
 - Right CX8
 - GPUs
 - CPUs
+
+==================================================
+
+IMPORTANT
+
+Always perform HMC Log Clear before every retest and before collecting final validation results.
+
+RCA selection considers:
+
+- RCA Priority
+- Matched Conditions
+- RCA Evidence
+- Event Recency
+- Latest Supporting Event ID
+
+Recent events are weighted higher than historical events when determining the Primary Root Cause.
 
 ==================================================
 
