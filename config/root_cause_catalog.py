@@ -60,6 +60,8 @@ ROOT_CAUSE_CATALOG = [
 
         "priority": 100,
 
+        "match": "ANY",
+
         "name": "Bianca#1 Power Distribution Fault",
 
         "confidence": "HIGH",
@@ -105,6 +107,8 @@ ROOT_CAUSE_CATALOG = [
         "version": "1.0",
 
         "priority": 100,
+
+        "match": "ANY",
 
         "name": "Bianca#2 Power Distribution Fault",
 
@@ -354,6 +358,8 @@ ROOT_CAUSE_CATALOG = [
         "version": "2.0",
 
         "priority": 100,
+
+        "match": "ANY",
 
         "name": "I/O Mezzanine Failure",
 

@@ -1,29 +1,25 @@
 FOXCONN FAILURE ANALYZER
 NVIDIA HGX / BIANCA DIAGNOSTIC PLATFORM
 
-VERSION 2.2.3
+VERSION 2.2.5
 
 ==================================================
 
-WHAT'S NEW IN V2.2.4
+WHAT'S NEW IN V2.2.5
 
-- Improved thermal event correlation
-- Added GPU Thermal Interrupt RCA
-- Added GPU Thermal Protection RCA
-- Added CX8 correlation and RCA workflow
-- Added Location visibility in Critical Events
-- Added CX8 visibility in Critical Events
-- Added RCA Evidence section
-- Added RCA scoring and prioritization
-- Added latest event weighting for RCA selection
-- Added Timestamp Validation Warnings
-- Added Bus-Bar reseat workflow before Bianca replacement
-- Added CX8 reseat workflow before replacement
-- Added Coldplate verification workflow before replacement
-- Added Bianca escalation workflow for persistent thermal failures
-- Added HMC Log Clear guidance across RCA workflows
-- Expanded Power Fault Catalog coverage
-- Improved Root Cause Analysis accuracy
+- Interactive Menu Mode
+- Rich Terminal User Interface
+- RCA Scoring Engine
+- Event Recency Based RCA Prioritization
+- Latest Supporting Event Tracking
+- Potential Causal Event Analysis
+- HTML Dashboard Cards
+- RCA Evidence Timeline
+- Top Critical Events Tables
+- HMC Log Clear Guidance Across All Repair Workflows
+- Expanded Power Fault Catalog Coverage
+- Expanded NVIDIA XID Catalog Coverage
+- Improved Thermal, CX8 and Bianca Troubleshooting Workflows
 
 ==================================================
 
@@ -34,7 +30,8 @@ system diagnostics and Root Cause Analysis.
 
 The tool analyzes logs and Redfish critical events,
 stores historical analysis results, detects recurring
-failures, and generates professional reports.
+failures, correlates evidence, and generates
+professional Markdown and HTML reports.
 
 ==================================================
 
@@ -51,16 +48,39 @@ FEATURES
 - Redfish Critical Event Analysis
 - Root Cause Analysis (RCA)
 - RCA Evidence Correlation
+- RCA Scoring Engine
+- Event Recency Based RCA Prioritization
+- Latest Supporting Event Correlation
+- Potential Causal Event Detection
 - Historical Database
 - Serial Reports
 - Historical Statistics
 - Date Filtering
 - Markdown Reports
 - HTML Reports
-- RCA Scoring Engine
-- Event Recency Based RCA Prioritization
-- HMC Log Clear Workflow Guidance
+- Rich Terminal Interface
+- Interactive Menu Mode
 - Power Rail Failure Classification
+- HMC Log Clear Workflow Guidance
+
+==================================================
+
+INTERACTIVE MENU MODE
+
+Run without parameters:
+
+FoxconnFailureAnalyzer.exe
+
+Available Functions
+
+- Analyze Single Log
+- Analyze All Logs
+- Serial History
+- Serial Report
+- Top RCA
+- Top Components
+- Top Serials
+- Historical Summary
 
 ==================================================
 
@@ -120,13 +140,14 @@ SERIAL REPORT
 
 FoxconnFailureAnalyzer.exe --serial-report SERIAL_NUMBER
 
-Provides:
+Provides
 
 - Analysis History
 - Root Cause History
 - Component History
 - Critical Event Summary
 - Recurring Failure Detection
+- Historical Repair Recommendation
 
 ==================================================
 
@@ -165,23 +186,47 @@ FoxconnFailureAnalyzer.exe ^
 
 ==================================================
 
+ADVANCED MODE
+
+Analyze Log
+
+FoxconnFailureAnalyzer.exe logfile.txt
+
+Analyze All Logs
+
+FoxconnFailureAnalyzer.exe --all
+
+Top RCA
+
+FoxconnFailureAnalyzer.exe --top-rca
+
+Historical Summary
+
+FoxconnFailureAnalyzer.exe --summary
+
+==================================================
+
 REPORTS
 
-Generated:
+Generated
 
 - Markdown Report (.md)
 - HTML Report (.html)
+- Executive Summary
 - RCA Evidence
+- RCA Evidence Timeline
+- RCA Score
+- Latest Supporting Event
+- Potential Causal Events
+- Secondary RCA Findings
 - Component Correlation
 - Coldplate Correlation
 - CX8 Correlation
 - Location Correlation
 - Timestamp Validation Warnings
-- RCA Score
-- Latest Supporting Event
-- Secondary RCA Findings
+- Dashboard Summary Cards
 
-Location:
+Location
 
 reports\
 
@@ -195,17 +240,29 @@ THERMAL FAILURES
 2. Verify coldplate screw torque.
 3. Verify TIM condition and contact pressure.
 4. Correct assembly issues if found.
-5. Execute validation and retest.
-6. Replace the affected coldplate only if the issue reoccurs.
+5. Perform HMC Log Clear.
+6. Execute validation and retest.
+7. Replace the affected coldplate only if the issue reoccurs.
+8. Perform HMC Log Clear.
+9. Execute validation and retest.
+10. If the issue persists, replace the Bianca assembly associated with the affected GPU.
+11. Perform HMC Log Clear.
+12. Execute final validation.
 
 --------------------------------------------------
 
 CX8 FAILURES
 
 1. Perform complete CX8 reseat.
-2. Verify connector engagement.
-3. Execute validation and retest.
-4. Replace the affected CX8 only if the issue reoccurs.
+2. Verify connector engagement and retention.
+3. Perform HMC Log Clear.
+4. Execute validation and retest.
+5. Replace the affected CX8 only if the issue reoccurs.
+6. Perform HMC Log Clear.
+7. Execute validation and retest.
+8. If the issue persists, replace the Bianca assembly associated with the affected CX8.
+9. Perform HMC Log Clear.
+10. Execute final validation.
 
 --------------------------------------------------
 
@@ -213,8 +270,11 @@ BIANCA POWER FAULTS
 
 1. Perform complete Bus-Bar reseat.
 2. Verify connector engagement and torque.
-3. Execute validation and retest.
-4. Replace the affected Bianca only if the issue reoccurs.
+3. Perform HMC Log Clear.
+4. Execute validation and retest.
+5. Replace the affected Bianca only if the issue reoccurs.
+6. Perform HMC Log Clear.
+7. Execute final validation.
 
 ==================================================
 
@@ -222,7 +282,7 @@ DATABASE
 
 diagnostics.db
 
-Stores:
+Stores
 
 - Analysis History
 - Serial History
@@ -246,19 +306,29 @@ SUPPORTED COMPONENTS
 
 ==================================================
 
-IMPORTANT
+RCA PRIORITIZATION
 
-Always perform HMC Log Clear before every retest and before collecting final validation results.
+Primary Root Cause selection considers
 
-RCA selection considers:
-
-- RCA Priority
+- Rule Priority
 - Matched Conditions
-- RCA Evidence
+- Evidence Correlation
+- RCA Score
 - Event Recency
 - Latest Supporting Event ID
+- Potential Causal Events
 
-Recent events are weighted higher than historical events when determining the Primary Root Cause.
+Recent events are weighted higher than
+historical events when determining the
+Primary Root Cause.
+
+==================================================
+
+IMPORTANT
+
+Always perform HMC Log Clear before every
+retest and before collecting final validation
+results.
 
 ==================================================
 

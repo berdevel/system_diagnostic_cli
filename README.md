@@ -10,30 +10,25 @@ The tool parses diagnostic logs and Redfish event data, identifies hardware fail
 
 ## Version
 
-**FoxconnFailureAnalyzer v2.2.4**
+**FoxconnFailureAnalyzer v2.2.5**
 
 ---
 
-### What's New in v2.2.4
+### What's New in v2.2.5
 
-- Improved thermal event correlation.
-- Added GPU Thermal Interrupt RCA.
-- Added GPU Thermal Protection RCA.
-- Added CX8 visibility in Critical Events.
-- Added Location visibility in Critical Events.
-- Improved RCA evidence generation.
-- Added timestamp validation warnings.
-- Added Bus-Bar reseat workflow before Bianca replacement.
-- Added CX8 reseat workflow before replacement.
-- Added coldplate verification workflow before replacement.
-- Added RCA scoring and prioritization.
+- Added interactive menu mode.
+- Added Rich terminal user interface.
+- Added RCA scoring engine.
 - Added event recency weighting for RCA selection.
 - Added latest supporting event tracking.
+- Added potential causal event analysis.
+- Added HTML dashboard cards.
+- Added RCA evidence timeline.
+- Added top critical events tables.
+- Added HMC Log Clear guidance throughout repair workflows.
 - Expanded Power Fault Catalog coverage.
-- Added HMC Log Clear recommendations across all repair workflows.
-- Added Bianca escalation workflow after unsuccessful coldplate replacement.
-- Added Bianca escalation workflow after unsuccessful CX8 replacement.
-- Improved RCA rule matching and evidence correlation.
+- Expanded NVIDIA XID Catalog coverage.
+- Improved thermal, CX8 and Bianca troubleshooting workflows.
 
 ---
 
@@ -60,6 +55,7 @@ The tool parses diagnostic logs and Redfish event data, identifies hardware fail
 - Evidence Correlation
 - Event Recency Based RCA Prioritization
 - Latest Supporting Event Correlation
+- Potential Causal Event Detection
 - Matched Condition Tracking
 - Primary Root Cause Identification
 - Secondary Findings Detection
@@ -79,12 +75,14 @@ The tool parses diagnostic logs and Redfish event data, identifies hardware fail
 - Critical Event Analysis
 - Root Cause Analysis
 - RCA Evidence
+- RCA Evidence Timeline
 - Secondary Findings
 - Markdown Report Generation
 - HTML Report Generation
 - RCA Score
 - Latest Supporting Event
 - Matched Conditions
+- Dashboard Summary Cards
 
 ### Historical Analytics
 
@@ -109,6 +107,8 @@ The tool parses diagnostic logs and Redfish event data, identifies hardware fail
 - Top Component Reports
 - Top Serial Reports
 - Historical Summary Reports
+- Interactive Menu Mode
+- Rich Terminal Interface
 
 ---
 
@@ -147,6 +147,27 @@ FoxconnFailureAnalyzer/
 - Right CX8
 - GPUs
 - CPUs
+
+---
+
+## Interactive Menu Mode
+
+Launch without arguments:
+
+```bash
+python cli.py
+```
+
+Available options:
+
+- Analyze Single Log
+- Analyze All Logs
+- Serial History
+- Serial Report
+- Top RCA
+- Top Components
+- Top Serials
+- Historical Summary
 
 ---
 
@@ -296,6 +317,7 @@ Generated Reports Include:
 - Critical Event Analysis
 - Root Cause Analysis
 - RCA Evidence
+- RCA Evidence Timeline
 - Corrective Actions
 - Secondary Findings
 - Location Correlation
@@ -305,6 +327,8 @@ Generated Reports Include:
 - RCA Score
 - Latest Supporting Event
 - Matched Conditions
+- Potential Causal Events
+- Dashboard Summary Cards
 
 ---
 
@@ -399,15 +423,57 @@ diagnostics.db
 - AP0_PRIMARY_AuthenticateError
 - AP0_SECONDARY_AuthenticateError
 - ErrorAuthApFw
+- Firmware Authentication Failures
+- Firmware Verification Failures
 
 ### NVIDIA Events
 
-- XID 163
-- XID 154
-- XID 149
-- XID 79
-- XID 48
+- XID 8
+- XID 11
+- XID 13
+- XID 25
 - XID 31
+- XID 32
+- XID 37
+- XID 38
+- XID 43
+- XID 45
+- XID 46
+- XID 48
+- XID 54
+- XID 60
+- XID 62
+- XID 63
+- XID 64
+- XID 74
+- XID 79
+- XID 92
+- XID 94
+- XID 95
+- XID 109
+- XID 110
+- XID 119
+- XID 120
+- XID 121
+- XID 136
+- XID 137
+- XID 140
+- XID 143
+- XID 144
+- XID 145
+- XID 146
+- XID 147
+- XID 148
+- XID 149
+- XID 150
+- XID 154
+- XID 156
+- XID 158
+- XID 163
+- XID 164
+- XID 165
+- XID 171
+- XID 172
 
 ---
 
@@ -419,6 +485,7 @@ diagnostics.db
 - OOP
 - Markdown
 - HTML
+- Rich
 - Redfish
 - NVIDIA Diagnostics
 - Root Cause Analysis
@@ -475,8 +542,10 @@ Primary Root Cause selection considers:
 - RCA Priority
 - Matched Evidence
 - Matched Conditions
+- RCA Score
 - Event Recency
 - Latest Supporting Event ID
+- Potential Causal Events
 
 More recent events are weighted higher than historical events when selecting the Primary Root Cause.
 

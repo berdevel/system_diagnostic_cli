@@ -114,6 +114,285 @@ class MarkdownGenerator:
 
                     )
 
+             # ==========================================
+            # ROOT CAUSE ANALYSIS
+            # ==========================================
+
+            file.write(
+                "\n---\n\n"
+            )
+
+            file.write(
+                "# ROOT CAUSE ANALYSIS\n\n"
+            )
+
+            if root_causes and root_causes.get("primary"):
+
+                primary = root_causes["primary"]
+
+                primary_conditions = primary.get(
+                    "conditions",
+                    []
+                )
+
+                file.write(
+                    "## EXECUTIVE SUMMARY\n\n"
+                )
+
+                file.write(
+                    "| Item | Value |\n"
+                )
+
+                file.write(
+                    "|------|-------|\n"
+                )
+
+                file.write(
+                    f"| Rule ID | {primary['id']} |\n"
+                )
+
+                file.write(
+                    f"| Cause | {primary['name']} |\n"
+                )
+
+                file.write(
+                    f"| Confidence | {primary['confidence']} |\n"
+                )
+
+                file.write(
+                    f"| Priority | {primary['priority']} |\n"
+                )
+
+                file.write(
+                    f"| Matched Conditions | {primary.get('matched_conditions','N/A')} |\n"
+                )
+
+                file.write(
+                    f"| RCA Score | {primary.get('score','N/A')} |\n"
+                )
+
+                if primary.get("latest_event_id"):
+
+                    file.write(
+                        f"Latest Supporting Event | {primary.get('latest_event_id','N/A')} |\n\n"
+                    )
+
+                if primary.get("potential_causes"):
+
+                    file.write(
+                        "## Potential Causal Events\n\n"
+                    )
+
+                    for event_id in primary[
+                        "potential_causes"
+                    ]:
+
+                        file.write(
+                            f"- Event ID {event_id}\n"
+                        )
+
+                    file.write("\n")
+
+                rca_biancas = set()
+
+                for item in findings:
+
+                    failure = (
+                        item.get(
+                            "failure",
+                            ""
+                        ).upper()
+                    )
+
+                    if any(
+
+                        condition.upper() in failure
+
+                        for condition in primary_conditions
+
+                    ):
+
+                        bianca = (
+                            item.get(
+                                "bianca",
+                                ""
+                            )
+                            .replace(
+                                "Bianca 1",
+                                "Bianca#1"
+                            )
+                            .replace(
+                                "Bianca 2",
+                                "Bianca#2"
+                            )
+                        )
+
+                        if bianca not in [
+
+                            None,
+                            "",
+                            "Unknown",
+                            "N/A"
+
+                        ]:
+
+                            rca_biancas.add(
+                                bianca
+                            )
+
+                affected_coldplates = sorted({
+
+                    event.get("coldplate")
+
+                    for event in findings
+
+                    if event.get("coldplate") not in [
+                        None,
+                        "",
+                        "Unknown",
+                        "N/A"
+                    ]
+
+                })
+
+                file.write(
+                    "## Affected Components\n\n"
+                )
+
+                for bianca in sorted(
+                    rca_biancas
+                ):
+
+                    file.write(
+                        f"- {bianca}\n"
+                    )
+
+                for coldplate in affected_coldplates:
+
+                    file.write(
+                        f"- {coldplate} Coldplate\n"
+                    )
+
+                file.write("\n")
+
+                file.write(
+                    "## Recommended Actions\n\n"
+                )
+
+                file.write(
+                    primary["recommendation"] + "\n\n"
+                )
+
+                supporting_events = set()
+
+                for item in findings:
+
+                    failure = (
+                        item.get(
+                            "failure",
+                            ""
+                        ).upper()
+                    )
+
+                    if any(
+
+                        condition.upper() in failure
+
+                        for condition in primary_conditions
+
+                    ):
+
+                        supporting_events.add(
+                            item.get("event_id")
+                        )
+
+                for event in (critical_findings or []):
+
+                    event_text = (
+
+                        (
+                            event.get(
+                                "failure",
+                                ""
+                            )
+
+                            + " "
+
+                            +
+
+                            event.get(
+                                "description",
+                                ""
+                            )
+
+                        ).upper()
+
+                    )
+
+                    if any(
+
+                        condition.upper() in event_text
+
+                        for condition in primary_conditions
+
+                    ):
+
+                        supporting_events.add(
+                            event.get("event_id")
+                        )
+
+                if supporting_events:
+
+                    file.write(
+                        "## RCA Evidence Timeline\n\n"
+                    )
+
+                    file.write(
+                        "| Sequence | Event ID |\n"
+                    )
+
+                    file.write(
+                        "|----------|----------|\n"
+                    )
+
+                    for idx, event_id in enumerate(
+
+                        sorted(supporting_events),
+
+                        start=1
+
+                    ):
+
+                        file.write(
+                            f"| {idx} | {event_id} |\n"
+                        )
+
+                    file.write("\n")
+
+                secondary = root_causes.get(
+                    "secondary",
+                    []
+                )
+
+                if secondary:
+
+                    file.write(
+                        "## Secondary Findings\n\n"
+                    )
+
+                    for rule in secondary:
+
+                        file.write(
+                            f"- {rule['name']} "
+                            f"(Priority {rule['priority']})\n"
+                        )
+
+            else:
+
+                file.write(
+                    "No matching root cause rule found.\n"
+                )
+
             # ==========================================
             # COMPONENT FAILURES
             # ==========================================
@@ -217,8 +496,20 @@ class MarkdownGenerator:
 
                         ]:
 
-                            locations.add(
+                            bianca = (
                                 item["bianca"]
+                                .replace(
+                                    "Bianca 1",
+                                    "Bianca#1"
+                                )
+                                .replace(
+                                    "Bianca 2",
+                                    "Bianca#2"
+                                )
+                            )
+
+                            locations.add(
+                                bianca
                             )
 
                         if item.get(
@@ -506,534 +797,137 @@ class MarkdownGenerator:
                 )
 
                 file.write(
-                    "## Critical Event Summary\n\n"
+    "## Top Critical Events\n\n"
                 )
 
-                for failure, qty in (
+                file.write(
+                    "| Critical Event | Count |\n"
+                )
 
-                    critical_counter.most_common()
+                file.write(
+                    "|---------------|-------|\n"
+                )
 
-                ):
+                for failure, qty in critical_counter.most_common(10):
 
                     file.write(
-                        f"- {failure}: {qty}\n"
+                        f"| {failure} | {qty} |\n"
                     )
 
                 file.write("\n")
 
-                for event in critical_findings:
+                file.write(
+                    "## Critical Event Details\n\n"
+                )
 
-                    file.write(
-                        "## CRITICAL EVENT\n\n"
-                    )
+                file.write(
+                    "| Event ID | Severity | Failure | GPU | CPU | Bianca | Location |\n"
+                )
 
-                    file.write(
-                        f"- Event ID       : "
-                        f"{event.get('event_id', 'Unknown')}\n"
-                    )
+                file.write(
+                    "|----------|----------|---------|-----|-----|--------|----------|\n"
+                )
 
-                    event_date = event.get(
-                        "created",
-                        "Unknown"
-                    )
+                sorted_events = sorted(
 
-                    if event.get(
-                        "invalid_timestamp",
-                        False
-                    ):
+                    critical_findings,
 
-                        event_date = (
-                            "Legacy / Invalid "
-                            "BMC Timestamp"
+                    key=lambda event: (
+
+                        int(
+                            event.get(
+                                "event_id",
+                                0
+                            )
                         )
 
-                    file.write(
-                        f"- Date           : "
-                        f"{event_date}\n"
+                        if str(
+                            event.get(
+                                "event_id",
+                                0
+                            )
+                        ).isdigit()
+
+                        else 0
+
                     )
 
+                )
 
-                    file.write(
-                        f"- Severity       : "
-                        f"{event.get('severity', 'Unknown')}\n"
+                for event in sorted_events:
+
+                    gpu = event.get(
+                        "gpu",
+                        ""
                     )
 
-                    if event.get("gpu") != "Unknown":
-                    
-                        file.write(
-                            f"- GPU            : "
-                            f"{event.get('gpu')}\n"
-                        )
-
-                    if event.get("cpu") != "Unknown":
-
-                        file.write(
-
-                            f"- CPU            : "
-                            f"{event.get('cpu')}\n"
-
-                        )
-
-                    file.write(
-                        f"- Bianca         : "
-                        f"{event.get('bianca', 'Unknown')}\n"
+                    cpu = event.get(
+                        "cpu",
+                        ""
                     )
 
-                    if (
+                    bianca = event.get(
+                        "bianca",
+                        ""
+                    )
 
-                        event.get("location") not in [
+                    location = event.get(
+                        "location",
+                        ""
+                    )
 
-                            None,
-                            "",
-                            "Unknown",
+                    file.write(
+
+                        f"| {event.get('event_id','')} "
+                        f"| {event.get('severity','')} "
+                        f"| {event.get('failure','')} "
+                        f"| {gpu} "
+                        f"| {cpu} "
+                        f"| {bianca} "
+                        f"| {location} |\n"
+
+                    )
+
+                file.write("\n")
+
+                file.write(
+                    "## Event Descriptions\n\n"
+                )
+
+                file.write(
+                    "| Event ID | Description |\n"
+                )
+
+                file.write(
+                    "|----------|-------------|\n"
+                )
+
+                for event in sorted_events:
+
+                    description = (
+
+                        event.get(
+                            "description",
                             "N/A"
-
-                        ]
-
-                        and
-
-                        event.get("coldplate") == "N/A"
-
-                        and
-
-                        event.get("cx8") == "N/A"
-
-                    ):
-
-                        file.write(
-
-                            f"- Location       : "
-                            f"{event.get('location')}\n"
-
                         )
+                        .replace("\n", " ")
+                        .replace("|", "/")
 
-                    if event.get("coldplate") != "N/A":
-
-                        file.write(
-                            f"- Coldplate      : "
-                            f"{event.get('coldplate')}\n"
-                        )
-
-                    if event.get("cx8") not in [
-
-                        None,
-                        "",
-                        "Unknown",
-                        "N/A"
-
-                    ]:
-
-                        file.write(
-
-                            f"- CX8            : "
-                            f"{event.get('cx8')}\n"
-
-                        )
-
-                    if event.get("xid") != "N/A":
-
-                        file.write(
-                            f"- XID            : "
-                            f"{event.get('xid')}\n"
-                        )
-
-                    file.write(
-                        f"- Failure        : "
-                        f"{event.get('failure', 'Unknown')}\n"
                     )
 
                     file.write(
-                        f"- Description    : "
-                        f"{event.get('description', 'N/A')}\n"
+
+                        f"| {event.get('event_id','')} "
+                        f"| {description} |\n"
+
                     )
 
-                    file.write(
-                        f"- Recommendation : "
-                        f"{event.get('recommendation', 'N/A')}\n"
-                    )
-
-                    file.write(
-                        f"- Resolution     : "
-                        f"{event.get('resolution', 'N/A')}\n\n"
-                    )
+                file.write("\n")
 
             else:
 
                 file.write(
                     "No Critical Events detected.\n\n"
-                )
-
-            # ==========================================
-            # ROOT CAUSE ANALYSIS
-            # ==========================================
-
-            file.write(
-                "\n---\n\n"
-            )
-
-            file.write(
-                "# ROOT CAUSE ANALYSIS\n\n"
-            )
-
-            if (
-
-                root_causes
-
-                and
-
-                root_causes.get(
-                    "primary"
-                )
-
-            ):
-
-                primary = (
-                    root_causes[
-                        "primary"
-                    ]
-                )
-
-                file.write(
-                    "## PRIMARY ROOT CAUSE\n\n"
-                )
-
-                file.write(
-                    f"Serial Number: "
-                    f"{serial_number}\n\n"
-                )
-
-                file.write(
-                    f"Catalog Version: "
-                    f"{root_causes['catalog_version']}\n\n"
-                )
-
-                file.write(
-                    f"Rule ID: "
-                    f"{primary['id']}\n\n"
-                )
-
-                file.write(
-                    f"Rule Version: "
-                    f"{primary['version']}\n\n"
-                )
-
-                file.write(
-                    f"Priority: "
-                    f"{primary['priority']}\n\n"
-                )
-
-                file.write(
-                    f"Cause: "
-                    f"{primary['name']}\n\n"
-                )
-
-                file.write(
-                    f"Confidence: "
-                    f"{primary['confidence']}\n\n"
-                )
-
-                if primary.get("matched_conditions"):
-
-                    file.write(
-                        f"Matched Conditions: "
-                        f"{primary['matched_conditions']}\n\n"
-                    )
-
-                if primary.get("score"):
-
-                    file.write(
-                        f"RCA Score: "
-                        f"{primary['score']}\n\n"
-                    )
-
-                if primary.get("latest_event_id"):
-
-                    file.write(
-                        f"Latest Supporting Event: "
-                        f"{primary['latest_event_id']}\n\n"
-                    )
-
-                affected_biancas = sorted({
-
-                    event.get(
-                        "bianca"
-                    )
-                    .replace(
-                        "Bianca 1",
-                        "Bianca#1"
-                    )
-                    .replace(
-                        "Bianca 2",
-                        "Bianca#2"
-                    )
-
-                    for event in findings + (critical_findings or [])
-
-                    if event.get(
-                        "bianca"
-                    ) not in [
-
-                        "Unknown",
-                        "N/A",
-                        None,
-                        ""
-
-                    ]
-
-                })
-
-                affected_cx8 = sorted({
-
-                    event.get(
-                        "cx8"
-                    )
-
-                    for event in findings
-
-                    if event.get(
-                        "cx8"
-                    ) not in [
-
-                        "Unknown",
-                        "N/A",
-                        None,
-                        ""
-
-                    ]
-
-                })
-
-                affected_coldplates = sorted({
-
-                    event.get(
-                        "coldplate",
-                        "N/A"
-                    )
-
-                    for event in findings
-
-                    if event.get(
-                        "coldplate"
-                    ) not in [
-
-                        "Unknown",
-                        "N/A",
-                        None,
-                        ""
-
-                    ]
-
-                })
-
-                primary_conditions = []
-
-                if root_causes and root_causes.get(
-                    "primary"
-                ):
-
-                    primary_conditions = (
-
-                        root_causes["primary"]
-                        .get(
-                            "conditions",
-                            []
-                        )
-
-                    )
-
-                supporting_events = set()
-
-                # Component Findings
-
-                for item in findings:
-
-                    failure = (
-
-                        item.get(
-                            "failure",
-                            ""
-                        ).upper()
-
-                    )
-
-                    if any(
-
-                        condition.upper() in failure
-
-                        for condition in primary_conditions
-
-                    ):
-
-                        supporting_events.add(
-
-                            item.get(
-                                "event_id"
-                            )
-
-                        )
-
-                # Critical Events
-
-                for event in (critical_findings or []):
-
-                    event_text = (
-
-                        (
-                            event.get(
-                                "failure",
-                                ""
-                            )
-
-                            + " "
-
-                            +
-
-                            event.get(
-                                "description",
-                                ""
-                            )
-
-                        ).upper()
-
-                    )
-
-                    if any(
-
-                        condition.upper() in event_text
-
-                        for condition in primary_conditions
-
-                    ):
-
-                        supporting_events.add(
-
-                            event.get(
-                                "event_id"
-                            )
-
-                        )
-
-
-                if supporting_events:
-
-                    file.write(
-                        "Evidence Supporting RCA:\n\n"
-                    )
-
-                    for event_id in sorted(
-                        supporting_events
-                    ):
-
-                        file.write(
-                            f"- Event ID {event_id}\n"
-                        )
-
-                    file.write("\n")
-
-                if affected_biancas:
-
-                    file.write(
-                        "Affected Bianca Modules:\n\n"
-                    )
-
-                    for bianca in affected_biancas:
-
-                        file.write(
-                            f"- {bianca}\n"
-                        )
-
-                    file.write("\n")
-
-                file.write(
-                    "Recommended Actions:\n\n"
-                )
-
-                file.write(
-                    primary[
-                        "recommendation"
-                    ] + "\n\n"
-                )
-
-                if affected_biancas:
-
-                    file.write(
-                        "Implementation Notes:\n\n"
-                    )
-
-                    file.write(
-                        "- Bianca replacement includes the corresponding coldplate assembly.\n\n"
-                    )
-
-                if affected_coldplates:
-
-                    file.write(
-                        "Additional Thermal Findings:\n\n"
-                    )
-
-                    for coldplate in affected_coldplates:
-
-                        file.write(
-                            f"- Thermal event detected on "
-                            f"{coldplate} Coldplate\n"
-                        )
-
-                    file.write("\n")
-
-                    file.write(
-                        "Recommended Thermal Actions:\n\n"
-                    )
-
-                    file.write(
-                        "- Inspect TIM condition\n"
-                    )
-
-                    file.write(
-                        "- Verify coldplate contact pressure\n"
-                    )
-
-                    file.write(
-                        "- Review temperature history\n\n"
-                    )
-
-                if affected_cx8:
-
-                    file.write(
-                        "Affected CX8 Modules:\n\n"
-                    )
-
-                    for cx8 in affected_cx8:
-
-                        file.write(
-                            f"- {cx8} CX8\n"
-                        )
-
-                    file.write("\n")
-
-                secondary = (
-                    root_causes.get(
-                        "secondary",
-                        []
-                    )
-                )
-
-                if secondary:
-
-                    file.write(
-                        "## SECONDARY FINDINGS\n\n"
-                    )
-
-                    for rule in secondary:
-
-                        file.write(
-                            f"- {rule['name']} "
-                            f"(Priority "
-                            f"{rule['priority']})\n"
-                        )
-
-            else:
-
-                file.write(
-                    "No matching root cause rule found.\n"
                 )
 
         # ==========================================
@@ -1061,106 +955,259 @@ class MarkdownGenerator:
             extensions=["tables"]
         )
 
+        dashboard = f"""
+        <div class="card-container">
+
+        <div class="card">
+        <div class="card-title">Serial Number</div>
+        <div class="card-value">{serial_number}</div>
+        </div>
+
+        <div class="card">
+        <div class="card-title">Findings</div>
+        <div class="card-value">{len(findings)}</div>
+        </div>
+
+        <div class="card">
+        <div class="card-title">Critical Events</div>
+        <div class="card-value">{len(critical_findings or [])}</div>
+        </div>
+
+        <div class="card">
+        <div class="card-title">Primary RCA</div>
+        <div class="card-value">
+        {
+        root_causes["primary"]["id"]
+        if root_causes and root_causes.get("primary")
+        else "N/A"
+        }
+        </div>
+        </div>
+
+        <div class="card rca-score">
+        <div class="card-title">RCA Score</div>
+        <div class="card-value">
+        {
+        root_causes["primary"].get("score","N/A")
+        if root_causes and root_causes.get("primary")
+        else "N/A"
+        }
+        </div>
+        </div>
+        <p>
+        <div class="card latest-event">
+        <div class="card-title">Latest Event</div>
+        <div class="card-value">
+        {
+        root_causes["primary"].get("latest_event_id","N/A")
+        if root_causes and root_causes.get("primary")
+        else "N/A"
+        }
+        </div>
+        </div>
+
+        </div>
+        """
+
         html_template = f"""
-<!DOCTYPE html>
-<html lang="en">
+        <!DOCTYPE html>
+        <html lang="en">
 
-<head>
+        <head>
 
-<meta charset="UTF-8">
+        <meta charset="UTF-8">
 
-<title>
-FoxconnFailureAnalyzer Report
-</title>
+        <title>
+        FoxconnFailureAnalyzer Report
+        </title>
 
-<style>
+        <style>
 
-body {{
-    font-family: Arial, sans-serif;
-    max-width: 1200px;
-    margin: auto;
-    padding: 30px;
-    background-color: #f4f6f9;
-}}
+        .card-container {{
 
-.header {{
-    background-color: #003366;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-}}
+            display: flex;
 
-.section {{
-    background-color: white;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}}
+            flex-wrap: wrap;
 
-h1 {{
-    margin: 0;
-}}
+            gap: 20px;
 
-h2 {{
-    color: #003366;
-}}
+            margin-bottom: 40px;
 
-h3 {{
-    color: #0055aa;
-}}
+            padding-bottom: 25px;
 
-table {{
-    width: 100%;
-    border-collapse: collapse;
-}}
+            border-bottom: 2px solid #d9d9d9;
+        }}
 
-th {{
-    background-color: #003366;
-    color: white;
-    padding: 10px;
-}}
+        .card {{
 
-td {{
-    border: 1px solid #ddd;
-    padding: 10px;
-}}
+            background: white;
 
-tr:nth-child(even) {{
-    background-color: #f2f2f2;
-}}
+            border-left: 6px solid #003366;
 
-code {{
-    background-color: #efefef;
-    padding: 2px 4px;
-}}
+            border-radius: 10px;
 
-</style>
+            padding: 15px;
 
-</head>
+            min-width: 220px;
 
-<body>
+            box-shadow: 0 2px 8px rgba(0,0,0,.15);
+        }}
 
-<div class="header">
+        .card-title {{
 
-<h1>FoxconnFailureAnalyzer</h1>
+            color: #666;
 
-<p>
-Automated HGX / Bianca Diagnostic Report
-</p>
+            font-size: 12px;
+        }}
 
-</div>
+        .card-value {{
 
-<div class="section">
+            color: #003366;
 
-{html_body}
+            font-size: 24px;
 
-</div>
+            font-weight: bold;
+        }}
 
-</body>
+        .rca-score {{
 
-</html>
-"""
+            color: #008000;
+
+            font-size: 28px;
+
+            font-weight: bold;
+        }}
+
+        .latest-event {{
+
+            color: #cc5500;
+
+            font-size: 28px;
+
+            font-weight: bold;
+        }}
+
+        table {{
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+            margin-top: 15px;
+
+            margin-bottom: 20px;
+        }}
+
+        th {{
+
+            background-color: #003366;
+
+            color: white;
+
+            padding: 12px;
+        }}
+
+        td {{
+
+            border: 1px solid #ddd;
+
+            padding: 10px;
+        }}
+
+        tr:hover {{
+
+            background-color: #eef5ff;
+        }}
+
+        body {{
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: auto;
+            padding: 30px;
+            background-color: #f4f6f9;
+        }}
+
+        .header {{
+            background-color: #003366;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }}
+
+        .section {{
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }}
+
+        h1 {{
+            margin: 0;
+        }}
+
+        h2 {{
+            color: #003366;
+        }}
+
+        h3 {{
+            color: #0055aa;
+        }}
+
+        table {{
+            width: 100%;
+            border-collapse: collapse;
+        }}
+
+        th {{
+            background-color: #003366;
+            color: white;
+            padding: 10px;
+        }}
+
+        td {{
+            border: 1px solid #ddd;
+            padding: 10px;
+        }}
+
+        tr:nth-child(even) {{
+            background-color: #f2f2f2;
+        }}
+
+        code {{
+            background-color: #efefef;
+            padding: 2px 4px;
+        }}
+
+        </style>
+
+        </head>
+
+        <body>
+
+        <div class="header">
+
+        <h1>FoxconnFailureAnalyzer</h1>
+
+        <p>
+        Automated HGX / Bianca Diagnostic Report
+        </p>
+
+        </div>
+
+        <div class="section">
+
+        {dashboard}
+        <p>
+        <p>
+        {html_body}
+
+        </div>
+
+        </body>
+
+        </html>
+        """
 
         with open(
             html_file,

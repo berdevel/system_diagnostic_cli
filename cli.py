@@ -1,6 +1,17 @@
 import argparse
 import time
 from pathlib import Path
+import webbrowser
+from collections import Counter
+
+from rich.console import Console
+from rich.panel import Panel
+from rich.table import Table
+from rich.text import Text
+from rich import box
+from rich.progress import Progress
+
+console = Console()
 
 from colorama import init, Fore
 
@@ -11,6 +22,10 @@ from reports.markdown_generator import MarkdownGenerator
 
 from parsers.root_cause_analyzer import (
     RootCauseAnalyzer
+)
+
+from config.root_cause_catalog import (
+    CATALOG_VERSION
 )
 
 init(autoreset=True)
@@ -81,7 +96,7 @@ class DiagnosticTool:
 
         print(
             Fore.CYAN +
-            "\n========== FOXCONN FAILURE ANALYZER v2.2.4 =========="
+            "\n========== FOXCONN FAILURE ANALYZER v2.2.5 =========="
         )
 
         print()
@@ -94,23 +109,63 @@ class DiagnosticTool:
 
         try:
 
-            parser = LogParser()
-            findings = parser.parse_log(logfile)
+            with Progress() as progress:
 
-            # NUEVO PARSER PARA EVENTOS CRÍTICOS REDFISH
-            redfish_parser = RedfishParser()
-
-            critical_events = (
-                redfish_parser.parse_critical_events(
-
-                    logfile,
-
-                    args.date_from,
-
-                    args.date_to
-
+                task = progress.add_task(
+                    "[cyan]Analyzing Log...",
+                    total=4
                 )
-            )
+
+                parser = LogParser()
+
+                findings = parser.parse_log(
+                    logfile
+                )
+
+                progress.update(
+                    task,
+                    advance=1,
+                    description="[cyan]Parsing Findings..."
+                )
+
+                redfish_parser = RedfishParser()
+
+                critical_events = (
+                    redfish_parser.parse_critical_events(
+                        logfile,
+                        args.date_from,
+                        args.date_to
+                    )
+                )
+
+                progress.update(
+                    task,
+                    advance=1,
+                    description="[cyan]Parsing Critical Events..."
+                )
+
+                root_cause_analyzer = (
+                    RootCauseAnalyzer()
+                )
+
+                root_causes = (
+                    root_cause_analyzer.analyze(
+                        findings,
+                        critical_events
+                    )
+                )
+
+                progress.update(
+                    task,
+                    advance=1,
+                    description="[cyan]Running RCA..."
+                )
+
+                progress.update(
+                    task,
+                    advance=1,
+                    description="[green]Completed"
+                )
 
             root_cause_analyzer = (
                 RootCauseAnalyzer()
@@ -200,9 +255,37 @@ class DiagnosticTool:
                             f"{event['xid']}"
                         )
 
+                    severity = event.get(
+                        "xid_severity",
+                        "Info"
+                    )
+
+                    if severity == "Critical":
+
+                        color = Fore.RED
+
+                    elif severity == "Error":
+
+                        color = Fore.MAGENTA
+
+                    elif severity == "Warning":
+
+                        color = Fore.YELLOW
+
+                    else:
+
+                        color = Fore.CYAN
+
                     print(
+                        color +
                         f"Failure    : "
                         f"{event.get('failure','Unknown')}"
+                    )
+
+                    print(
+                        color +
+                        f"Severity   : "
+                        f"{severity}"
                     )
 
             serial_number = (
@@ -253,6 +336,23 @@ class DiagnosticTool:
                 root_causes,
                 serial_number
             )
+
+            report_name = Path(logfile).stem
+
+            html_report = (
+                Path("reports") /
+                f"{report_name}_Report.html"
+            )
+
+            try:
+
+                webbrowser.open(
+                    html_report.resolve().as_uri()
+                )
+
+            except:
+
+                pass
 
             elapsed_time = round(
                 time.time() - start_time,
@@ -340,113 +440,170 @@ class DiagnosticTool:
                 critical_events
             )
 
-            print(
-                Fore.CYAN +
-                "\n================================="
+            summary = Table(
+
+                title="Analysis Summary",
+
+                box=box.ROUNDED,
+
+                header_style="bold cyan"
+
             )
 
-            print(
-                Fore.CYAN +
-                "SUMMARY"
+            summary.add_column(
+                "Metric"
             )
 
-            print(
-                Fore.CYAN +
-                "=================================\n"
+            summary.add_column(
+                "Value"
             )
 
-            print(
-                Fore.WHITE +
-                f"Serial Number      : "
-                f"{serial_number}"
+            summary.add_row(
+                "Serial Number",
+                serial_number
             )
+
+            summary.add_row(
+                "Findings",
+                str(len(findings))
+            )
+
+            summary.add_row(
+                "Critical Events",
+                str(critical_count)
+            )
+
+            summary.add_row(
+                "Bianca #1 Issues",
+                str(bianca1_count)
+            )
+
+            summary.add_row(
+                "Bianca #2 Issues",
+                str(bianca2_count)
+            )
+
+            summary.add_row(
+                "Coldplate Issues",
+                str(coldplate_count)
+            )
+
+            summary.add_row(
+                "CX8 Issues",
+                str(cx8_count)
+            )
+
+            console.print()
+            console.print(summary)
 
             print()
 
-            print(
-                Fore.GREEN +
-                f"Total Findings     : "
-                f"{len(findings)}"
+            critical_counter = Counter(
+
+                event.get(
+                    "failure",
+                    "Unknown"
+                )
+
+                for event in critical_events
+
             )
 
-            print()
+            top_events = Table(
 
-            print(
-                Fore.YELLOW +
-                f"Bianca Issues      : "
-                f"{bianca1_count + bianca2_count}"
+                title="Top Critical Events",
+
+                box=box.ROUNDED,
+
+                header_style="bold red"
+
             )
 
-            print(
-                Fore.BLUE +
-                f"Coldplate Issues   : "
-                f"{coldplate_count}"
+            top_events.add_column(
+                "Critical Event"
             )
 
-            print(
-                Fore.MAGENTA +
-                f"CX8 Issues         : "
-                f"{cx8_count}"
+            top_events.add_column(
+                "Count",
+                justify="right"
             )
 
+            for failure, qty in (
 
-            print(
-                Fore.RED +
-                f"Critical Events    : "
-                f"{critical_count}"
-            )
+                critical_counter.most_common(10)
+
+            ):
+
+                top_events.add_row(
+                    failure,
+                    str(qty)
+                )
+
+            console.print()
+            console.print(top_events)
 
             print()
 
             if primary:
 
-                print()
+                severity_color = {
 
-                print(
-                    Fore.CYAN +
-                    "Primary Root Cause :"
+                    "HIGH": "red",
+
+                    "MEDIUM": "yellow",
+
+                    "LOW": "cyan"
+
+                }.get(
+                    primary["confidence"],
+                    "white"
                 )
 
-                print(
-                    Fore.RED +
-                    primary["name"]
+                rca_panel = Panel(
+
+                    f"""
+                [bold red]{primary['name']}[/bold red]
+
+                Rule ID: {primary['id']}
+
+                [{severity_color}]Confidence: {primary['confidence']}[/{severity_color}]
+
+                Matched Conditions: {primary.get('matched_conditions','N/A')}
+
+                RCA Score: {primary.get('score','N/A')}
+
+                Latest Event: {primary.get('latest_event_id','N/A')}
+                """,
+
+                    title="Primary Root Cause",
+
+                    border_style="red"
+
                 )
 
-                print()
+                console.print()
+                console.print(rca_panel)
 
-                print(
-                    Fore.YELLOW +
-                    f"Rule ID            : "
-                    f"{primary['id']}"
+                status_panel = Panel(
+
+                    f"""
+                Findings       : {len(findings)}
+
+                Critical Events: {critical_count}
+
+                Score          : {primary.get('score','N/A')}
+
+                Latest Event   : {primary.get('latest_event_id','N/A')}
+                """,
+
+                    title="System Status",
+
+                    border_style="cyan"
+
                 )
 
-                print()
-
-                print(
-                    Fore.YELLOW +
-                    f"Confidence         : "
-                    f"{primary['confidence']}"
-                )
-
-                print()
-
-                print(
-                    Fore.YELLOW +
-                    f"Matched Conditions : "
-                    f"{primary.get('matched_conditions', 'N/A')}"
-                )
-
-                print(
-                    Fore.YELLOW +
-                    f"RCA Score          : "
-                    f"{primary.get('score', 'N/A')}"
-                )
-
-                print(
-                    Fore.YELLOW +
-                    f"Latest Event ID    : "
-                    f"{primary.get('latest_event_id', 'N/A')}"
-                )
+                console.print()
+                console.print(status_panel)
 
                 recommendation = (
 
@@ -505,47 +662,42 @@ class DiagnosticTool:
                         f"- {coldplate} Coldplate Thermal Event"
                     )
 
-            report_name = Path(logfile).stem
-
-            print(
-                Fore.CYAN +
-                "\n================================="
+            outputs = Table(
+                title="Generated Outputs",
+                box=box.ROUNDED,
+                header_style="bold cyan"
             )
 
-            print(
-                Fore.CYAN +
-                "OUTPUTS"
+            outputs.add_column("Artifact")
+            outputs.add_column("Location")
+
+            outputs.add_row(
+                "Catalog Version",
+                CATALOG_VERSION
             )
 
-            print(
-                Fore.CYAN +
-                "=================================\n"
+            outputs.add_row(
+                "Database",
+                "diagnostics.db"
             )
 
-            print(
-                Fore.BLUE +
-                "Database            : diagnostics.db"
-            )
-
-            print(
-                Fore.BLUE +
-                f"Markdown Report     : "
+            outputs.add_row(
+                "Markdown Report",
                 f"reports/{report_name}_Report.md"
             )
 
-            print(
-                Fore.BLUE +
-                f"HTML Report         : "
+            outputs.add_row(
+                "HTML Report",
                 f"reports/{report_name}_Report.html"
             )
 
-            print()
-
-            print(
-                Fore.GREEN +
-                f"Process Time        : "
+            outputs.add_row(
+                "Process Time",
                 f"{elapsed_time} sec"
             )
+
+            console.print()
+            console.print(outputs)
 
             if verbose:
             
@@ -1057,6 +1209,309 @@ class DiagnosticTool:
                     "RECURRING FAILURE DETECTED"
                 )
 
+def show_menu():
+
+    console.clear()
+
+    console.print()
+
+    console.print(
+
+        Panel.fit(
+
+            """
+    [bold cyan]
+    ███████╗ ██████╗ ██╗  ██╗
+    ██╔════╝██╔═══██╗╚██╗██╔╝
+    █████╗  ██║   ██║ ╚███╔╝
+    ██╔══╝  ██║   ██║ ██╔██╗
+    ██║     ╚██████╔╝██╔╝ ██╗
+    ╚═╝      ╚═════╝ ╚═╝  ╚═╝
+    [/bold cyan]
+
+    [bold white]
+    FOXCONN FAILURE ANALYZER v2.2.5
+    [/bold white]
+
+    [white]
+    NVIDIA HGX / GB200 Diagnostic Platform
+    [/white]
+    """,
+
+            border_style="cyan"
+
+        )
+
+    )
+
+    logs_count = len(
+        list(
+            Path("logs").glob("*.txt")
+        )
+    )
+
+    stats = Table(
+        box=box.ROUNDED,
+        show_header=False
+    )
+
+    stats.add_row(
+        "Catalog Version",
+        CATALOG_VERSION
+    )
+
+    stats.add_row(
+        "Logs Available",
+        str(logs_count)
+    )
+
+    console.print(stats)
+    console.print()
+
+    table = Table(
+
+        box=box.ROUNDED,
+
+        show_header=True,
+
+        header_style="bold cyan"
+
+    )
+
+    table.add_column(
+        "#",
+        justify="center",
+        width=5
+    )
+
+    table.add_column(
+        "Action",
+        width=40
+    )
+
+    table.add_row(
+        "1",
+        "Analyze Single Log"
+    )
+
+    table.add_row(
+        "2",
+        "Analyze All Logs"
+    )
+
+    table.add_row(
+        "3",
+        "Serial History"
+    )
+
+    table.add_row(
+        "4",
+        "Serial Report"
+    )
+
+    table.add_row(
+        "5",
+        "Top RCA"
+    )
+
+    table.add_row(
+        "6",
+        "Top Components"
+    )
+
+    table.add_row(
+        "7",
+        "Top Serials"
+    )
+
+    table.add_row(
+        "8",
+        "Historical Summary"
+    )
+
+    table.add_row(
+        "9",
+        "[red]Exit[/red]"
+    )
+
+    console.print(table)
+
+    console.print()
+
+    return input(
+        "Select Option > "
+    ).strip()
+
+
+def interactive_mode(tool):
+
+    while True:
+
+        option = show_menu()
+
+        # ======================================
+        # Analyze Single Log
+        # ======================================
+
+        if option == "1":
+
+            logs = sorted(
+                list(
+                    Path("logs").glob(
+                        "*.txt"
+                    )
+                )
+            )
+
+            if not logs:
+
+                console.print(
+                    "[red]No log files found[/red]"
+                )
+
+                continue
+
+            table = Table(
+                title="Available Logs",
+                box=box.ROUNDED,
+                header_style="bold cyan"
+            )
+
+            table.add_column(
+                "#",
+                justify="center"
+            )
+
+            table.add_column(
+                "Log File"
+            )
+
+            table.add_column(
+                "Size",
+                justify="right"
+            )
+
+            for idx, log in enumerate(
+                logs,
+                start=1
+            ):
+
+                table.add_row(
+                    str(idx),
+                    log.name,
+                    f"{round(log.stat().st_size / 1024, 1)} KB"
+                )
+
+            console.print(table)
+
+            try:
+
+                selection = int(
+                    input(
+                        "\nSelect Log: "
+                    )
+                )
+
+                logfile = logs[
+                    selection - 1
+                ]
+
+                tool.run(
+                    str(logfile)
+                )
+
+            except Exception:
+
+                console.print(
+                    "[red]Invalid Selection[/red]"
+                )
+
+        # ======================================
+        # Analyze All Logs
+        # ======================================
+
+        elif option == "2":
+
+            tool.analyze_all_logs()
+
+        # ======================================
+        # Serial History
+        # ======================================
+
+        elif option == "3":
+
+            serial = input(
+                "\nSerial Number: "
+            )
+
+            tool.show_history(
+                serial
+            )
+
+        # ======================================
+        # Serial Report
+        # ======================================
+
+        elif option == "4":
+
+            serial = input(
+                "\nSerial Number: "
+            )
+
+            tool.show_serial_report(
+                serial
+            )
+
+        # ======================================
+        # Top RCA
+        # ======================================
+
+        elif option == "5":
+
+            tool.show_top_rca()
+
+        # ======================================
+        # Top Components
+        # ======================================
+
+        elif option == "6":
+
+            tool.show_top_components()
+
+        # ======================================
+        # Top Serials
+        # ======================================
+
+        elif option == "7":
+
+            tool.show_top_serials()
+
+        # ======================================
+        # Summary
+        # ======================================
+
+        elif option == "8":
+
+            tool.show_summary()
+
+        # ======================================
+        # Exit
+        # ======================================
+
+        elif option == "9":
+
+            print(
+                "\nGoodbye.\n"
+            )
+
+            break
+
+        else:
+
+            print(
+                "\nInvalid Option.\n"
+            )
+
 
 if __name__ == "__main__":
 
@@ -1145,6 +1600,33 @@ if __name__ == "__main__":
 
     tool = DiagnosticTool()
 
+    advanced_mode = any(
+
+        [
+
+            args.logfile,
+
+            args.generate,
+
+            args.all,
+
+            args.history,
+
+            args.top_rca,
+
+            args.top_components,
+
+            args.top_serials,
+
+            args.summary,
+
+            args.serial_report
+
+        ]
+
+    )
+
+
     if args.generate:
 
         from generators.fake_log_generator import (
@@ -1223,4 +1705,12 @@ if __name__ == "__main__":
 
     else:
 
-        parser.print_help()
+        if not advanced_mode:
+
+            interactive_mode(
+                tool
+            )
+
+        else:
+
+            parser.print_help()

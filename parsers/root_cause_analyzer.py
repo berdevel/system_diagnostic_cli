@@ -106,31 +106,54 @@ class RootCauseAnalyzer:
 
         for rule in ROOT_CAUSE_CATALOG:
 
-            matched = True
+            match_mode = rule.get(
+                "match",
+                "ALL"
+            )
 
             matched_conditions = 0
 
             latest_rule_event = 0
 
-            for condition in rule["conditions"]:
+            if match_mode == "ANY":
 
-                condition_found = False
+                matched = False
 
-                for token in evidence:
+                for condition in rule["conditions"]:
 
-                    if condition.upper() in token:
+                    for token in evidence:
 
-                        condition_found = True
+                        if condition.upper() in token:
 
-                        matched_conditions += 1
+                            matched = True
+
+                            matched_conditions += 1
+
+                            break
+
+            else:
+
+                matched = True
+
+                for condition in rule["conditions"]:
+
+                    condition_found = False
+
+                    for token in evidence:
+
+                        if condition.upper() in token:
+
+                            condition_found = True
+
+                            matched_conditions += 1
+
+                            break
+
+                    if not condition_found:
+
+                        matched = False
 
                         break
-
-                if not condition_found:
-
-                    matched = False
-
-                    break
 
             if matched:
 
@@ -200,6 +223,40 @@ class RootCauseAnalyzer:
 
                 )
 
+                potential_causes = []
+                
+                for event in critical_events:
+        
+                    failure = str(
+                        event.get(
+                            "failure",
+                            ""
+                        )
+                    ).upper()
+        
+                    if any(
+        
+                        keyword in failure
+        
+                        for keyword in [
+        
+                            "XID_121",
+                            "NETIR",
+                            "GPU RESET",
+                            "NVLINK"
+        
+                        ]
+        
+                    ):
+        
+                        potential_causes.append(
+        
+                            event.get(
+                                "event_id"
+                            )
+        
+                        )
+
                 rule_copy = rule.copy()
 
                 rule_copy["score"] = score
@@ -207,6 +264,10 @@ class RootCauseAnalyzer:
                 rule_copy["latest_event_id"] = latest_rule_event
 
                 rule_copy["matched_conditions"] = matched_conditions
+
+                rule_copy["potential_causes"] = (
+                    potential_causes
+                )
 
                 matches.append(
                     rule_copy
