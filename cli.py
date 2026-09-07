@@ -1331,17 +1331,15 @@ def show_menu():
 
     logo = """
     [bold cyan]
-    ███████╗ ██████╗ ██╗  ██╗
-    ██╔════╝██╔═══██╗╚██╗██╔╝
-    █████╗  ██║   ██║ ╚███╔╝
-    ██╔══╝  ██║   ██║ ██╔██╗
-    ██║     ╚██████╔╝██╔╝ ██╗
-    ╚═╝      ╚═════╝ ╚═╝  ╚═╝
+               ███████╗███████╗ █████╗
+               ██╔════╝██╔════╝██╔══██╗
+               █████╗  █████╗  ███████║
+               ██╔══╝  ██╔══╝  ██╔══██║
+               ██║     ██║     ██║  ██║
+               ╚═╝     ╚═╝     ╚═╝  ╚═╝
     [/bold cyan]
-
-    [bold white]FOXCONN FAILURE ANALYZER v2.2.5[/bold white]
-
-    NVIDIA HGX / GB200 Diagnostic Platform
+          [bold bright_white]FOXCONN FAILURE ANALYZER[/bold bright_white] [bold yellow]v2.2.5[/bold yellow]
+      [bright_black]NVIDIA HGX / GB200 Diagnostic Platform[/bright_black]
     """
 
     menu_text = f"""
