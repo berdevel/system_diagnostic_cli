@@ -10,6 +10,8 @@ from rich.table import Table
 from rich.text import Text
 from rich import box
 from rich.progress import Progress
+from rich.columns import Columns
+from rich.console import Group
 
 console = Console()
 
@@ -63,7 +65,7 @@ class DiagnosticTool:
         for logfile in log_files:
 
             print(
-                "\n================================="
+                "\n================================================================="
             )
 
             print(
@@ -71,7 +73,7 @@ class DiagnosticTool:
             )
 
             print(
-                "=================================\n"
+                "=================================================================\n"
             )
 
             self.run(
@@ -84,7 +86,7 @@ class DiagnosticTool:
         logfile,
         verbose=False
     ):
-
+        
         if not Path(logfile).exists():
             print(
                 Fore.RED +
@@ -92,11 +94,13 @@ class DiagnosticTool:
             )
             return
 
+        console.clear()
+
         start_time = time.time()
 
         print(
             Fore.CYAN +
-            "\n========== FOXCONN FAILURE ANALYZER v2.2.5 =========="
+            "\n================ FOXCONN FAILURE ANALYZER v2.2.5 ================"
         )
 
         print()
@@ -166,17 +170,6 @@ class DiagnosticTool:
                     advance=1,
                     description="[green]Completed"
                 )
-
-            root_cause_analyzer = (
-                RootCauseAnalyzer()
-            )
-
-            root_causes = (
-                root_cause_analyzer.analyze(
-                    findings,
-                    critical_events
-                )
-            )
 
             primary = root_causes.get(
                 "primary"
@@ -443,9 +436,8 @@ class DiagnosticTool:
             summary = Table(
 
                 title="Analysis Summary",
-
                 box=box.ROUNDED,
-
+                border_style="cyan",
                 header_style="bold cyan"
 
             )
@@ -493,10 +485,45 @@ class DiagnosticTool:
                 str(cx8_count)
             )
 
-            console.print()
-            console.print(summary)
+            top_findings = Counter(
 
-            print()
+                item.get(
+                    "failure",
+                    "Unknown"
+                )
+
+                for item in findings
+
+            )
+
+            top_table = Table(
+
+                title="Top Findings",
+                box=box.ROUNDED,
+                border_style="yellow",
+                header_style="bold yellow"
+
+            )
+
+            top_table.add_column(
+                "Failure"
+            )
+
+            top_table.add_column(
+                "Count",
+                justify="right"
+            )
+
+            for failure, qty in (
+
+                top_findings.most_common(5)
+
+            ):
+
+                top_table.add_row(
+                    failure,
+                    str(qty)
+                )
 
             critical_counter = Counter(
 
@@ -512,10 +539,9 @@ class DiagnosticTool:
             top_events = Table(
 
                 title="Top Critical Events",
-
                 box=box.ROUNDED,
-
-                header_style="bold red"
+                border_style="magenta",
+                header_style="bold magenta"
 
             )
 
@@ -530,7 +556,7 @@ class DiagnosticTool:
 
             for failure, qty in (
 
-                critical_counter.most_common(10)
+                critical_counter.most_common(5)
 
             ):
 
@@ -538,9 +564,6 @@ class DiagnosticTool:
                     failure,
                     str(qty)
                 )
-
-            console.print()
-            console.print(top_events)
 
             print()
 
@@ -559,51 +582,42 @@ class DiagnosticTool:
                     "white"
                 )
 
-                rca_panel = Panel(
-
-                    f"""
-                [bold red]{primary['name']}[/bold red]
-
-                Rule ID: {primary['id']}
-
-                [{severity_color}]Confidence: {primary['confidence']}[/{severity_color}]
-
-                Matched Conditions: {primary.get('matched_conditions','N/A')}
-
-                RCA Score: {primary.get('score','N/A')}
-
-                Latest Event: {primary.get('latest_event_id','N/A')}
-                """,
-
+                rca = Table(
+                
                     title="Primary Root Cause",
-
-                    border_style="red"
-
+                    box=box.ROUNDED,
+                    border_style="red",
+                    header_style="bold red"
+    
                 )
-
-                console.print()
-                console.print(rca_panel)
-
-                status_panel = Panel(
-
-                    f"""
-                Findings       : {len(findings)}
-
-                Critical Events: {critical_count}
-
-                Score          : {primary.get('score','N/A')}
-
-                Latest Event   : {primary.get('latest_event_id','N/A')}
-                """,
-
-                    title="System Status",
-
-                    border_style="cyan"
-
+    
+                rca.add_column(
+                    "Metric"
                 )
-
-                console.print()
-                console.print(status_panel)
+    
+                rca.add_column(
+                    "Value"
+                )
+    
+                rca.add_row(
+                    "Rule ID",
+                    f"{primary['id']}"
+                )
+    
+                rca.add_row(
+                    "Confidence",
+                    f"[{severity_color}]{primary['confidence']}[/{severity_color}]"
+                )
+    
+                rca.add_row(
+                    "RCA Score",
+                    f"{primary.get('score','N/A')}"
+                )
+    
+                rca.add_row(
+                    "Latest Event",
+                    f"{primary.get('latest_event_id','N/A')}"
+                )
 
                 recommendation = (
 
@@ -615,14 +629,71 @@ class DiagnosticTool:
 
                 )
 
-                for line in recommendation.splitlines():
+                if verbose:
 
-                    if line.strip():
+                    print()
 
-                        print(
-                            Fore.GREEN +
-                            line.strip()
-                        )
+                    print(
+                        Fore.GREEN +
+                        "Recommended Actions:"
+                    )
+
+                    for line in recommendation.splitlines():
+
+                        if line.strip():
+
+                            print(
+                                Fore.GREEN +
+                                line.strip()
+                            )
+
+            console.print()
+                        
+            console.print(
+
+                Columns(
+
+                    [
+
+                        summary,
+
+                        rca
+
+                    ],
+
+                    width=40,
+
+                    equal=True,
+
+                    expand=True
+
+                )
+
+            )
+
+            console.print()
+            
+            console.print(
+
+                Columns(
+
+                    [
+
+                        top_table,
+
+                        top_events
+
+                    ],
+
+                   width=40,
+
+                    equal=True,
+
+                    expand=True
+
+                )
+
+            )
 
             secondary = root_causes.get(
                 "secondary",
@@ -631,41 +702,47 @@ class DiagnosticTool:
 
             if secondary:
 
-                print()
-
-                print(
-                    Fore.MAGENTA +
-                    "Additional RCA Matches :"
+                secondary_table = Table(
+                    title="Secondary RCA Matches",
+                    box=box.ROUNDED,
+                    border_style="green",
+                    header_style="bold green"
                 )
 
-                for rule in secondary[:5]:
+                secondary_table.add_column("Rule")
+                secondary_table.add_column("Name")
 
-                    print(
-                        Fore.MAGENTA +
-                        f"- {rule['id']} "
-                        f"({rule['name']})"
+                for rule in secondary[:3]:
+
+                    secondary_table.add_row(
+                        rule["id"],
+                        rule["name"]
                     )
 
             if thermal_findings:
 
-                print()
+                thermal_table = Table(
+                    title="Secondary Findings",
+                    box=box.ROUNDED,
+                    border_style="purple",
+                    header_style="bold purple"
+                )
 
-                print(
-                    Fore.MAGENTA +
-                    "Secondary Findings :"
+                thermal_table.add_column(
+                    "Finding"
                 )
 
                 for coldplate in thermal_findings:
 
-                    print(
-                        Fore.MAGENTA +
-                        f"- {coldplate} Coldplate Thermal Event"
+                    thermal_table.add_row(
+                        f"{coldplate} Coldplate Thermal Event"
                     )
 
             outputs = Table(
                 title="Generated Outputs",
                 box=box.ROUNDED,
-                header_style="bold cyan"
+                border_style="blue",
+                header_style="bold blue"
             )
 
             outputs.add_column("Artifact")
@@ -682,8 +759,8 @@ class DiagnosticTool:
             )
 
             outputs.add_row(
-                "Markdown Report",
-                f"reports/{report_name}_Report.md"
+                "LOG Report",
+                f"reports/{report_name}_Report.log"
             )
 
             outputs.add_row(
@@ -694,6 +771,30 @@ class DiagnosticTool:
             outputs.add_row(
                 "Process Time",
                 f"{elapsed_time} sec"
+            )
+
+            console.print()
+
+            console.print(
+
+                Columns(
+
+                    [
+
+                        secondary_table,
+
+                        thermal_table
+
+                    ],
+
+                    width=40,
+
+                    equal=True,
+
+                    expand=True
+
+                )
+
             )
 
             console.print()
@@ -1215,11 +1316,20 @@ def show_menu():
 
     console.print()
 
-    console.print(
+    logs_count = len(
+                list(
+                    Path("logs").glob("*.txt")
+                )
+            )
 
-        Panel.fit(
+    menu_grid = Table.grid(
+        padding=(0, 2)
+    )
 
-            """
+    menu_grid.add_column(width=50)
+    menu_grid.add_column(width=35)
+
+    logo = """
     [bold cyan]
     ███████╗ ██████╗ ██╗  ██╗
     ██╔════╝██╔═══██╗╚██╗██╔╝
@@ -1229,117 +1339,52 @@ def show_menu():
     ╚═╝      ╚═════╝ ╚═╝  ╚═╝
     [/bold cyan]
 
-    [bold white]
-    FOXCONN FAILURE ANALYZER v2.2.5
-    [/bold white]
+    [bold white]FOXCONN FAILURE ANALYZER v2.2.5[/bold white]
 
-    [white]
     NVIDIA HGX / GB200 Diagnostic Platform
-    [/white]
-    """,
+    """
 
-            border_style="cyan"
+    menu_text = f"""
+    [cyan]Catalog Version:[/cyan] {CATALOG_VERSION}
+    [cyan]Logs Available :[/cyan] {logs_count}
+
+    [bold]1[/bold]  Analyze Log
+    [bold]2[/bold]  Analyze All Logs
+    [bold]3[/bold]  Serial History
+    [bold]4[/bold]  Serial Report
+    [bold]5[/bold]  Top RCA
+    [bold]6[/bold]  Top Components
+    [bold]7[/bold]  Top Serials
+    [bold]8[/bold]  Summary
+    [bold red]9[/bold red]  Exit
+    """
+
+    menu_grid.add_row(
+        logo,
+        menu_text
+    )
+
+    console.print(
+
+        Panel.fit(
+
+            menu_grid,
+
+            border_style="cyan",
+
+            title="",
+
+            padding=(0, 1)
 
         )
 
     )
-
-    logs_count = len(
-        list(
-            Path("logs").glob("*.txt")
-        )
-    )
-
-    stats = Table(
-        box=box.ROUNDED,
-        show_header=False
-    )
-
-    stats.add_row(
-        "Catalog Version",
-        CATALOG_VERSION
-    )
-
-    stats.add_row(
-        "Logs Available",
-        str(logs_count)
-    )
-
-    console.print(stats)
-    console.print()
-
-    table = Table(
-
-        box=box.ROUNDED,
-
-        show_header=True,
-
-        header_style="bold cyan"
-
-    )
-
-    table.add_column(
-        "#",
-        justify="center",
-        width=5
-    )
-
-    table.add_column(
-        "Action",
-        width=40
-    )
-
-    table.add_row(
-        "1",
-        "Analyze Single Log"
-    )
-
-    table.add_row(
-        "2",
-        "Analyze All Logs"
-    )
-
-    table.add_row(
-        "3",
-        "Serial History"
-    )
-
-    table.add_row(
-        "4",
-        "Serial Report"
-    )
-
-    table.add_row(
-        "5",
-        "Top RCA"
-    )
-
-    table.add_row(
-        "6",
-        "Top Components"
-    )
-
-    table.add_row(
-        "7",
-        "Top Serials"
-    )
-
-    table.add_row(
-        "8",
-        "Historical Summary"
-    )
-
-    table.add_row(
-        "9",
-        "[red]Exit[/red]"
-    )
-
-    console.print(table)
 
     console.print()
 
     return input(
-        "Select Option > "
+        Fore.CYAN +
+        f"Select Option > " + Fore.WHITE
     ).strip()
 
 
@@ -1408,7 +1453,8 @@ def interactive_mode(tool):
 
                 selection = int(
                     input(
-                        "\nSelect Log: "
+                        Fore.CYAN +
+                        f"\nSelect Log: " + Fore.WHITE
                     )
                 )
 
@@ -1418,6 +1464,11 @@ def interactive_mode(tool):
 
                 tool.run(
                     str(logfile)
+                )
+
+                input(
+                    Fore.YELLOW +
+                    f"\nPress ENTER to return to menu..."
                 )
 
             except Exception:
@@ -1434,6 +1485,11 @@ def interactive_mode(tool):
 
             tool.analyze_all_logs()
 
+            input(
+                Fore.YELLOW +
+                f"\nPress ENTER to return to menu..."
+            )
+
         # ======================================
         # Serial History
         # ======================================
@@ -1441,11 +1497,17 @@ def interactive_mode(tool):
         elif option == "3":
 
             serial = input(
-                "\nSerial Number: "
+                Fore.CYAN +
+                f"\nSerial Number: " + Fore.WHITE
             )
 
             tool.show_history(
                 serial
+            )
+
+            input(
+                Fore.YELLOW +
+                f"\nPress ENTER to return to menu..."
             )
 
         # ======================================
@@ -1455,11 +1517,17 @@ def interactive_mode(tool):
         elif option == "4":
 
             serial = input(
-                "\nSerial Number: "
+                Fore.CYAN +
+                f"\nSerial Number: " + Fore.WHITE
             )
 
             tool.show_serial_report(
                 serial
+            )
+
+            input(
+                Fore.YELLOW +
+                f"\nPress ENTER to return to menu..."
             )
 
         # ======================================
@@ -1470,6 +1538,11 @@ def interactive_mode(tool):
 
             tool.show_top_rca()
 
+            input(
+                Fore.YELLOW +
+                f"\nPress ENTER to return to menu..."
+            )
+
         # ======================================
         # Top Components
         # ======================================
@@ -1477,6 +1550,11 @@ def interactive_mode(tool):
         elif option == "6":
 
             tool.show_top_components()
+
+            input(
+                Fore.YELLOW +
+                f"\nPress ENTER to return to menu..."
+            )
 
         # ======================================
         # Top Serials
@@ -1486,6 +1564,11 @@ def interactive_mode(tool):
 
             tool.show_top_serials()
 
+            input(
+                Fore.YELLOW +
+                f"\nPress ENTER to return to menu..."
+            )
+
         # ======================================
         # Summary
         # ======================================
@@ -1494,6 +1577,11 @@ def interactive_mode(tool):
 
             tool.show_summary()
 
+            input(
+                Fore.YELLOW +
+                f"\nPress ENTER to return to menu..."
+            )
+
         # ======================================
         # Exit
         # ======================================
@@ -1501,7 +1589,8 @@ def interactive_mode(tool):
         elif option == "9":
 
             print(
-                "\nGoodbye.\n"
+                Fore.YELLOW +
+                f"\nGoodbye.\n"
             )
 
             break

@@ -189,6 +189,12 @@ class RootCauseAnalyzer:
                                 ""
                             )
 
+                            + " "
+
+                            +
+
+                            f"XID_{event.get('xid','')}"
+
                         ).upper()
 
                     )

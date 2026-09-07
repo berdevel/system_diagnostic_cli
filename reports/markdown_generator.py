@@ -19,7 +19,7 @@ class MarkdownGenerator:
         report_name = Path(source_log).stem
 
         with open(
-            f"reports/{report_name}_Report.md",
+            f"reports/{report_name}_Report.log",
             "w",
             encoding="utf-8"
         ) as file:
@@ -177,10 +177,12 @@ class MarkdownGenerator:
                         f"Latest Supporting Event | {primary.get('latest_event_id','N/A')} |\n\n"
                     )
 
+                file.write("\n")
+
                 if primary.get("potential_causes"):
 
                     file.write(
-                        "## Potential Causal Events\n\n"
+                        "Potential Causal Events\n\n"
                     )
 
                     for event_id in primary[
@@ -934,8 +936,8 @@ class MarkdownGenerator:
         # HTML REPORT GENERATION
         # ==========================================
 
-        md_file = (
-            f"reports/{report_name}_Report.md"
+        log_file = (
+            f"reports/{report_name}_Report.log"
         )
 
         html_file = (
@@ -943,7 +945,7 @@ class MarkdownGenerator:
         )
 
         with open(
-            md_file,
+            log_file,
             "r",
             encoding="utf-8"
         ) as md:
