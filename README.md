@@ -4,31 +4,29 @@
 
 FOXCONN Failure Analyzer is a Python-based diagnostic platform designed to automate NVIDIA HGX system troubleshooting, failure analysis, and root cause identification.
 
-The tool parses diagnostic logs and Redfish event data, identifies hardware failures using Regex and rule-based detection, correlates findings with NVIDIA critical events, performs automated Root Cause Analysis (RCA), stores historical results in SQLite, and generates professional Markdown and HTML reports.
+The tool parses HMC diagnostic logs and NVIDIA Redfish event data, identifies hardware failures using Regex and catalog-driven detection, correlates findings with critical events, performs automated Root Cause Analysis (RCA), stores historical results in SQLite, and generates professional Technical LOG and HTML Dashboard reports.
 
 ---
 
 ## Version
 
-**FoxconnFailureAnalyzer v2.2.5**
+**FoxconnFailureAnalyzer v2.2.6**
 
 ---
 
-### What's New in v2.2.5
+### What's New in v2.2.6
 
-- Added interactive menu mode.
-- Added Rich terminal user interface.
-- Added RCA scoring engine.
-- Added event recency weighting for RCA selection.
-- Added latest supporting event tracking.
-- Added potential causal event analysis.
-- Added HTML dashboard cards.
-- Added RCA evidence timeline.
-- Added top critical events tables.
-- Added HMC Log Clear guidance throughout repair workflows.
-- Expanded Power Fault Catalog coverage.
-- Expanded NVIDIA XID Catalog coverage.
-- Improved thermal, CX8 and Bianca troubleshooting workflows.
+- Added standalone Technical LOG Report generator.
+- Added standalone HTML Dashboard Report generator.
+- Added KPI dashboard cards.
+- Added Primary RCA Hero Section.
+- Added Recommended Actions dashboard section.
+- Added HMC Event Details.
+- Added HMC Event Descriptions.
+- Added Critical Event Details table.
+- Added Critical Event Descriptions table.
+- Added Affected Components dashboard view.
+- Removed Markdown report dependency.
 
 ---
 
@@ -68,21 +66,15 @@ The tool parses diagnostic logs and Redfish event data, identifies hardware fail
 
 ### Reporting
 
-- Executive Summary
-- Failure Highlights
-- Component Statistics
-- Component Failure Analysis
-- Critical Event Analysis
-- Root Cause Analysis
-- RCA Evidence
-- RCA Evidence Timeline
-- Secondary Findings
-- Markdown Report Generation
-- HTML Report Generation
-- RCA Score
-- Latest Supporting Event
-- Matched Conditions
-- Dashboard Summary Cards
+- Technical LOG Report Generation
+- HTML Dashboard Report Generation
+- KPI Dashboard Cards
+- HMC Event Details
+- HMC Event Descriptions
+- Critical Event Details
+- Critical Event Descriptions
+- Recommended Actions Dashboard
+- Affected Component Visualization
 
 ### Historical Analytics
 
@@ -121,17 +113,15 @@ FoxconnFailureAnalyzer/
 ├── diagnostics.db
 │
 ├── config/
-│
 ├── parsers/
-│
 ├── database/
 │
 ├── reports/
+│   ├── report_log_generator.py
+│   └── report_html_generator.py
 │
 ├── logs/
-│
 ├── generators/
-│
 └── tests/
 ```
 
@@ -304,32 +294,57 @@ Each successful analysis generates:
 ```text
 reports/
 
-SERIAL_Report.md
+SERIAL_Report.log
 
 SERIAL_Report.html
 ```
 
 Generated Reports Include:
 
-- Executive Summary
-- Failure Highlights
-- Component Statistics
-- Critical Event Analysis
-- Root Cause Analysis
-- RCA Evidence
-- RCA Evidence Timeline
-- Corrective Actions
-- Secondary Findings
-- Location Correlation
-- Coldplate Correlation
-- CX8 Correlation
-- Timestamp Validation Warnings
-- RCA Score
-- Latest Supporting Event
-- Matched Conditions
-- Potential Causal Events
-- Dashboard Summary Cards
+### Technical LOG Report
 
+- Root Cause Analysis
+- Recommended Actions
+- Component Summary
+- Top Critical Events
+- Critical Event Details
+- Critical Event Descriptions
+- HMC Failure Events
+- HMC Event Descriptions
+
+### HTML Dashboard Report
+
+- KPI Dashboard Cards
+- Primary RCA Hero Section
+- Recommended Actions Section
+- Affected Components
+- Top Findings
+- Top Critical Events
+- HMC Failure Events
+- HMC Event Details
+- Critical Event Details
+- Critical Event Descriptions
+
+---
+
+## HTML Dashboard
+
+The HTML dashboard provides a visual view of diagnostic results.
+
+Dashboard Sections:
+
+- KPI Summary Cards
+- Primary Root Cause
+- Recommended Actions
+- Affected Components
+- Top Findings
+- Top Critical Events
+- HMC Failure Events
+- HMC Event Details
+- Critical Event Details
+- Critical Event Descriptions
+
+The dashboard automatically opens after a successful analysis.
 ---
 
 ## SQLite Database
@@ -479,17 +494,13 @@ diagnostics.db
 
 ## Technology Stack
 
-- Python
+- Rich
+- HTML Dashboard Reporting
 - SQLite
 - Regex
-- OOP
-- Markdown
-- HTML
-- Rich
-- Redfish
-- NVIDIA Diagnostics
-- Root Cause Analysis
-- Automation
+- Rule-Based RCA Engine
+- NVIDIA Redfish Events
+- Catalog-Based Failure Detection
 
 ---
 
@@ -561,8 +572,10 @@ Always perform HMC Log Clear before every retest and before collecting final val
 
 ### v2.3
 
-- Dashboard HTML
-- Graphs and Visualizations
+- Interactive RCA Timeline
+- Event Correlation Graphs
+- RCA Trend Visualization
+- Historical Component Analytics
 
 ### v2.4
 
@@ -578,6 +591,32 @@ Always perform HMC Log Clear before every retest and before collecting final val
 
 - Web Dashboard
 - REST API
+
+---
+
+## Report Architecture
+
+The platform generates two independent reports from the same diagnostic dataset:
+
+### Technical LOG Report
+
+Designed for:
+
+- Failure Analysis Engineers
+- Repair Validation
+- Ticket Attachments
+- Historical Review
+
+### HTML Dashboard Report
+
+Designed for:
+
+- Fast Troubleshooting
+- RCA Review
+- Manufacturing Support
+- Executive Summaries
+
+Both reports are generated independently and do not depend on Markdown conversion.
 
 ---
 

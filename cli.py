@@ -20,7 +20,14 @@ from colorama import init, Fore
 from parsers.log_parser import LogParser
 from parsers.redfish_parser import RedfishParser
 from database.sqlite_manager import SQLiteManager
-from reports.markdown_generator import MarkdownGenerator
+
+from reports.report_log_generator import (
+    ReportLogGenerator
+)
+
+from reports.report_html_generator import (
+    ReportHtmlGenerator
+)
 
 from parsers.root_cause_analyzer import (
     RootCauseAnalyzer
@@ -100,7 +107,7 @@ class DiagnosticTool:
 
         print(
             Fore.CYAN +
-            "\n================ FOXCONN FAILURE ANALYZER v2.2.5 ================"
+            "\n================ FOXCONN FAILURE ANALYZER v2.2.6 ================"
         )
 
         print()
@@ -320,9 +327,15 @@ class DiagnosticTool:
 
             database.close()
 
-            report = MarkdownGenerator()
+            ReportLogGenerator().generate(
+                findings,
+                critical_events,
+                logfile,
+                root_causes,
+                serial_number
+            )
 
-            report.generate(
+            ReportHtmlGenerator().generate(
                 findings,
                 critical_events,
                 logfile,
@@ -1338,7 +1351,7 @@ def show_menu():
                ██║     ██║     ██║  ██║
                ╚═╝     ╚═╝     ╚═╝  ╚═╝
     [/bold cyan]
-          [bold bright_white]FOXCONN FAILURE ANALYZER[/bold bright_white] [bold yellow]v2.2.5[/bold yellow]
+          [bold bright_white]FOXCONN FAILURE ANALYZER[/bold bright_white] [bold yellow]v2.2.6[/bold yellow]
       [bright_black]NVIDIA HGX / GB200 Diagnostic Platform[/bright_black]
     """
 

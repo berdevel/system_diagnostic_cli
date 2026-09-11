@@ -1,4 +1,4 @@
-CATALOG_VERSION = "2.2.4"
+CATALOG_VERSION = "2.2.6"
 
 ROOT_CAUSE_CATALOG = [
 
@@ -7,7 +7,7 @@ ROOT_CAUSE_CATALOG = [
 
         "version": "2.0",
 
-        "priority": 120,
+        "priority": 80,
 
         "name": "GPU Thermal Event",
 
@@ -58,7 +58,7 @@ ROOT_CAUSE_CATALOG = [
 
         "version": "1.0",
 
-        "priority": 100,
+        "priority": 95,
 
         "match": "ANY",
 
@@ -106,7 +106,7 @@ ROOT_CAUSE_CATALOG = [
 
         "version": "1.0",
 
-        "priority": 100,
+        "priority": 95,
 
         "match": "ANY",
 
@@ -154,7 +154,7 @@ ROOT_CAUSE_CATALOG = [
 
         "version": "2.0",
 
-        "priority": 115,
+        "priority": 90,
 
         "name": "CPUVDD Rail Failure - Bianca#1",
 
@@ -195,7 +195,7 @@ ROOT_CAUSE_CATALOG = [
 
         "version": "2.0",
 
-        "priority": 115,
+        "priority": 90,
 
         "name": "CPUVDD Rail Failure - Bianca#2",
 
@@ -236,7 +236,7 @@ ROOT_CAUSE_CATALOG = [
 
         "version": "2.0",
 
-        "priority": 115,
+        "priority": 85,
 
         "name": "GPU Core Power Rail Failure",
 
@@ -277,7 +277,7 @@ ROOT_CAUSE_CATALOG = [
 
         "version": "2.0",
 
-        "priority": 110,
+        "priority": 85,
 
         "name": "FBVDDP Power Rail Failure",
 
@@ -318,7 +318,7 @@ ROOT_CAUSE_CATALOG = [
 
         "version": "1.0",
 
-        "priority": 20,
+        "priority": 50,
 
         "name": "Power Sequencing Failure",
 
@@ -408,7 +408,7 @@ ROOT_CAUSE_CATALOG = [
 
         "name": "GPU Thermal Interrupt",
 
-        "priority": 130,
+        "priority": 80,
 
         "confidence": "HIGH",
 
@@ -459,7 +459,7 @@ ROOT_CAUSE_CATALOG = [
 
         "name": "GPU Thermal Protection Triggered",
 
-        "priority": 125,
+        "priority": 80,
 
         "confidence": "HIGH",
 
@@ -508,7 +508,7 @@ ROOT_CAUSE_CATALOG = [
 
         "version": "1.0",
 
-        "priority": 115,
+        "priority": 100,
 
         "name": "Bianca#1 - PEX Switch 0.95V Rail Failure",
 
@@ -549,7 +549,7 @@ ROOT_CAUSE_CATALOG = [
 
         "version": "1.0",
 
-        "priority": 115,
+        "priority": 100,
 
         "name": "Bianca#2 - PEX Switch 0.95V Rail Failure",
 
