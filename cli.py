@@ -399,25 +399,58 @@ class DiagnosticTool:
 
 )
 
-            coldplate_count = sum(
+            left_coldplate_count = sum(
 
                 1
 
                 for item in findings
 
                 if item.get("component")
-                == "Coldplate"
+                == "Left Coldplate"
 
             )
 
-            cx8_count = sum(
+            right_coldplate_count = sum(
+            
+                            1
+            
+                            for item in findings
+            
+                            if item.get("component")
+                            == "Right Coldplate"
+            
+                        )
+
+            left_cx8_count = sum(
 
                 1
 
                 for item in findings
 
                 if item.get("component")
-                == "CX8"
+                == "Left CX8"
+
+            )
+
+            right_cx8_count = sum(
+            
+                1
+
+                for item in findings
+
+                if item.get("component")
+                == "Right CX8"
+
+            )
+
+            both_cx8_count = sum(
+                        
+                1
+
+                for item in findings
+
+                if item.get("component")
+                == "Both CX8"
 
             )
 
@@ -489,13 +522,28 @@ class DiagnosticTool:
             )
 
             summary.add_row(
-                "Coldplate Issues",
-                str(coldplate_count)
+                "Left Coldplate Issues",
+                str(left_coldplate_count)
             )
 
             summary.add_row(
-                "CX8 Issues",
-                str(cx8_count)
+                "Right Coldplate Issues",
+                str(right_coldplate_count)
+            )
+
+            summary.add_row(
+                "Left CX8 Issues",
+                str(left_cx8_count)
+            )
+
+            summary.add_row(
+                "Right CX8 Issues",
+                str(right_cx8_count)
+            )
+
+            summary.add_row(
+                "Both CX8 Issues",
+                str(both_cx8_count)
             )
 
             top_findings = Counter(
@@ -509,34 +557,36 @@ class DiagnosticTool:
 
             )
 
-            top_table = Table(
+            if top_findings:
 
-                title="Top Findings",
-                box=box.ROUNDED,
-                border_style="yellow",
-                header_style="bold yellow"
+                top_table = Table(
 
-            )
+                    title="Top Findings",
+                    box=box.ROUNDED,
+                    border_style="yellow",
+                    header_style="bold yellow"
 
-            top_table.add_column(
-                "Failure"
-            )
-
-            top_table.add_column(
-                "Count",
-                justify="right"
-            )
-
-            for failure, qty in (
-
-                top_findings.most_common(5)
-
-            ):
-
-                top_table.add_row(
-                    failure,
-                    str(qty)
                 )
+
+                top_table.add_column(
+                    "Failure"
+                )
+
+                top_table.add_column(
+                    "Count",
+                    justify="right"
+                )
+
+                for failure, qty in (
+
+                    top_findings.most_common(5)
+
+                ):
+
+                    top_table.add_row(
+                        failure,
+                        str(qty)
+                    )
 
             critical_counter = Counter(
 
@@ -549,51 +599,52 @@ class DiagnosticTool:
 
             )
 
-            top_events = Table(
+            if critical_counter:
 
-                title="Top Critical Events",
-                box=box.ROUNDED,
-                border_style="magenta",
-                header_style="bold magenta"
+                top_events = Table(
 
-            )
+                    title="Top Critical Events",
+                    box=box.ROUNDED,
+                    border_style="magenta",
+                    header_style="bold magenta"
 
-            top_events.add_column(
-                "Critical Event"
-            )
-
-            top_events.add_column(
-                "Count",
-                justify="right"
-            )
-
-            for failure, qty in (
-
-                critical_counter.most_common(5)
-
-            ):
-
-                top_events.add_row(
-                    failure,
-                    str(qty)
                 )
+
+                top_events.add_column(
+                    "Critical Event"
+                )
+
+                top_events.add_column(
+                    "Count",
+                    justify="right"
+                )
+
+                for failure, qty in (
+
+                    critical_counter.most_common(5)
+
+                ):
+
+                    top_events.add_row(
+                        failure,
+                        str(qty)
+                    )
 
             print()
+            severity_color = {
+
+                "HIGH": "red",
+
+                "MEDIUM": "yellow",
+
+                "LOW": "cyan"
+
+            }.get(
+                primary["confidence"],
+                "white"
+            )
 
             if primary:
-
-                severity_color = {
-
-                    "HIGH": "red",
-
-                    "MEDIUM": "yellow",
-
-                    "LOW": "cyan"
-
-                }.get(
-                    primary["confidence"],
-                    "white"
-                )
 
                 rca = Table(
                 
@@ -601,32 +652,32 @@ class DiagnosticTool:
                     box=box.ROUNDED,
                     border_style="red",
                     header_style="bold red"
-    
+
                 )
-    
+
                 rca.add_column(
                     "Metric"
                 )
-    
+
                 rca.add_column(
                     "Value"
                 )
-    
+
                 rca.add_row(
                     "Rule ID",
                     f"{primary['id']}"
                 )
-    
+
                 rca.add_row(
                     "Confidence",
                     f"[{severity_color}]{primary['confidence']}[/{severity_color}]"
                 )
-    
+
                 rca.add_row(
                     "RCA Score",
                     f"{primary.get('score','N/A')}"
                 )
-    
+
                 rca.add_row(
                     "Latest Event",
                     f"{primary.get('latest_event_id','N/A')}"
@@ -642,71 +693,85 @@ class DiagnosticTool:
 
                 )
 
-                if verbose:
+            if verbose:
 
-                    print()
+                print()
 
-                    print(
-                        Fore.GREEN +
-                        "Recommended Actions:"
-                    )
+                print(
+                    Fore.GREEN +
+                    "Recommended Actions:"
+                )
 
-                    for line in recommendation.splitlines():
+                for line in recommendation.splitlines():
 
-                        if line.strip():
+                    if line.strip():
 
-                            print(
-                                Fore.GREEN +
-                                line.strip()
-                            )
+                        print(
+                            Fore.GREEN +
+                            line.strip()
+                        )
 
             console.print()
                         
-            console.print(
+            if primary:
 
-                Columns(
+                console.print(
 
-                    [
+                    Columns(
 
-                        summary,
+                        [
 
-                        rca
+                            summary,
 
-                    ],
+                            rca
+
+                        ],
+
+                        width=40,
+
+                        equal=True,
+
+                        expand=True
+
+                    )
+
+                )
+
+            else:
+                console.print(summary)
+
+            console.print()
+
+            if top_findings and critical_counter:
+
+            
+                console.print(
+
+                    Columns(
+
+                        [
+
+                            top_table,
+
+                            top_events
+
+                        ],
 
                     width=40,
 
-                    equal=True,
+                        equal=True,
 
-                    expand=True
+                        expand=True
 
-                )
-
-            )
-
-            console.print()
-            
-            console.print(
-
-                Columns(
-
-                    [
-
-                        top_table,
-
-                        top_events
-
-                    ],
-
-                   width=40,
-
-                    equal=True,
-
-                    expand=True
+                    )
 
                 )
 
-            )
+            elif top_findings and not critical_counter:
+                console.print(top_table)
+
+            elif critical_counter and not top_findings:
+                console.print(top_events)
 
             secondary = root_causes.get(
                 "secondary",
@@ -788,27 +853,35 @@ class DiagnosticTool:
 
             console.print()
 
-            console.print(
+            if secondary and thermal_findings:
 
-                Columns(
+                console.print(
 
-                    [
+                    Columns(
 
-                        secondary_table,
+                        [
 
-                        thermal_table
+                            secondary_table,
 
-                    ],
+                            thermal_table
 
-                    width=40,
+                        ],
 
-                    equal=True,
+                        width=40,
 
-                    expand=True
+                        equal=True,
+
+                        expand=True
+
+                    )
 
                 )
 
-            )
+            elif secondary and not thermal_findings:
+                console.print(secondary_table)
+
+            elif thermal_findings and not secondary:
+                console.print(thermal_table)
 
             console.print()
             console.print(outputs)

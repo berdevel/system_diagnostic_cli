@@ -59,13 +59,25 @@ class LogParser:
 
                             component = "Bianca"
 
-                        elif "Coldplate" in module:
+                        elif "Left Coldplate" in module:
 
-                            component = "Coldplate"
+                            component = "Left Coldplate"
 
-                        elif "CX8" in module:
+                        elif "Right Coldplate" in module:
+                        
+                            component = "Right Coldplate"
 
-                            component = "CX8"
+                        elif "Left CX8" in module:
+
+                            component = "Left CX8"
+
+                        elif "Right CX8" in module:
+                        
+                            component = "Right CX8"
+
+                        elif "Both CX8" in module:
+                        
+                            component = "Both CX8"
 
                         # ==========================================
                         # BIANCA
