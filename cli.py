@@ -107,7 +107,17 @@ class DiagnosticTool:
 
         print(
             Fore.CYAN +
-            "\n================ FOXCONN FAILURE ANALYZER v2.2.6 ================"
+            """
+        ╔══════════════════════════════════════════════════════════════╗
+        ║                 FOXCONN FAILURE ANALYZER                     ║
+        ║                         Version 2.2.6                        ║
+        ╠══════════════════════════════════════════════════════════════╣
+        ║ NVIDIA HGX / GB200 Diagnostic Platform                       ║
+        ║                                                              ║
+        ║ Developed by Bernardo Perez                                  ║
+        ║ FOXCONN Diagnostic Automation Project                        ║
+        ╚══════════════════════════════════════════════════════════════╝
+        """
         )
 
         print()
@@ -1426,6 +1436,8 @@ def show_menu():
     [/bold cyan]
           [bold bright_white]FOXCONN FAILURE ANALYZER[/bold bright_white] [bold yellow]v2.2.6[/bold yellow]
       [bright_black]NVIDIA HGX / GB200 Diagnostic Platform[/bright_black]
+    [cyan]      Developed by [/cyan][bold]Bernardo Perez[/bold]
+    [bright_black]  FOXCONN Diagnostic Automation Project[/bright_black]
     """
 
     menu_text = f"""
@@ -1560,7 +1572,7 @@ def interactive_mode(tool):
                 console.print(
                     "[red]Invalid Selection[/red]"
                 )
-
+        
         # ======================================
         # Analyze All Logs
         # ======================================
@@ -1573,7 +1585,7 @@ def interactive_mode(tool):
                 Fore.YELLOW +
                 f"\nPress ENTER to return to menu..."
             )
-
+        
         # ======================================
         # Serial History
         # ======================================
@@ -1665,7 +1677,7 @@ def interactive_mode(tool):
                 Fore.YELLOW +
                 f"\nPress ENTER to return to menu..."
             )
-
+        
         # ======================================
         # Exit
         # ======================================
